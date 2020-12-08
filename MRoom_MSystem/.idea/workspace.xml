@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="web:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bb9fb278-f1ef-4dea-9c13-59477795374b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +22,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -86,12 +98,29 @@
           </settings>
         </artifact>
       </deployment>
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_31_MRoom_MSystem" />
+      </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -113,6 +142,7 @@
       <workItem from="1607328618203" duration="151000" />
       <workItem from="1607349699179" duration="1222000" />
       <workItem from="1607353756380" duration="364000" />
+      <workItem from="1607385111552" duration="4261000" />
     </task>
     <servers />
   </component>
@@ -120,9 +150,61 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="827" height="43" key="GridCell.Tab.0.bottom" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.0.center" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.0.left" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.0.right" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.1.bottom" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.1.center" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.1.left" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.1.right" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.2.bottom" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.2.center" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.2.left" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
+    <state width="827" height="43" key="GridCell.Tab.2.right" timestamp="1607393228414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="827" height="43" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1607393228414" />
     <state x="0" y="0" key="SettingsEditor" timestamp="1607352414021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607352414021" />
+    <state x="513" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607393227617">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="513" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607393227617" />
   </component>
 </project>
