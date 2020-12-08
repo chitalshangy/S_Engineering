@@ -12,7 +12,7 @@
 	 * @return {Object} jQuery object for chaining.
 	 */
 	$.fn.jParticle = function jParticle( options ){
-	
+
 		this.each(function( _, el ){
 
 			if ( typeof el.sandbox === 'object' ) {
@@ -22,7 +22,7 @@
 
 			el.sandbox = createParticlesSandbox( el, options );
 		});
-	
+
 		return this;
 	};
 
@@ -89,7 +89,7 @@
 		var ParticlesSandbox, createParticle;
 
 		ParticlesSandbox = {};
-        
+
 		ParticlesSandbox.canvas = {};
 		ParticlesSandbox.mouse = {};
 		ParticlesSandbox.particles = [];
@@ -231,11 +231,11 @@
 		 */
 		ParticlesSandbox.initAnimation = function initAnimation(){
 
-			window.requestAnimFrame = 
-				window.requestAnimationFrame || 
+			window.requestAnimFrame =
+				window.requestAnimationFrame ||
 				window.webkitRequestAnimationFrame ||
-				window.mozRequestAnimationFrame || 
-				window.ORequestAnimationFrame || 
+				window.mozRequestAnimationFrame ||
+				window.ORequestAnimationFrame ||
 				window.msRequestAnimationFrame ||
 
 				function requestAnimFrame( callback ){
@@ -260,7 +260,7 @@
 			canvas = ParticlesSandbox.canvas;
 
 			canvas.context.clearRect( 0, 0, canvas.element.get(0).width, canvas.element.get(0).height );
-		
+
 			for ( ; i < count; i += 1 ) {
 
 				particle = ParticlesSandbox.particles[i];
@@ -275,7 +275,7 @@
 				if ( !ParticlesSandbox.params.disableMouse && ParticlesSandbox.mouse.hoverCanvas ) {
 					ParticlesSandbox.drawLink(
 						particle.getPosition('x'),
-						particle.getPosition('y'), 
+						particle.getPosition('y'),
 						ParticlesSandbox.mouse.x,
 						ParticlesSandbox.mouse.y
 					);
@@ -287,11 +287,11 @@
 
 						particle2 = ParticlesSandbox.particles[j];
 
-						ParticlesSandbox.drawLink( 
+						ParticlesSandbox.drawLink(
 							particle.getPosition('x'),
-							particle.getPosition('y'), 
+							particle.getPosition('y'),
 							particle2.getPosition('x'),
-							particle2.getPosition('y') 
+							particle2.getPosition('y')
 						);
 					}
 				}
@@ -318,7 +318,7 @@
 				context.save();
 
 				context.beginPath();
-				context.lineWidth = ParticlesSandbox.params.linksWidth; 
+				context.lineWidth = ParticlesSandbox.params.linksWidth;
 				context.moveTo( x, y );
 				context.lineTo( x2, y2 );
 				context.globalAlpha = ParticlesSandbox.getOpacityLink( x, y, x2, y2 );
@@ -484,8 +484,8 @@
 
 				var context = Particle.canvas.context;
 
-				context.beginPath(); 
-				context.arc( Particle.x, Particle.y, Particle.size /2, 0, Math.PI*2 ); 
+				context.beginPath();
+				context.arc( Particle.x, Particle.y, Particle.size /2, 0, Math.PI*2 );
 				context.fillStyle = Particle.params.color;
 				context.fill();
 				context.closePath();
