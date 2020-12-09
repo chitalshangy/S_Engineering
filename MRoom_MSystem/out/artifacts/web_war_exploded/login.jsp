@@ -9,12 +9,12 @@
 <html>
 <head>
     <title>登录界面</title>
-
     <!-- load css -->
-    <link rel="stylesheet" type="text/css" href="static/layui/css/layui.css" media="all">
-    <link rel="stylesheet" type="text/css" href="static/css/login.css" media="all">
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/login.css" media="all">
 </head>
 <body>
+<div class="layui-canvs"></div>
 <div class="layui-layout layui-layout-login">
     <form action="login" method="post">
         <h1>
@@ -46,9 +46,9 @@
         </div>
     </form>
 </div>
-<script type="text/javascript" src="static/layui/layui.all.js"/>
-<script type="text/javascript" src="static/js/login.js"/>
-<script type="text/javascript" src="static/js/jparticle.jquery.js"/>
+<script type="text/javascript" src="layui/lay/dest/layui.all.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/jparticle.jquery.js"></script>
 <script type="text/javascript">
     var code;
     function createCode(){
@@ -79,5 +79,6 @@
         return true;
     }
 </script>
+
 </body>
 </html>

@@ -8,7 +8,6 @@
     <welcome-file>login.jsp</welcome-file>
 </welcome-file-list>
 
-
     <!--配置struts2的过滤器-->
     <filter>
         <filter-name>struts2</filter-name>
