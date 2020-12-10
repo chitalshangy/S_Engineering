@@ -10,6 +10,5 @@
             <result name="fail">/loginFail.jsp</result>
         </action>
         <!--注册转发-->
-
     </package>
 </struts>

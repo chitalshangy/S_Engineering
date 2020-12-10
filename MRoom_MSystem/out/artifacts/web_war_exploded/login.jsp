@@ -61,6 +61,12 @@
         checkCode.value = code;//把code值赋给验证码
     }
     function validate(){
+        var user_id=document.getElementsByName("user.user_id").values();
+        var password=document.getElementsByName("user.password").values();
+        if(user_id==null||password==null){
+            alert("请输入账号及密码登录！");
+            return false;
+        }
         var inputCode = document.getElementById("code").value.toUpperCase(); //取得输入的验证码并转化为大写
         if(inputCode.length <= 0) { //若输入的验证码长度为0
             alert("请输入验证码！"); //则弹出请输入验证码
