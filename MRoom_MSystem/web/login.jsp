@@ -24,18 +24,18 @@
 
         <div class="layui-user-icon larry-login">
             <div class="layui-code-box">
-                <input name="user.user_id" type="text" placeholder="账号" class="login_txtbx"/>
+                <input name="user.user_id" id="user_id" type="text" placeholder="账号" class="login_txtbx"/>
             </div>
         </div>
         <div class="layui-pwd-icon larry-login">
             <div class="layui-code-box">
-                <input name="user.password" type="password" placeholder="密码" class="login_txtbx"/>
+                <input name="user.password" id="password" type="password" placeholder="密码" class="login_txtbx"/>
             </div>
         </div>
         <div class="layui-val-icon larry-login">
             <div class="layui-code-box">
                 <input type="text" id="code" name="code" placeholder="验证码" maxlength="4" class="login_txtbx"/>
-                <input type="button" id="new_code" class="login_txtbx" style="background-color: #8D8D8D;text-align: left;" value="点击更换验证码" onclick="createCode()" />
+                <input type="button" id="new_code" class="login_txtbx" style="background-color: #8D8D8D;" value="点击更换验证码" onclick="createCode()" />
             </div>
         </div>
         <div class="layui-submit larry-login">
@@ -61,6 +61,12 @@
         checkCode.value = code;//把code值赋给验证码
     }
     function validate(){
+        var user_id=document.getElementById("user_id").value;
+        var password=document.getElementById("password").value;
+        if(user_id.length<=0||password.length<=0){
+            alert("请输入账号或密码！");
+            return false;
+        }
         var inputCode = document.getElementById("code").value.toUpperCase(); //取得输入的验证码并转化为大写
         if(inputCode.length <= 0) { //若输入的验证码长度为0
             alert("请输入验证码！"); //则弹出请输入验证码
@@ -68,7 +74,7 @@
         }else if(inputCode != code ) { //若输入的验证码与产生的验证码不一致时
             alert("验证码输入错误！"); //则弹出验证码输入错误
             createCode();//刷新验证码
-            document.getElementById("Captcha").value = "";//清空文本框
+            document.getElementById("code").value = "";//清空文本框
             return false;
         }else { //输入正确时
             alert("登录成功,正在跳转...");
