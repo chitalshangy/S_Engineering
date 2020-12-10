@@ -65,16 +65,19 @@
         var password=document.getElementById("password").value;
         if(user_id.length<=0||password.length<=0){
             alert("请输入账号或密码！");
+            window.location.href="/login.jsp";
             return false;
         }
         var inputCode = document.getElementById("code").value.toUpperCase(); //取得输入的验证码并转化为大写
         if(inputCode.length <= 0) { //若输入的验证码长度为0
             alert("请输入验证码！"); //则弹出请输入验证码
+            window.location.href="/login.jsp";
             return false;
         }else if(inputCode != code ) { //若输入的验证码与产生的验证码不一致时
             alert("验证码输入错误！"); //则弹出验证码输入错误
             createCode();//刷新验证码
             document.getElementById("code").value = "";//清空文本框
+            window.location.href="/login.jsp";
             return false;
         }else { //输入正确时
             alert("登录成功,正在跳转...");
