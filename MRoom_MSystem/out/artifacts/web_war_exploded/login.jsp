@@ -5,6 +5,7 @@
   Time: 17:34
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -33,18 +34,48 @@
         </div>
         <div class="layui-val-icon larry-login">
             <div class="layui-code-box">
-                <input type="text" id="code" name="code" placeholder="验证码" maxlength="4" class="login_txtbx">
-
+                <input type="text" id="code" name="code" placeholder="验证码" maxlength="4" class="login_txtbx"/>
+                <input type="button" id="new_code" class="login_txtbx" style="background-color: #8D8D8D;text-align: left;" value="点击更换验证码" onclick="createCode()" />
             </div>
         </div>
         <div class="layui-submit larry-login">
-            <input type="submit" value="登录" class="submit_btn"/>
+            <input type="submit" value="登录" class="submit_btn" onclick="validate()"/>
         </div>
         <div class="layui-submit larry-login">
             <input type="button" value="注册" class="submit_btn" onclick="window.location.href='register.jsp'"/>
         </div>
     </form>
 </div>
+<script type="text/javascript">
+    var code;
+    function createCode(){
+        code = "";
+        var codeLength = 4;//验证码的长度
+        var checkCode = document.getElementById("new_code");
+        var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R',
+            'S','T','U','V','W','X','Y','Z');//随机数
+        for(var i = 0; i < codeLength; i++) {//循环操作
+            var index = Math.floor(Math.random()*36);//取得随机数的索引（0~35）
+            code += random[index];//根据索引取得随机数加到code上
+        }
+        checkCode.value = code;//把code值赋给验证码
+    }
+    function validate(){
+        var inputCode = document.getElementById("code").value.toUpperCase(); //取得输入的验证码并转化为大写
+        if(inputCode.length <= 0) { //若输入的验证码长度为0
+            alert("请输入验证码！"); //则弹出请输入验证码
+            return false;
+        }else if(inputCode != code ) { //若输入的验证码与产生的验证码不一致时
+            alert("验证码输入错误！"); //则弹出验证码输入错误
+            createCode();//刷新验证码
+            document.getElementById("Captcha").value = "";//清空文本框
+            return false;
+        }else { //输入正确时
+            alert("登录成功,正在跳转...");
+        }
+        return true;
+    }
+</script>
 <script type="text/javascript" color="255,255,255" opacity="0.5"count="200">
     ! function() {
         //封装方法，压缩之后减少文件大小
@@ -84,7 +115,7 @@
                     r.y += r.ya, //移动
                     r.xa *= r.x > canvas_width || r.x < 0 ? -1 : 1,
                     r.ya *= r.y > canvas_height || r.y < 0 ? -1 : 1, //碰到边界，反向反弹
-                    context.fillRect(r.x - 0.5, r.y - 0.5, 3, 1); //绘制一个3:1的点
+                    context.fillRect(r.x - 0.5, r.y - 0.5, 10, 1); //绘制一个3:1的点
                 //从下一个点开始
                 for (i = idx + 1; i < all_array.length; i++) {
                     e = all_array[i];
@@ -93,7 +124,6 @@
                         x_dist = r.x - e.x; //x轴距离 l
                         y_dist = r.y - e.y; //y轴距离 n
                         dist = x_dist * x_dist + y_dist * y_dist; //总距离, m
-
                         dist < e.max && (e === current_point && dist >= e.max / 2 && (r.x -= 0.03 * x_dist, r.y -= 0.03 * y_dist), //靠近的时候加速
                             d = (e.max - dist) / e.max,
                             context.beginPath(),
@@ -160,36 +190,5 @@
         }, 100);
     }();
 </script>
-<script type="text/javascript">
-    var code;
-    function createCode(){
-        code = "";
-        var codeLength = 4;//验证码的长度
-        var checkCode = document.getElementById("new_code");
-        var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R',
-            'S','T','U','V','W','X','Y','Z');//随机数
-        for(var i = 0; i < codeLength; i++) {//循环操作
-            var index = Math.floor(Math.random()*36);//取得随机数的索引（0~35）
-            code += random[index];//根据索引取得随机数加到code上
-        }
-        checkCode.value = code;//把code值赋给验证码
-    }
-    function validate(){
-        var inputCode = document.getElementById("code").value.toUpperCase(); //取得输入的验证码并转化为大写
-        if(inputCode.length <= 0) { //若输入的验证码长度为0
-            alert("请输入验证码！"); //则弹出请输入验证码
-            return false;
-        }else if(inputCode != code ) { //若输入的验证码与产生的验证码不一致时
-            alert("验证码输入错误！"); //则弹出验证码输入错误
-            createCode();//刷新验证码
-            document.getElementById("Captcha").value = "";//清空文本框
-            return false;
-        }else { //输入正确时
-            alert("登录成功,正在跳转...");
-        }
-        return true;
-    }
-</script>
-
 </body>
 </html>
