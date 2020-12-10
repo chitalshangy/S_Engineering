@@ -76,7 +76,7 @@
         return true;
     }
 </script>
-<script type="text/javascript" color="255,255,255" opacity="0.5"count="200">
+<script type="text/javascript" color="255,255,255" opacity="0.5"count="180">
     ! function() {
         //封装方法，压缩之后减少文件大小
         function get_attribute(node, attr, default_value) {
@@ -180,7 +180,7 @@
                 y: y,
                 xa: xa,
                 ya: ya,
-                max: parseInt(Math.random()*(12000-10000+1)+10000,10) //沾附距离
+                max: parseInt(Math.random()*(30000-20000+1)+20000,10) //沾附距离
             });
         }
         all_array = random_points.concat([current_point]);
