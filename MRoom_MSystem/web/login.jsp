@@ -16,7 +16,8 @@
 </head>
 <body bgcolor="#0F0F0F">
 <div class="layui-layout layui-layout-login">
-    <form action="login" method="post">
+    <!--添加表单只有在判断成功后才允许提交-->
+    <form action="login" method="post" onsubmit="return validate()">
         <h1>
             <strong>智能会议室管理系统</strong>
             <em>Meeting Room Management System</em>
@@ -24,22 +25,22 @@
 
         <div class="layui-user-icon larry-login">
             <div class="layui-code-box">
-                <input name="user.user_id" type="text" placeholder="账号" class="login_txtbx"/>
+                <input name="user.user_id" id="user_id" type="text" placeholder="账号" class="login_txtbx"/>
             </div>
         </div>
         <div class="layui-pwd-icon larry-login">
             <div class="layui-code-box">
-                <input name="user.password" type="password" placeholder="密码" class="login_txtbx"/>
+                <input name="user.password" id="password" type="password" placeholder="密码" class="login_txtbx"/>
             </div>
         </div>
         <div class="layui-val-icon larry-login">
             <div class="layui-code-box">
-                <input type="text" id="code" name="code" placeholder="验证码" maxlength="4" class="login_txtbx"/>
-                <input type="button" id="new_code" class="login_txtbx" style="background-color: #8D8D8D;text-align: left;" value="点击更换验证码" onclick="createCode()" />
+                <input type="text" id="code" name="code" placeholder="验证码" maxlength="4" class="login_txtbx" />
+                <input type="button" id="new_code" class="login_txtbx" style="background-color: #8D8D8D;" value="点击更换验证码" onclick="createCode()" />
             </div>
         </div>
         <div class="layui-submit larry-login">
-            <input type="submit" value="登录" class="submit_btn" onclick="validate()"/>
+            <input type="submit" value="登录" class="submit_btn"/>
         </div>
         <div class="layui-submit larry-login">
             <input type="button" value="注册" class="submit_btn" onclick="window.location.href='register.jsp'"/>
@@ -48,6 +49,7 @@
 </div>
 <script type="text/javascript">
     var code;
+    var result;
     function createCode(){
         code = "";
         var codeLength = 4;//验证码的长度
@@ -61,22 +63,29 @@
         checkCode.value = code;//把code值赋给验证码
     }
     function validate(){
+        var user_id=document.getElementById("user_id").value;
+        var password=document.getElementById("password").value;
+        if(user_id.length<=0||password.length<=0){
+            alert("请输入账号或密码！");
+            result = false;
+        }
         var inputCode = document.getElementById("code").value.toUpperCase(); //取得输入的验证码并转化为大写
         if(inputCode.length <= 0) { //若输入的验证码长度为0
             alert("请输入验证码！"); //则弹出请输入验证码
-            return false;
+            result = false;
         }else if(inputCode != code ) { //若输入的验证码与产生的验证码不一致时
             alert("验证码输入错误！"); //则弹出验证码输入错误
             createCode();//刷新验证码
-            document.getElementById("Captcha").value = "";//清空文本框
-            return false;
+            document.getElementById("code").value = "";//清空文本框
+            result = false;
         }else { //输入正确时
             alert("登录成功,正在跳转...");
+            result = true;
         }
-        return true;
+        return result;
     }
 </script>
-<script type="text/javascript" color="255,255,255" opacity="0.5"count="200">
+<script type="text/javascript" color="255,255,255" opacity="0.5"count="180">
     ! function() {
         //封装方法，压缩之后减少文件大小
         function get_attribute(node, attr, default_value) {
@@ -180,7 +189,7 @@
                 y: y,
                 xa: xa,
                 ya: ya,
-                max: parseInt(Math.random()*(12000-10000+1)+10000,10) //沾附距离
+                max: parseInt(Math.random()*(30000-20000+1)+20000,10) //沾附距离
             });
         }
         all_array = random_points.concat([current_point]);

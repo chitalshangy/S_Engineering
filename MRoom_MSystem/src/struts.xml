@@ -6,10 +6,10 @@
     <package name="strutsBean" extends="struts-default" namespace="/">
         <!--登录转发-->
         <action name="login" class="Action.UserAction" method="login">
-            <result name="success">/loginSuccess.jsp</result>
-            <result name="fail">/loginFail.jsp</result>
+            <result name="admin_success">/admin.jsp</result>
+            <result name="other_success">/normal.jsp</result>
+            <result name="fail">/error.jsp</result>
         </action>
         <!--注册转发-->
-
     </package>
 </struts>
