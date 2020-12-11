@@ -22,8 +22,14 @@ public class UserAction {
         session =(Map) ctx.getSession();
         UserService userService=new UserService();
         if(userService.login(user)){
-            session.put("user",user.getUser_id());
-            return "success";
+            if(user.getUser_id().length()==4) {
+                session.put("user", user.getUser_id());
+                return "admin_success";
+            }
+            else{
+                session.put("user",user.getUser_id());
+                return "other_success";
+            }
         }
         return "fail";
     }
