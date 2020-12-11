@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="Po.Reserve" table="reserve"
+		catalog="mroom_msystem">
+		<id name="reid" type="int">
+			<column name="reid" />
+			<generator class="assigned" />
+		</id>
+		<property name="uid" type="string">
+			<column name="uid" length="18" />
+		</property>
+		<property name="rid" type="int">
+			<column name="rid" />
+		</property>
+		<property name="rephone" type="string">
+			<column name="rephone" length="13" />
+		</property>
+		<property name="state" type="string">
+			<column name="state" length="6" />
+		</property>
+		<property name="date" type="date">
+			<column name="date" />
+		</property>
+		<property name="startTime" type="time">
+			<column name="startTime" />
+		</property>
+		<property name="endTime" type="time">
+			<column name="endTime" />
+		</property>
+		<property name="state2" type="string">
+			<column name="state2" length="2" />
+		</property>
+		<set name="uid" inverse="true" cascade="all" lazy="false">
+			<key column="uid"/>
+			<one-to-many class="Po.User"/>
+		</set>
+		<set name="rid" inverse="true" cascade="all" lazy="false">
+			<key column="rid"/>
+			<one-to-many class="Po.Room"/>
+		</set>
+	</class>
+</hibernate-mapping>
