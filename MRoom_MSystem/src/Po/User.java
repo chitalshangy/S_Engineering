@@ -3,35 +3,55 @@ package Po;
 import java.awt.*;
 
 public class User {
-    private String user_id;
-    private String password;
+    private String uid;
+    private String uname;
+    private String upassword;
+    private String uidentity;
     private Image image;
 
     public User() {
     }
 
-    public User(String user_id, String password, Image image) {
-        this.user_id = user_id;
-        this.password = password;
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public User(String uid, String uname, String upassword, String uidentity, Image image) {
+        this.uid = uid;
+        this.uname = uname;
+        this.upassword = upassword;
+        this.uidentity = uidentity;
         this.image = image;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUpassword(String upassword) {
+        this.upassword = upassword;
     }
 
-    public String getPassword() {
-        return password;
+    public void setUidentity(String uidentity) {
+        this.uidentity = uidentity;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getUid() {
+        return uid;
     }
 
+    public String getUname() {
+        return uname;
+    }
+
+    public String getUpassword() {
+        return upassword;
+    }
+
+    public String getUidentity() {
+        return uidentity;
+    }
+    
     public Image getImage() {
         return image;
     }
