@@ -7,21 +7,21 @@ public class User {
     private String uname;
     private String upassword;
     private String uidentity;
-    private Image image;
+    private Image upicture;
 
     public User() {
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    public User(String uid, String uname, String upassword, String uidentity, Image image) {
+    public User(String uid, String uname, String upassword, String uidentity, Image upicture) {
         this.uid = uid;
         this.uname = uname;
         this.upassword = upassword;
         this.uidentity = uidentity;
-        this.image = image;
+        this.upicture = upicture;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public void setUname(String uname) {
@@ -51,12 +51,12 @@ public class User {
     public String getUidentity() {
         return uidentity;
     }
-    
-    public Image getImage() {
-        return image;
+
+    public Image getUpicture() {
+        return upicture;
     }
 
-    public void setImage(Image image) {
-        this.image = image;
+    public void setUpicture(Image upicture) {
+        this.upicture = upicture;
     }
 }

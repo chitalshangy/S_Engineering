@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="Po.Room" table="room"
+		catalog="mroom_msystem">
+		<id name="rid" type="int">
+			<column name="rid" />
+			<generator class="assigned" />
+		</id>
+		<property name="rnum" type="int">
+			<column name="rnum" length="3"/>
+		</property>
+		<property name="rtype" type="string">
+			<column name="rtype" length="4" />
+		</property>
+		<property name="raddress" type="string">
+			<column name="raddress" length="100" />
+		</property>
+	</class>
+</hibernate-mapping>
