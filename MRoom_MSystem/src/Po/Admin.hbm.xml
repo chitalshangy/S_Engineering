@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="Po.Admin" table="admin"
+		catalog="mroom_msystem">
+		<id name="aid" type="string">
+			<column name="aid" length="4" />
+			<generator class="assigned" />
+		</id>
+		<property name="apassword" type="string">
+			<column name="apassword" length="8" />
+		</property>
+		<property name="aphone" type="string">
+			<column name="aphone" length="13" />
+		</property>
+	</class>
+</hibernate-mapping>

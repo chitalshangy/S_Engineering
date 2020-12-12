@@ -16,8 +16,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="chital.xml" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,23 +50,36 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Po" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\大三上\软件工程\课程设计\MRoom_MSystem\MRoom_MSystem\src\Po" />
+      <recent name="D:\大三上\软件工程\课程设计\MRoom_MSystem\MRoom_MSystem\libs" />
+      <recent name="D:\大三上\软件工程\课程设计\MRoom_MSystem\MRoom_MSystem\src" />
+      <recent name="C:\Users\Chital\Documents\GitHub\S_Engineering\MRoom_MSystem\web" />
+      <recent name="C:\Users\Chital\Documents\GitHub\S_Engineering\MRoom_MSystem\web\layui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Chital\Documents\GitHub\S_Engineering\MRoom_MSystem\web" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Chital\Documents\GitHub\S_Engineering\MRoom_MSystem\web" />
-      <recent name="C:\Users\Chital\Documents\GitHub\S_Engineering\MRoom_MSystem\web\layui" />
-      <recent name="C:\Users\Chital\Documents\GitHub\S_Engineering\MRoom_MSystem\web\static" />
-      <recent name="C:\Users\Chital\Documents\GitHub\S_Engineering\MRoom_MSystem\libs" />
-    </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.31" ALTERNATIVE_JRE_ENABLED="false">
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -126,6 +139,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -157,104 +171,11 @@
       <workItem from="1607602089211" duration="81000" />
       <workItem from="1607602965029" duration="86000" />
       <workItem from="1607646627165" duration="2915000" />
+      <workItem from="1607664539833" duration="7674000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="292" y="245" key="#Template_Data_Languages" timestamp="1607420031595">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="292" y="245" key="#Template_Data_Languages/0.0.1536.824@0.0.1536.824" timestamp="1607420031595" />
-    <state x="427" y="176" key="#com.intellij.ide.util.MemberChooser" timestamp="1607399362162">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="427" y="176" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1607399362162" />
-    <state x="612" y="207" key="FileChooserDialogImpl" timestamp="1607602142835">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="612" y="207" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607602142835" />
-    <state width="1390" height="35" key="GridCell.Tab.0.bottom" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.0.center" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.0.left" timestamp="1607654183271">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607654183271" />
-    <state width="1390" height="35" key="GridCell.Tab.0.right" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.1.bottom" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.1.center" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.1.left" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.1.right" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.2.bottom" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.2.center" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.2.left" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="35" key="GridCell.Tab.2.right" timestamp="1607654183286">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="35" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1607654183286" />
-    <state width="1390" height="117" key="GridCell.Tab.3.bottom" timestamp="1607595016282">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="117" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607595016282" />
-    <state width="1390" height="117" key="GridCell.Tab.3.center" timestamp="1607595016282">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="117" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1607595016282" />
-    <state width="1390" height="117" key="GridCell.Tab.3.left" timestamp="1607595016282">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="117" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1607595016282" />
-    <state width="1390" height="117" key="GridCell.Tab.3.right" timestamp="1607595016282">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1390" height="117" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1607595016282" />
-    <state x="0" y="0" key="SettingsEditor" timestamp="1607420828839">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607420828839" />
-    <state x="513" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607393227617">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="513" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607393227617" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1607422440054">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1607422440054" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607652667026">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607652667026" />
+    <option name="version" value="3" />
   </component>
 </project>
