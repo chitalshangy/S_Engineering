@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="Po.User" table="user"
+		catalog="mroom_msystem">
+		<id name="uid" type="string">
+			<column name="uid" length="18" />
+			<generator class="assigned" />
+		</id>
+		<property name="uname" type="string">
+			<column name="uname" length="18" />
+		</property>
+		<property name="upassword" type="string">
+			<column name="upassword" length="18" />
+		</property>
+		<property name="uidentity" type="string">
+			<column name="uidentity" length="4" />
+		</property>
+		<property name="upicture" type="blob">
+			<column name="upicture" />
+		</property>
+	</class>
+</hibernate-mapping>
