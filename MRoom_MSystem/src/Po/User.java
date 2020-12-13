@@ -9,6 +9,7 @@ public class User {
     private String uidentity;
     private Image upicture;
 
+    //记得构造函数
     public User() {
     }
 

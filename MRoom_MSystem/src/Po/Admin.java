@@ -5,11 +5,13 @@ public class Admin {
     private String apassword;
     private String aphone;
 
-    public String getAphone() {
-        return aphone;
+    //记得构造函数
+    public Admin() {
     }
 
-    public void setAphone(String aphone) {
+    public Admin(String aid, String apassword, String aphone) {
+        this.aid = aid;
+        this.apassword = apassword;
         this.aphone = aphone;
     }
 
@@ -29,5 +31,11 @@ public class Admin {
         this.apassword = apassword;
     }
 
+    public String getAphone() {
+        return aphone;
+    }
 
+    public void setAphone(String aphone) {
+        this.aphone = aphone;
+    }
 }

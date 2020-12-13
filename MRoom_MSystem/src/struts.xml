@@ -5,7 +5,7 @@
 <struts>
     <package name="strutsBean" extends="struts-default" namespace="/">
         <!--登录转发-->
-        <action name="login" class="Action.UserAction" method="login">
+        <action name="login" class="userAction" method="login">
             <result name="admin_success">/admin.jsp</result>
             <result name="other_success">/normal.jsp</result>
             <result name="fail">/error.jsp</result>

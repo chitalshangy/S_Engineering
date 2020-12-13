@@ -87,7 +87,7 @@
     <!-- 内容主体区域 -->
     <div class="layui-body">
         <div style="padding: 15px;">
-
+            <table id="admin" lay-filter="adminList"></table>
         </div>
     </div>
 
@@ -102,8 +102,27 @@
 <script>
     //JavaScript代码区域
     layui.use(['table','element','form','tree'], function(){
+        var table=layui.table;
         var element = layui.element;
+        var form=layui.form;
+        var tree=layui.tree;
 
+        table.render({
+            elem: '#adminList',
+            url : 'userAction_findAll.action',
+            cellMinWidth : 95,
+            page : true,
+            height : "full-125",
+            limits : [10,15,20,25],
+            limit : 10,
+            id : "userListTable",
+            cols : [[
+                {field:'id',tilte:'describtion',width:80,sort:true,fixed:'left'},
+                {field:'aid',tilte:'id',width:80,sort:true},
+                {field:'apassword',tilte:'密码',width:80,sort:true},
+                {field:'aphone',tilte:'联系方式',width:80,sort:true}
+            ]]
+        });
     });
 </script>
 </body>
