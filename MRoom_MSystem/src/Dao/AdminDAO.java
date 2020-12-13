@@ -8,6 +8,10 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class AdminDAO extends BaseHibernateDAO implements IAdminDAO{
+    public AdminDAO() {
+        super();
+    }
+
     //登录
     public List findByhql(String hql){
         Transaction tran=null;

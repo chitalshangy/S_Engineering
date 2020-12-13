@@ -7,7 +7,7 @@ import Service.UserService;
 
 public class UserAction {
     private User user;
-    private Admin admin;
+    private Admin admin = new Admin();
     private IUserService userService;
     public User getUser() {
         return user;

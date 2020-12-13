@@ -2,7 +2,6 @@ package Dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 public class BaseHibernateDAO {
     private SessionFactory sessionFactory;

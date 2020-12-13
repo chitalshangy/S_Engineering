@@ -26,7 +26,9 @@ public class UserService implements IUserService{
         String id=user.getUid();
         String password=user.getUpassword();
         String hql="from User as user where uid='" +id+ "' and upassword='" + password +"'";
+        /*错误
         UserDAO userDAO=new UserDAO();
+        */
         List list=userDAO.findByhql(hql);
         if(list!=null)return true;
         return false;
@@ -36,7 +38,9 @@ public class UserService implements IUserService{
         String id=admin.getAid();
         String password=admin.getApassword();
         String hql="from Admin as admin where aid='" +id+ "' and apassword='" + password +"'";
-        AdminDAO adminDAO=new AdminDAO();
+        /*错误
+        UserDAO userDAO=new UserDAO();
+        */
         List list=adminDAO.findByhql(hql);
         if(list!=null)return true;
         return false;

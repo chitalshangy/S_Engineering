@@ -903,13 +903,13 @@
     </key>
     <column id="286" parent="278" name="uid">
       <Position>1</Position>
-      <DataType>varchar(18)|0s</DataType>
+      <DataType>varchar(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="287" parent="278" name="reid">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -938,31 +938,30 @@
 reid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="293" parent="278" name="c-uid">
+    <foreign-key id="293" parent="278" name="cuid">
       <ColNames>uid</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="294" parent="278" name="c-reid">
+    <foreign-key id="294" parent="278" name="creid">
       <ColNames>reid</ColNames>
       <RefTableName>reserve</RefTableName>
       <RefColNames>reid</RefColNames>
     </foreign-key>
     <column id="295" parent="279" name="reid">
       <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="296" parent="279" name="uid">
       <Position>2</Position>
-      <DataType>varchar(18)|0s</DataType>
+      <DataType>varchar(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="297" parent="279" name="rid">
       <Position>3</Position>
-      <DataType>int(3)|0s</DataType>
+      <DataType>varchar(3)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="298" parent="279" name="rephone">
@@ -1020,14 +1019,13 @@ reid</ColNames>
     </foreign-key>
     <column id="309" parent="280" name="rid">
       <Position>1</Position>
-      <DataType>int(3)|0s</DataType>
+      <DataType>varchar(3)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="310" parent="280" name="rnum">
       <Position>2</Position>
-      <DataType>int(3)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1048,7 +1046,7 @@ reid</ColNames>
     </key>
     <column id="314" parent="281" name="uid">
       <Position>1</Position>
-      <DataType>varchar(18)|0s</DataType>
+      <DataType>varchar(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
