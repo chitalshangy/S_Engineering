@@ -5,6 +5,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="HibernateSessionFactory" />
+          <unit-entry name="sessionFactory" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
@@ -21,6 +22,13 @@
         <sourceRoots />
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="ApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/web/WEB-INF/applicationContext.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -30,7 +38,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.31" level="application_server_libraries" />
-    <orderEntry type="library" name="libs" level="project" />
-    <orderEntry type="library" name="libs (2)" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

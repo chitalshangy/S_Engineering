@@ -1,35 +1,42 @@
 package Action;
 
+import Po.Admin;
 import Po.User;
+import Service.IUserService;
 import Service.UserService;
-import com.opensymphony.xwork2.ActionContext;
-
-import java.util.Map;
 
 public class UserAction {
-
-    private Map session;
-
     private User user;
-    public User getUser(){
+    private Admin admin;
+    private IUserService userService;
+    public User getUser() {
         return user;
     }
-    public void setUser(User user){
-        this.user=user;
+
+    public Admin getAdmin() {
+        return admin;
     }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
+    public void setUserService(IUserService userService) {
+        this.userService = userService;
+    }
+
     public String login(){
-        ActionContext ctx= ActionContext.getContext();
-        session =(Map) ctx.getSession();
-        UserService userService=new UserService();
-        if(userService.login(user)){
-            if(user.getUid().length()==4) {
-                session.put("user", user.getUid());
-                return "admin_success";
-            }
-            else{
-                session.put("user",user.getUid());
-                return "other_success";
-            }
+        if(user.getUid().length()==4){
+            admin.setAid(user.getUid());
+            admin.setApassword(user.getUpassword());
+            if(userService.alogin(admin))return "admin_success";
+        }
+        else{
+            if(userService.ulogin(user))return "other_success";
         }
         return "fail";
     }

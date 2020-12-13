@@ -8,8 +8,7 @@
           <element id="module-output" name="MRoom_MSystem" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="libs" />
-          <element id="library" level="project" name="libs (2)" />
+          <element id="library" level="project" name="lib" />
         </element>
       </element>
     </root>
