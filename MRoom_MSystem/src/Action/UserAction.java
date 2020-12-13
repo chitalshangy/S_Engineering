@@ -22,12 +22,12 @@ public class UserAction {
         session =(Map) ctx.getSession();
         UserService userService=new UserService();
         if(userService.login(user)){
-            if(user.getUser_id().length()==4) {
-                session.put("user", user.getUser_id());
+            if(user.getUid().length()==4) {
+                session.put("user", user.getUid());
                 return "admin_success";
             }
             else{
-                session.put("user",user.getUser_id());
+                session.put("user",user.getUid());
                 return "other_success";
             }
         }

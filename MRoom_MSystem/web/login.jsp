@@ -25,12 +25,12 @@
 
         <div class="layui-user-icon larry-login">
             <div class="layui-code-box">
-                <input name="user.user_id" id="user_id" type="text" placeholder="账号" class="login_txtbx"/>
+                <input name="user.uid" id="user_id" type="text" placeholder="账号" class="login_txtbx"/>
             </div>
         </div>
         <div class="layui-pwd-icon larry-login">
             <div class="layui-code-box">
-                <input name="user.password" id="password" type="password" placeholder="密码" class="login_txtbx"/>
+                <input name="user.upassword" id="password" type="password" placeholder="密码" class="login_txtbx"/>
             </div>
         </div>
         <div class="layui-val-icon larry-login">
