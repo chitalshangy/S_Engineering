@@ -10,14 +10,14 @@ import Po.User;
 import java.util.List;
 
 public class UserService implements IUserService{
-    private IUserDAO userDAO;
-    private IAdminDAO adminDAO;
+    private UserDAO userDAO;
+    private AdminDAO adminDAO;
 
-    public void setUserDAO(IUserDAO userDAO) {
+    public void setUserDAO(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 
-    public void setAdminDAO(IAdminDAO adminDAO) {
+    public void setAdminDAO(AdminDAO adminDAO) {
         this.adminDAO = adminDAO;
     }
 
@@ -42,7 +42,24 @@ public class UserService implements IUserService{
         UserDAO userDAO=new UserDAO();
         */
         List list=adminDAO.findByhql(hql);
-        if(list!=null)return true;
+        if(list.size()==1)return true;
         return false;
+    }
+
+    //获得所有信息
+    public List InfoList(int page,int limit){
+        return userDAO.findAll(page,limit);
+    }
+    //获取总行数
+    public long Count(){
+        return userDAO.infoCount();
+    }
+
+    public void delUser(String uid){
+        userDAO.del(uid);
+    }
+
+    public void updateUser(String uid,String uname,String upassword,String uidentity){
+        userDAO.update(uid,uname,upassword,uidentity);
     }
 }

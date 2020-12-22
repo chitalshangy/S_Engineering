@@ -7,13 +7,13 @@ public class User {
     private String uname;
     private String upassword;
     private String uidentity;
-    private Image upicture;
+    private String upicture;
 
     //记得构造函数
     public User() {
     }
 
-    public User(String uid, String uname, String upassword, String uidentity, Image upicture) {
+    public User(String uid, String uname, String upassword, String uidentity, String upicture) {
         this.uid = uid;
         this.uname = uname;
         this.upassword = upassword;
@@ -53,11 +53,11 @@ public class User {
         return uidentity;
     }
 
-    public Image getUpicture() {
+    public String getUpicture() {
         return upicture;
     }
 
-    public void setUpicture(Image upicture) {
+    public void setUpicture(String upicture) {
         this.upicture = upicture;
     }
 }

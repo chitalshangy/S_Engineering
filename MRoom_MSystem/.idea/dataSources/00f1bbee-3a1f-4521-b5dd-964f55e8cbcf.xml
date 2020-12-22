@@ -1068,7 +1068,7 @@ reid</ColNames>
     </column>
     <column id="318" parent="281" name="upicture">
       <Position>5</Position>
-      <DataType>blob|0s</DataType>
+      <DataType>varchar(18)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="319" parent="281" name="PRIMARY">

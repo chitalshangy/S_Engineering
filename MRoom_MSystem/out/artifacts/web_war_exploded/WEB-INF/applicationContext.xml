@@ -36,7 +36,7 @@ http://www.springframework.org/schema/context/spring-context-5.2.9.xsd">
         </property>
     </bean>
 
-    <bean id="baseDAO" class="Dao.BaseHibernateDAO">
+    <bean id="baseDAO" class="Dao.BaseHibernateDAO" abstract="true">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     <bean id="adminDAO" class="Dao.AdminDAO" parent="baseDAO"/>
@@ -49,6 +49,10 @@ http://www.springframework.org/schema/context/spring-context-5.2.9.xsd">
 
     <!--差点忘了-->
     <bean id="userAction" class="Action.UserAction" scope="prototype">
+        <property name="userService" ref="userService" />
+    </bean>
+
+    <bean id="zpJsonAction" class="Action.ZPJsonAction" scope="prototype">
         <property name="userService" ref="userService" />
     </bean>
 </beans>

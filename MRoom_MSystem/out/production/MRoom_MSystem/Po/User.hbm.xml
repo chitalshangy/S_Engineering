@@ -17,8 +17,8 @@
         <property name="uidentity" type="string">
             <column name="uidentity" length="4" />
         </property>
-        <property name="upicture" type="blob">
-            <column name="upicture" />
+        <property name="upicture" type="string">
+            <column name="upicture" length="18"/>
         </property>
     </class>
 </hibernate-mapping>

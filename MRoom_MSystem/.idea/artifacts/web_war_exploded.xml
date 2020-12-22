@@ -9,6 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="struts2-json-plugin-2.5.25" />
         </element>
       </element>
     </root>

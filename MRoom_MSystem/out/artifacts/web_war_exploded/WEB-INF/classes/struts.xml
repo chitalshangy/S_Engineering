@@ -11,5 +11,22 @@
             <result name="fail">/error.jsp</result>
         </action>
         <!--注册转发-->
+
+        <!--删除转发-->
+        <action name="delete" class="userAction" method="delete">
+            <result name="success">/admin.jsp</result>
+        </action>
+
+        <action name="update" class="userAction" method="update">
+            <result name="success">/admin.jsp</result>
+        </action>
+    </package>
+    <!--json文件返回-->
+    <package name="zp" extends="json-default">
+        <action name="zpjsonUserList" class="zpJsonAction" method="zpjsonUserList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
     </package>
 </struts>
