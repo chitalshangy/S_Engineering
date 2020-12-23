@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Demo2.0-</string>
+    <string name="in_name">欢迎使用会议室管理软件</string>
+    <string name="in_button">开始体验</string>
+    <string name="login_text">登录</string>
+    <string name="versions">v2.0.1</string>
+    <string name="login_name">用户名</string>
+    <string name="passwd">密码</string>
+    <string name="menu">目录</string>
+</resources>

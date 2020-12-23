@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group  android:checkableBehavior="single">
+        <item
+            android:id="@+id/appoin"
+            android:icon="@drawable/head"
+            android:title="我要预约"/>
+        <item
+            android:id="@+id/appoin2"
+            android:icon="@drawable/head"
+            android:title="我已预约"/>
+        <item
+            android:id="@+id/scan"
+            android:icon="@drawable/head"
+            android:title="扫码加入"/>
+    </group>
+</menu>
