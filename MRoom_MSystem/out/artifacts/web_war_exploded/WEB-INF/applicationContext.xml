@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-5.2.9.xsd">
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/mroom_msystem?serverTimezone=Hongkong"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                    org.hibernate.dialect.MySQLDialect
+                </prop>
+            </props>
+        </property>
+        <property name="mappingResources">
+            <list>
+                <value>Po/Admin.hbm.xml</value>
+                <value>Po/User.hbm.xml</value>
+                <value>Po/Room.hbm.xml</value>
+                <value>Po/Reserve.hbm.xml</value>
+                <value>Po/Conference.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="baseDAO" class="Dao.BaseHibernateDAO" abstract="true">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="adminDAO" class="Dao.AdminDAO" parent="baseDAO"/>
+    <bean id="userDAO" class="Dao.UserDAO" parent="baseDAO"/>
+    <bean id="reserveDAO" class="Dao.ReserveDAO" parent="baseDAO"/>
+    <bean id="conferenceDAO" class="Dao.ConferenceDAO" parent="baseDAO"/>
+
+    <bean id="userService" class="Service.UserService">
+        <property name="adminDAO" ref="adminDAO"/>
+        <property name="userDAO" ref="userDAO"/>
+    </bean>
+    <bean id="reserveService" class="Service.ReserveService">
+        <property name="reserveDAO" ref="reserveDAO"/>
+        <property name="conferenceDAO" ref="conferenceDAO"/>
+    </bean>
+    <bean id="conferenceService" class="Service.ConferenceService">
+        <property name="conferenceDAO" ref="conferenceDAO"/>
+    </bean>
+
+    <!--差点忘了-->
+    <bean id="userAction" class="Action.UserAction" scope="prototype">
+        <property name="userService" ref="userService" />
+    </bean>
+
+    <bean id="reserveAction" class="Action.ReserveAction" scope="prototype">
+        <property name="reserveService" ref="reserveService"/>
+    </bean>
+
+    <bean id="conferenceAction" class="Action.ConferenceAction" scope="prototype">
+        <property name="conferenceService" ref="conferenceService"/>
+    </bean>
+
+    <bean id="zpJsonAction" class="Action.ZPJsonAction" scope="prototype">
+        <property name="userService" ref="userService" />
+        <property name="reserveService" ref="reserveService"/>
+        <property name="conferenceService" ref="conferenceService"/>
+     </bean>
+
+</beans>
