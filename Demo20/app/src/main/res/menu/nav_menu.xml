@@ -5,14 +5,14 @@
         <item
             android:id="@+id/appoin"
             android:icon="@drawable/head"
-            android:title="我要预约"/>
+            android:title="@string/yuyue" />
         <item
             android:id="@+id/appoin2"
             android:icon="@drawable/head"
-            android:title="我已预约"/>
+            android:title="@string/yiyuyue"/>
         <item
-            android:id="@+id/scan"
+            android:id="@+id/takephoto"
             android:icon="@drawable/head"
-            android:title="扫码加入"/>
+            android:title="@string/takephoto"/>
     </group>
 </menu>

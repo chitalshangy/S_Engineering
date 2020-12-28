@@ -9,11 +9,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-      /*  navView.setCheckedItem(R.id.navCall)
+        supportActionBar?.hide()
+        navView.setCheckedItem(R.id.navView)
         navView.setNavigationItemSelectedListener {
-            drawerLayout.closeDrawers()
+           drawerLayout.closeDrawers()
             true
-        }*/
+        }
 
     }
 }
