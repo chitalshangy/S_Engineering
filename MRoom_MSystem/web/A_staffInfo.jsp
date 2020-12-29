@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>员工信息</title>
-    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
@@ -18,21 +18,21 @@
 <table class="layui-hide" id="TTTtest" lay-filter="test"></table>
 
 <!--修改信息时的弹出层-->
-<div class="site-text" style="margin: 5%; display: none" id="box1"  target="123">
+<div class="site-text" style="margin: 5%; display: none" id="box1" target="123">
     <form class="layui-form layui-form-pane" onsubmit="return false" id="booktype">
         <div class="layui-form-item">
             <label class="layui-form-label"> 姓名</label>
             <div class="layui-input-block">
-                <input type="text" class="layui-input"  id="uname"  name=cid ><br>
+                <input type="text" class="layui-input" id="uname" name=uname><br>
             </div>
             <label class="layui-form-label"> 密码</label>
             <div class="layui-input-block">
-                <input type="text" class="layui-input"  id="upassword"  name=cname><br>
+                <input type="text" class="layui-input" id="upassword" name=upassword><br>
             </div>
 
             <label class="layui-form-label"> 身份</label>
             <div class="layui-input-block">
-                <input type="text" class="layui-input"  id="uidentity"  name="cteacher"><br>
+                <input type="text" class="layui-input" id="uidentity" name="uidentity"><br>
             </div>
 
         </div>
@@ -63,26 +63,26 @@
 
 <script>
     //定义全局变量$
-    var $=layui.jquery;
+    var $ = layui.jquery;
 
     //照片弹出框的展示
     function show_img(t) {
         var t = $(t).find("img");
         //页面层
         layer.open({
-            title:'照片'
-            ,type: 1
-            ,skin: 'layui-layer-rim' //加上边框
-            ,area: ['60%', '80%'] //宽高
-            ,shadeClose: true //开启遮罩关闭
-            ,end: function (index, layero) {
+            title: '照片'
+            , type: 1
+            , skin: 'layui-layer-rim' //加上边框
+            , area: ['60%', '80%'] //宽高
+            , shadeClose: true //开启遮罩关闭
+            , end: function (index, layero) {
                 return false;
             }
-            ,content: '<div style="text-align:center"><img src="' + $(t).attr('src') + '" /></div>'
+            , content: '<div style="text-align:center"><img src="' + $(t).attr('src') + '" /></div>'
         });
     }
 
-    layui.use(['jquery','table'], function(){
+    layui.use(['jquery', 'table'], function () {
         var load = layui.layer.load(0);// 加载时loading效果
         layui.layer.close(load); //加载效果
 
@@ -92,101 +92,102 @@
         table.render({
             //指向的是表格的id
             elem: '#TTTtest'
-            ,url:'zpjsonUserList.action'
-            ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
-            ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+            , url: 'zpjsonUserList.action'
+            , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
                 title: '提示'
-                ,layEvent: 'LAYTABLE_TIPS'
-                ,icon: 'layui-icon-tips'
+                , layEvent: 'LAYTABLE_TIPS'
+                , icon: 'layui-icon-tips'
             }]
-            ,title:'职员数据表'
-            ,cols: [[
+            , title: '职员数据表'
+            , cols: [[
                 {type: 'checkbox', fixed: 'left'}
-                ,{field:'uid', title:'编号', sort: true}
-                ,{field:'uname', title:'姓名', sort: true}
-                ,{field:'upassword', title:'密码', sort: true}
-                ,{field:'uidentity', title:'身份', sort: true}
-                ,{
-                field:'upicture'
-                    , title:'照片'
+                , {field: 'uid', title: '编号', sort: true}
+                , {field: 'uname', title: '姓名', sort: true}
+                , {field: 'upassword', title: '密码', sort: true}
+                , {field: 'uidentity', title: '身份', sort: true}
+                , {
+                    field: 'upicture'
+                    , title: '照片'
                     //定义照片在表格内缩小展示，点击后放大展示
-                    ,templet:function(d){
-                        return '<div onclick="show_img(this)" ><img src="'+d.upicture+'" width="30px" height="30px"></a></div>';
+                    , templet: function (d) {
+                        return '<div onclick="show_img(this)" ><img src="' + d.upicture + '" width="30px" height="30px"></a></div>';
                     }
                 }
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo',fixed: 'right'}
+                , {fixed: 'right', title: '操作', toolbar: '#barDemo', fixed: 'right'}
             ]]
-            ,page: true
+            , page: true
         });
 
         //头部三个按钮简单的逻辑实现
         //头工具栏事件
-        table.on('toolbar(test)', function(obj){
+        table.on('toolbar(test)', function (obj) {
             var checkStatus = table.checkStatus(obj.config.id);
-            switch(obj.event){
+            switch (obj.event) {
                 case 'getCheckData':
                     var data = checkStatus.data;
                     layer.alert(JSON.stringify(data));
                     break;
                 case 'getCheckLength':
                     var data = checkStatus.data;
-                    layer.msg('选中了：'+ data.length + ' 个');
+                    layer.msg('选中了：' + data.length + ' 个');
                     break;
                 case 'isAll':
-                    layer.msg(checkStatus.isAll ? '全选': '未全选');
+                    layer.msg(checkStatus.isAll ? '全选' : '未全选');
                     break;
                 //自定义头工具栏右侧图标 - 提示
                 case 'LAYTABLE_TIPS':
                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                     break;
-            };
+            }
+            ;
         });
 
         //删除和修改按钮
         //监听行工具事件
-        table.on('tool(test)', function(obj){
+        table.on('tool(test)', function (obj) {
             var data = obj.data; //获得当前行数据
-            var urlex="${pageContext.request.contextPath}";
-            var tr=obj.tr//活动当前行tr 的  DOM对象
+            var urlex = "${pageContext.request.contextPath}";
+            var tr = obj.tr//活动当前行tr 的  DOM对象
             console.log(data);
-            if(obj.event === 'del'){
+            if (obj.event === 'del') {
                 /*layer.confirm('真的删除行么', function (index) {
                     obj.del();
                     layer.close(index);
                 });*/
-                layer.confirm('确定删除吗？',{title:'删除'}, function(index){
+                layer.confirm('确定删除吗？', {title: '删除'}, function (index) {
                     //向服务端发送删除指令og
-                    $.getJSON('delete.action',{uid:data.uid}, function(ret){
+                    $.getJSON('delete.action', {uid: data.uid}, function (ret) {
                     });
                     layer.close(index);//关闭弹窗
-                    table.reload('TTTtest',{page:{curr:1},where: {time:new Date()}});
+                    table.reload('TTTtest', {page: {curr: 1}, where: {time: new Date()}});
                 });
 
-            } else if(obj.event === 'edit'){
+            } else if (obj.event === 'edit') {
                 //这里是编辑
                 layer.open({
                     type: 1 //Page层类型
-                    ,skin: 'layui-layer-molv'
-                    ,area: ['380px', '270px']
-                    ,title: ['编辑用户信息','font-size:18px']
-                    ,btn: ['确定', '取消']
-                    ,shadeClose: true
-                    ,shade: 0 //遮罩透明度
-                    ,maxmin: true //允许全屏最小化
-                    ,content:$('#box1')  //弹窗id
-                    ,success:function(layero,index){
+                    , skin: 'layui-layer-molv'
+                    , area: ['380px', '270px']
+                    , title: ['编辑用户信息', 'font-size:18px']
+                    , btn: ['确定', '取消']
+                    , shadeClose: true
+                    , shade: 0 //遮罩透明度
+                    , maxmin: true //允许全屏最小化
+                    , content: $('#box1')  //弹窗id
+                    , success: function (layero, index) {
                         $('#uname').val(data.uname);
                         $('#upassword').val(data.upassword);
                         $('#uidentity').val(data.uidentity);
-                    },yes:function(index,layero){
-                        $.getJSON('update.action',{
+                    }, yes: function (index, layero) {
+                        $.getJSON('Userupdate.action', {
                             uname: $('#uname').val(),
                             upassword: $('#upassword').val(),
-                            uidentity:$('#uidentity').val(),
+                            uidentity: $('#uidentity').val(),
                             uid: data.uid,
                         });
                         layer.close(index);//关闭弹窗
-                        table.reload('TTTtest',{page:{curr:1},where: {time:new Date()}});
+                        table.reload('TTTtest', {page: {curr: 1}, where: {time: new Date()}});
                     }
                 });
             }

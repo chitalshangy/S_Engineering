@@ -42,7 +42,7 @@ http://www.springframework.org/schema/context/spring-context-5.2.9.xsd">
     <bean id="adminDAO" class="Dao.AdminDAO" parent="baseDAO"/>
     <bean id="userDAO" class="Dao.UserDAO" parent="baseDAO"/>
 
-    <bean id="userService" class="Service.UserService">
+    <bean id="userService" class="Service.UserServiceImpl">
         <property name="adminDAO" ref="adminDAO"/>
         <property name="userDAO" ref="userDAO"/>
     </bean>

@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>会议室管理</title>
-    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body>

@@ -1,7 +1,7 @@
 package Action;
 
 import Service.IUserService;
-import Service.UserService;
+import Service.UserServiceImpl;
 import net.sf.json.JSONObject;
 
 import java.util.List;
@@ -11,7 +11,8 @@ public class ZPJsonAction {
     JSONObject data;
     private int page;
     private int limit;
-    public void setUserService(UserService userService) {
+
+    public void setUserService(UserServiceImpl userService) {
         this.userService = userService;
     }
 
@@ -39,9 +40,9 @@ public class ZPJsonAction {
         this.limit = limit;
     }
 
-    public String zpjsonUserList(){
-        List userlist=userService.InfoList(page,limit);
-        data=new JSONObject();
+    public String zpjsonUserList() {
+        List userlist = userService.InfoList(page, limit);
+        data = new JSONObject();
         data.put("code", 0);
         data.put("msg", "");
         data.put("count", userService.Count());

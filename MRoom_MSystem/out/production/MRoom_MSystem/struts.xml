@@ -17,10 +17,14 @@
             <result name="success">/admin.jsp</result>
         </action>
 
-        <action name="update" class="userAction" method="update">
+        <action name="Userupdate" class="userAction" method="Userupdate">
+            <result name="success">/admin.jsp</result>
+        </action>
+        <action name="Adminupdate" class="userAction" method="Adminupdate">
             <result name="success">/admin.jsp</result>
         </action>
     </package>
+
     <!--json文件返回-->
     <package name="zp" extends="json-default">
         <action name="zpjsonUserList" class="zpJsonAction" method="zpjsonUserList">

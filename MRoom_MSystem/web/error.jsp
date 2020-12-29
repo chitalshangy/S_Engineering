@@ -11,6 +11,6 @@
     <title>运行失败</title>
 </head>
 <body>
-出错了！
+Sorry, something wrong happened!!!
 </body>
 </html>
