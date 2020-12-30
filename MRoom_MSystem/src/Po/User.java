@@ -3,40 +3,61 @@ package Po;
 import java.awt.*;
 
 public class User {
-    private String user_id;
-    private String password;
-    private Image image;
+    private String uid;
+    private String uname;
+    private String upassword;
+    private String uidentity;
+    private String upicture;
 
+    //记得构造函数
     public User() {
     }
 
-    public User(String user_id, String password, Image image) {
-        this.user_id = user_id;
-        this.password = password;
-        this.image = image;
+    public User(String uid, String uname, String upassword, String uidentity, String upicture) {
+        this.uid = uid;
+        this.uname = uname;
+        this.upassword = upassword;
+        this.uidentity = uidentity;
+        this.upicture = upicture;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 
-    public String getPassword() {
-        return password;
+    public void setUpassword(String upassword) {
+        this.upassword = upassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUidentity(String uidentity) {
+        this.uidentity = uidentity;
     }
 
-    public Image getImage() {
-        return image;
+    public String getUid() {
+        return uid;
     }
 
-    public void setImage(Image image) {
-        this.image = image;
+    public String getUname() {
+        return uname;
+    }
+
+    public String getUpassword() {
+        return upassword;
+    }
+
+    public String getUidentity() {
+        return uidentity;
+    }
+
+    public String getUpicture() {
+        return upicture;
+    }
+
+    public void setUpicture(String upicture) {
+        this.upicture = upicture;
     }
 }

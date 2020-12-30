@@ -5,10 +5,63 @@
 <struts>
     <package name="strutsBean" extends="struts-default" namespace="/">
         <!--登录转发-->
-        <action name="login" class="Action.UserAction" method="login">
-            <result name="success">/loginSuccess.jsp</result>
-            <result name="fail">/loginFail.jsp</result>
+        <action name="login" class="userAction" method="login">
+            <result name="admin_success">/admin.jsp</result>
+            <result name="other_success">/normal.jsp</result>
+            <result name="fail">/error.jsp</result>
         </action>
         <!--注册转发-->
+
+        <!--删除转发-->
+        <action name="delete" class="userAction" method="delete">
+            <result name="success">/admin.jsp</result>
+        </action>
+
+        <action name="update" class="userAction" method="update">
+            <result name="success">/admin.jsp</result>
+        </action>
+
+        <!--增加预约记录-->
+        <action name="addReserve" class="reserveAction" method="addReserve">
+            <result name="success">/reserveSuccess.jsp</result>
+            <result name="fail">/error.jsp</result>
+        </action>
+        <!--删除预约记录-->
+        <action name="deleteReserve" class="reserveAction" method="deleteReserve">
+            <result name="success">/reserveList.jsp</result>
+        </action>
+
+        <!--增加会议记录-->
+        <action name="addConference" class="conferenceAction" method="addConference">
+            <result name="success">/addConference.jsp</result>
+        </action>
+    </package>
+    <!--json文件返回-->
+    <package name="zp" extends="json-default">
+
+        <action name="zpjsonUserList" class="zpJsonAction" method="zpjsonUserList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="reserveList" class="zpJsonAction" method="zpjsonReserveList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="myReserveList" class="zpJsonAction" method="zpjsonMyReserveList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="conferenceList" class="zpJsonAction" method="zpjsonConferenceList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
     </package>
 </struts>
