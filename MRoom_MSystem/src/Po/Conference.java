@@ -12,7 +12,7 @@ public class Conference implements Serializable {
     private User user;
     private Reserve reserve;
 
-    public Conference(){
+    public Conference() {
 
     }
 

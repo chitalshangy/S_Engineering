@@ -6,18 +6,22 @@ public class User {
     private String uid;
     private String uname;
     private String upassword;
-    private String uidentity;
+    private String uphone;
     private String upicture;
 
     //记得构造函数
     public User() {
     }
 
-    public User(String uid, String uname, String upassword, String uidentity, String upicture) {
+    public User(String uid) {
+        this.uid = uid;
+    }
+
+    public User(String uid, String uname, String upassword, String uphone, String upicture) {
         this.uid = uid;
         this.uname = uname;
         this.upassword = upassword;
-        this.uidentity = uidentity;
+        this.uphone = uphone;
         this.upicture = upicture;
     }
 
@@ -33,8 +37,12 @@ public class User {
         this.upassword = upassword;
     }
 
-    public void setUidentity(String uidentity) {
-        this.uidentity = uidentity;
+    public String getUphone() {
+        return uphone;
+    }
+
+    public void setUphone(String uphone) {
+        this.uphone = uphone;
     }
 
     public String getUid() {
@@ -49,9 +57,6 @@ public class User {
         return upassword;
     }
 
-    public String getUidentity() {
-        return uidentity;
-    }
 
     public String getUpicture() {
         return upicture;

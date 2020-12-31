@@ -20,7 +20,7 @@ http://www.springframework.org/schema/context/spring-context-5.2.9.xsd">
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">
@@ -40,7 +40,7 @@ http://www.springframework.org/schema/context/spring-context-5.2.9.xsd">
     </bean>
 
     <bean id="baseDAO" class="Dao.BaseHibernateDAO" abstract="true">
-        <property name="sessionFactory" ref="sessionFactory" />
+        <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <bean id="adminDAO" class="Dao.AdminDAO" parent="baseDAO"/>
     <bean id="userDAO" class="Dao.UserDAO" parent="baseDAO"/>
@@ -61,7 +61,7 @@ http://www.springframework.org/schema/context/spring-context-5.2.9.xsd">
 
     <!--差点忘了-->
     <bean id="userAction" class="Action.UserAction" scope="prototype">
-        <property name="userService" ref="userService" />
+        <property name="userService" ref="userService"/>
     </bean>
 
     <bean id="reserveAction" class="Action.ReserveAction" scope="prototype">
@@ -73,9 +73,9 @@ http://www.springframework.org/schema/context/spring-context-5.2.9.xsd">
     </bean>
 
     <bean id="zpJsonAction" class="Action.ZPJsonAction" scope="prototype">
-        <property name="userService" ref="userService" />
+        <property name="userService" ref="userService"/>
         <property name="reserveService" ref="reserveService"/>
         <property name="conferenceService" ref="conferenceService"/>
-     </bean>
+    </bean>
 
 </beans>

@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
@@ -28,9 +28,9 @@
 
 <script>
     //定义全局变量$
-    var $=layui.jquery;
+    var $ = layui.jquery;
 
-    layui.use(['jquery','table'], function(){
+    layui.use(['jquery', 'table'], function () {
         var load = layui.layer.load(0);// 加载时loading效果
         layui.layer.close(load); //加载效果
 
@@ -40,44 +40,46 @@
         table.render({
             //指向的是表格的id
             elem: '#TTTtest'
-            ,url:'reserveList.action'
-            ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
-            ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+            , url: 'reserveList.action'
+            , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
                 title: '提示'
-                ,layEvent: 'LAYTABLE_TIPS'
-                ,icon: 'layui-icon-tips'
+                , layEvent: 'LAYTABLE_TIPS'
+                , icon: 'layui-icon-tips'
             }]
-            ,title:'会议室预约情况表'
-            ,cols: [[
+            , title: '会议室预约情况表'
+            , cols: [[
                 {type: 'checkbox', fixed: 'left'}
-                ,{field:'room', title:'会议室号', sort: true,templet: '<div>{{d.room.rid}}</div>'}
-                ,{field:'date', title:'预约日期', sort: true}
-                ,{field:'startTime', title:'开始时间', sort: true}
-                ,{field:'endTime', title:'结束时间', sort: true}
+                , {field: 'room', title: '会议室号', sort: true, templet: '<div>{{d.room.rid}}</div>'}
+                , {field: 'title', title: '主题', sort: true}
+                , {field: 'date', title: '预约日期', sort: true}
+                , {field: 'startTime', title: '开始时间', sort: true}
+                , {field: 'endTime', title: '结束时间', sort: true}
             ]]
-            ,page: true
+            , page: true
         });
 
         //头工具栏事件
-        table.on('toolbar(test)', function(obj){
+        table.on('toolbar(test)', function (obj) {
             var checkStatus = table.checkStatus(obj.config.id);
-            switch(obj.event){
+            switch (obj.event) {
                 case 'getCheckData':
                     var data = checkStatus.data;
                     layer.alert(JSON.stringify(data));
                     break;
                 case 'getCheckLength':
                     var data = checkStatus.data;
-                    layer.msg('选中了：'+ data.length + ' 个');
+                    layer.msg('选中了：' + data.length + ' 个');
                     break;
                 case 'isAll':
-                    layer.msg(checkStatus.isAll ? '全选': '未全选');
+                    layer.msg(checkStatus.isAll ? '全选' : '未全选');
                     break;
                 //自定义头工具栏右侧图标 - 提示
                 case 'LAYTABLE_TIPS':
                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                     break;
-            };
+            }
+            ;
         });
 
 

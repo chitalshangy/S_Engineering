@@ -10,10 +10,14 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="qrcode.js"></script>
 </head>
 <body>
 恭喜您预约成功，您的预约流水号为<s:property value="#request.reid"/><p>
+<div id="myCode"></div>
 
-
+<script>
+    new QRCode(document.getElementById('myCode'), '<s:property value="#request.reid"/>');
+</script>
 </body>
 </html>

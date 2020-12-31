@@ -35,8 +35,9 @@
         </div>
         <div class="layui-val-icon larry-login">
             <div class="layui-code-box">
-                <input type="text" id="code" name="code" placeholder="验证码" maxlength="4" class="login_txtbx" />
-                <input type="button" id="new_code" class="login_txtbx" style="background-color: #8D8D8D;" value="点击更换验证码" onclick="createCode()" />
+                <input type="text" id="code" name="code" placeholder="验证码" maxlength="4" class="login_txtbx"/>
+                <input type="button" id="new_code" class="login_txtbx" style="background-color: #8D8D8D;"
+                       value="点击更换验证码" onclick="createCode()"/>
             </div>
         </div>
         <div class="layui-submit larry-login">
@@ -50,51 +51,55 @@
 <script type="text/javascript">
     var code;
     var result;
-    function createCode(){
+
+    function createCode() {
         code = "";
         var codeLength = 4;//验证码的长度
         var checkCode = document.getElementById("new_code");
-        var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R',
-            'S','T','U','V','W','X','Y','Z');//随机数
-        for(var i = 0; i < codeLength; i++) {//循环操作
-            var index = Math.floor(Math.random()*36);//取得随机数的索引（0~35）
+        var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');//随机数
+        for (var i = 0; i < codeLength; i++) {//循环操作
+            var index = Math.floor(Math.random() * 36);//取得随机数的索引（0~35）
             code += random[index];//根据索引取得随机数加到code上
         }
         checkCode.value = code;//把code值赋给验证码
     }
-    function validate(){
-        var user_id=document.getElementById("user_id").value;
-        var password=document.getElementById("password").value;
-        if(user_id.length<=0||password.length<=0){
+
+    function validate() {
+        var user_id = document.getElementById("user_id").value;
+        var password = document.getElementById("password").value;
+        if (user_id.length <= 0 || password.length <= 0) {
             alert("请输入账号或密码！");
             result = false;
         }
         var inputCode = document.getElementById("code").value.toUpperCase(); //取得输入的验证码并转化为大写
-        if(inputCode.length <= 0) { //若输入的验证码长度为0
+        if (inputCode.length <= 0) { //若输入的验证码长度为0
             alert("请输入验证码！"); //则弹出请输入验证码
             result = false;
-        }else if(inputCode != code ) { //若输入的验证码与产生的验证码不一致时
+        } else if (inputCode != code) { //若输入的验证码与产生的验证码不一致时
             alert("验证码输入错误！"); //则弹出验证码输入错误
             createCode();//刷新验证码
             document.getElementById("code").value = "";//清空文本框
             result = false;
-        }else { //输入正确时
+        } else { //输入正确时
             alert("正在跳转...");
             result = true;
         }
         return result;
     }
 </script>
-<script type="text/javascript" color="255,255,255" opacity="0.5"count="180">
-    ! function() {
+<script type="text/javascript" color="255,255,255" opacity="0.5" count="180">
+    !function () {
         //封装方法，压缩之后减少文件大小
         function get_attribute(node, attr, default_value) {
             return node.getAttribute(attr) || default_value;
         }
+
         //封装方法，压缩之后减少文件大小
         function get_by_tagname(name) {
             return document.getElementsByTagName(name);
         }
+
         //获取配置参数
         function get_config_option() {
             var scripts = get_by_tagname("script"),
@@ -108,18 +113,20 @@
                 n: get_attribute(script, "count", 99) //count
             };
         }
+
         //设置canvas的高宽
         function set_canvas_size() {
             canvas_width = the_canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
                 canvas_height = the_canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
         }
+
         //绘制过程
         function draw_canvas() {
             context.clearRect(0, 0, canvas_width, canvas_height);
             //随机的线条和当前位置联合数组
             var e, i, d, x_dist, y_dist, dist; //临时节点
             //遍历处理每一个点
-            random_points.forEach(function(r, idx) {
+            random_points.forEach(function (r, idx) {
                 r.x += r.xa,
                     r.y += r.ya, //移动
                     r.xa *= r.x > canvas_width || r.x < 0 ? -1 : 1,
@@ -145,12 +152,13 @@
                 }
             }), frame_func(draw_canvas);
         }
+
         //创建画布，并添加到body中
         var the_canvas = document.createElement("canvas"), //画布
             config = get_config_option(), //配置
             canvas_id = "c_n" + config.l, //canvas id
             context = the_canvas.getContext("2d"), canvas_width, canvas_height,
-            frame_func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(func) {
+            frame_func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (func) {
                 window.setTimeout(func, 1000 / 45);
             }, random = Math.random,
             current_point = {
@@ -189,12 +197,12 @@
                 y: y,
                 xa: xa,
                 ya: ya,
-                max: parseInt(Math.random()*(30000-20000+1)+20000,10) //沾附距离
+                max: parseInt(Math.random() * (30000 - 20000 + 1) + 20000, 10) //沾附距离
             });
         }
         all_array = random_points.concat([current_point]);
         //0.1秒后绘制
-        setTimeout(function() {
+        setTimeout(function () {
             draw_canvas();
         }, 100);
     }();

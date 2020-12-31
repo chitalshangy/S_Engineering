@@ -3,21 +3,22 @@ package Action;
 import Service.IConferenceService;
 import Service.IReserveService;
 import Service.IUserService;
-import Service.UserService;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
+import org.apache.struts2.ServletActionContext;
 import processor.JsonDateValueProcessor;
 import processor.JsonTimeValueProcessor;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.HashMap;
 import java.util.List;
 
 public class ZPJsonAction {
-    private IUserService userService=null;
-    private IReserveService reserveService=null;
-    private IConferenceService conferenceService=null;
+    private IUserService userService = null;
+    private IReserveService reserveService = null;
+    private IConferenceService conferenceService = null;
     JSONObject data;
     private int page;
     private int limit;
@@ -58,9 +59,9 @@ public class ZPJsonAction {
         this.limit = limit;
     }
 
-    public String zpjsonUserList(){
-        List userlist=userService.InfoList(page,limit);
-        data=new JSONObject();
+    public String zpjsonUserList() {
+        List userlist = userService.InfoList(page, limit);
+        data = new JSONObject();
         data.put("code", 0);
         data.put("msg", "");
         data.put("count", userService.Count());
@@ -68,49 +69,64 @@ public class ZPJsonAction {
         return "success";
     }
 
-    public String zpjsonReserveList(){
+    public String zpjsonReserveList() {
         JsonConfig jsonConfig = new JsonConfig();
         jsonConfig.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor());
         jsonConfig.registerJsonValueProcessor(Time.class, new JsonTimeValueProcessor());
-        List reservelist= reserveService.InfoList(page,limit);
+        List reservelist = reserveService.InfoList(page, limit);
         HashMap<String, Object> hashMap = new HashMap<String, Object>();
         hashMap.put("code", 0);
         hashMap.put("msg", "");
         hashMap.put("count", reserveService.Count());
         hashMap.put("data", reservelist);
-        data=new JSONObject();
-        data.putAll(hashMap,jsonConfig);
+        data = new JSONObject();
+        data.putAll(hashMap, jsonConfig);
         return "success";
     }
 
-    public String zpjsonMyReserveList(){
+    public String zpjsonMyReserveList() {
         JsonConfig jsonConfig = new JsonConfig();
         jsonConfig.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor());
         jsonConfig.registerJsonValueProcessor(Time.class, new JsonTimeValueProcessor());
-        List reservelist= reserveService.InfoMyList(page,limit);
+        List reservelist = reserveService.InfoMyList(page, limit);
         HashMap<String, Object> hashMap = new HashMap<String, Object>();
         hashMap.put("code", 0);
         hashMap.put("msg", "");
         hashMap.put("count", reserveService.CountMy());
         hashMap.put("data", reservelist);
-        data=new JSONObject();
-        data.putAll(hashMap,jsonConfig);
+        data = new JSONObject();
+        data.putAll(hashMap, jsonConfig);
         return "success";
     }
 
-    public String zpjsonConferenceList(){
+    public String zpjsonConferenceList() {
         JsonConfig jsonConfig = new JsonConfig();
         jsonConfig.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor());
         jsonConfig.registerJsonValueProcessor(Time.class, new JsonTimeValueProcessor());
-        List list= conferenceService.InfoList(page,limit);
+        List list = conferenceService.InfoList(page, limit);
         HashMap<String, Object> hashMap = new HashMap<String, Object>();
         hashMap.put("code", 0);
         hashMap.put("msg", "");
         hashMap.put("count", conferenceService.Count());
         hashMap.put("data", list);
-        data=new JSONObject();
-        data.putAll(hashMap,jsonConfig);
+        data = new JSONObject();
+        data.putAll(hashMap, jsonConfig);
         return "success";
     }
 
+    public String zpjsonParticipantList() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String reid = request.getParameter("reid");
+        JsonConfig jsonConfig = new JsonConfig();
+        jsonConfig.registerJsonValueProcessor(Time.class, new JsonTimeValueProcessor());
+        List list = conferenceService.InfoListPa(reid, page, limit);
+        HashMap<String, Object> hashMap = new HashMap<String, Object>();
+        hashMap.put("code", 0);
+        hashMap.put("msg", "");
+        hashMap.put("count", conferenceService.CountPa(reid));
+        hashMap.put("data", list);
+        data = new JSONObject();
+        data.putAll(hashMap, jsonConfig);
+        return "success";
+    }
 }

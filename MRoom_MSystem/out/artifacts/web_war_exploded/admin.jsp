@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>管理员界面</title>
-    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body class="layui-layout-body">
@@ -35,25 +35,29 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">管理选项</a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;" data-id="1" data-title="员工管理" data-url="A_staffInfo.jsp"
-                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-user"></i>员工管理</a></dd>
+                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-user"></i>员工管理</a>
+                        </dd>
                         <dd><a href="javascript:;" data-id="2" data-title="会议室管理" data-url="A_roomInfo.jsp"
-                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-chart-screen"></i>会议室管理</a></dd>
+                               class="site-demo-active" data-type="tabAdd"><i
+                                class="layui-icon layui-icon-chart-screen"></i>会议室管理</a></dd>
                         <dd><a href="javascript:;" data-id="3" data-title="部门管理" data-url="A_departmentInfo.jsp"
-                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-flag"></i>部门管理</a></dd>
+                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-flag"></i>部门管理</a>
+                        </dd>
                         <dd><a href="javascript:;" data-id="4" data-title="人脸库管理" data-url="A_photoInfo.jsp"
-                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-picture"></i>人脸库管理</a></dd>
+                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-picture"></i>人脸库管理</a>
+                        </dd>
                     </dl>
                 </li>
             </ul>
         </div>
     </div>
 
-    <input type="button"  id="parentID" value="" hidden/>
+    <input type="button" id="parentID" value="" hidden/>
 
 
     <!-- 内容主体区域 -->
@@ -127,9 +131,10 @@
                 element.tabDelete("demo", id);//删除
             }
         };
+
         function FrameWH() {
             var h = $(window).height();
-            $("iframe").css("height",h+"px");
+            $("iframe").css("height", h + "px");
         }
     });
 </script>
