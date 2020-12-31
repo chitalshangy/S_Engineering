@@ -18,10 +18,4 @@ public abstract class BaseHibernateDAO {
 
     //登录查找
     public abstract List findByhql(String hql);
-
-    //查找全部
-    public abstract List findAll(int page, int limit);
-
-    //返回信息总条数
-    public abstract Long infoCount();
 }

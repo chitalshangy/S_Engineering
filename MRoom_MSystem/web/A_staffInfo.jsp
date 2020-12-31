@@ -15,7 +15,7 @@
 <body>
 
 <!--主体，用户信息表格-->
-<table class="layui-hide" id="TTTtest" lay-filter="test"></table>
+<table class="layui-hide" id="staffTable" lay-filter="test"></table>
 
 <!--修改信息时的弹出层-->
 <div class="site-text" style="margin: 5%; display: none" id="box1" target="123">
@@ -30,9 +30,9 @@
                 <input type="text" class="layui-input" id="upassword" name=upassword><br>
             </div>
 
-            <label class="layui-form-label"> 身份</label>
+            <label class="layui-form-label"> 联系方式</label>
             <div class="layui-input-block">
-                <input type="text" class="layui-input" id="uidentity" name="uidentity"><br>
+                <input type="text" class="layui-input" id="uphone" name="uphone"><br>
             </div>
 
         </div>
@@ -45,6 +45,7 @@
         <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
         <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+        <button class="layui-btn layui-btn-sm" lay-event="upLoad" id="test1111">批量上传人员数据</button>
     </div>
 </script>
 
@@ -56,11 +57,6 @@
 <script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
 
 <!--问题：找不到及时显示刷新后数据的方法-->
-<!--显示图片的templet-->
-<script type="text/html" id="imgTpl">
-    <img src="{{d.upicture}}">
-</script>
-
 <script>
     //定义全局变量$
     var $ = layui.jquery;
@@ -82,16 +78,16 @@
         });
     }
 
-    layui.use(['jquery', 'table'], function () {
+    layui.use(['jquery', 'table', 'upload'], function () {
         var load = layui.layer.load(0);// 加载时loading效果
         layui.layer.close(load); //加载效果
 
         var table = layui.table;
 
-        //表格的渲染
+        //表格主体的渲染
         table.render({
             //指向的是表格的id
-            elem: '#TTTtest'
+            elem: '#staffTable'
             , url: 'zpjsonUserList.action'
             , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
             , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
@@ -105,7 +101,7 @@
                 , {field: 'uid', title: '编号', sort: true}
                 , {field: 'uname', title: '姓名', sort: true}
                 , {field: 'upassword', title: '密码', sort: true}
-                , {field: 'uidentity', title: '身份', sort: true}
+                , {field: 'uphone', title: '联系方式', sort: true}
                 , {
                     field: 'upicture'
                     , title: '照片'
@@ -119,7 +115,7 @@
             , page: true
         });
 
-        //头部三个按钮简单的逻辑实现
+        //头部按钮简单的逻辑实现
         //头工具栏事件
         table.on('toolbar(test)', function (obj) {
             var checkStatus = table.checkStatus(obj.config.id);
@@ -147,20 +143,14 @@
         //监听行工具事件
         table.on('tool(test)', function (obj) {
             var data = obj.data; //获得当前行数据
-            var urlex = "${pageContext.request.contextPath}";
-            var tr = obj.tr//活动当前行tr 的  DOM对象
             console.log(data);
             if (obj.event === 'del') {
-                /*layer.confirm('真的删除行么', function (index) {
-                    obj.del();
-                    layer.close(index);
-                });*/
                 layer.confirm('确定删除吗？', {title: '删除'}, function (index) {
                     //向服务端发送删除指令og
                     $.getJSON('delete.action', {uid: data.uid}, function (ret) {
                     });
                     layer.close(index);//关闭弹窗
-                    table.reload('TTTtest', {page: {curr: 1}, where: {time: new Date()}});
+                    table.reload('staffTable', {page: {curr: 1}, where: {time: new Date()}});
                 });
 
             } else if (obj.event === 'edit') {
@@ -178,19 +168,39 @@
                     , success: function (layero, index) {
                         $('#uname').val(data.uname);
                         $('#upassword').val(data.upassword);
-                        $('#uidentity').val(data.uidentity);
+                        $('#uphone').val(data.uphone);
                     }, yes: function (index, layero) {
                         $.getJSON('Userupdate.action', {
                             uname: $('#uname').val(),
                             upassword: $('#upassword').val(),
-                            uidentity: $('#uidentity').val(),
+                            uphone: $('#uphone').val(),
                             uid: data.uid,
                         });
                         layer.close(index);//关闭弹窗
-                        table.reload('TTTtest', {page: {curr: 1}, where: {time: new Date()}});
+                        table.reload('staffTable', {page: {curr: 1}, where: {time: new Date()}});
                     }
                 });
             }
+        });
+
+        var upload = layui.upload;
+
+        //选完文件后不自动上传
+        var upload = layui.upload;
+
+        //执行实例
+        upload.render({
+            elem: '#test1111' //绑定元素
+            ,url: 'uploadUser.action' //上传接口
+            ,done: function(res){
+                //上传完毕回调
+                alert(res);
+            }
+            ,error: function(){
+                //请求异常回调
+                alert("出错了！");
+            }
+            ,accept:'file'//允许的文件类型
         });
     });
 </script>

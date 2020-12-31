@@ -8,6 +8,8 @@ import java.util.List;
 
 public class ZPJsonAction {
     private IUserService userService;
+
+    //返回值
     JSONObject data;
     private int page;
     private int limit;
@@ -41,12 +43,22 @@ public class ZPJsonAction {
     }
 
     public String zpjsonUserList() {
-        List userlist = userService.InfoList(page, limit);
+        List userlist = userService.userList(page, limit);
         data = new JSONObject();
         data.put("code", 0);
         data.put("msg", "");
-        data.put("count", userService.Count());
+        data.put("count", userService.userCount());
         data.put("data", userlist);
+        return "success";
+    }
+
+    public String zpjsonRoomList(){
+        List roomlist=userService.roomList(page, limit);
+        data=new JSONObject();
+        data.put("code", 0);
+        data.put("msg", "");
+        data.put("count", userService.roomCount());
+        data.put("data", roomlist);
         return "success";
     }
 }

@@ -1,14 +1,11 @@
 package Dao;
 
 import Po.Admin;
-import com.opensymphony.xwork2.ActionContext;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
-import java.util.Map;
 
 public class AdminDAO extends BaseHibernateDAO implements IAdminDAO {
     //登录
