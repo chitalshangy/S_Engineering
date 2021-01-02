@@ -20,7 +20,7 @@
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
-                    <img src="images/2.jpg" class="layui-nav-img">
+                    <img src="images/example.jpg" class="layui-nav-img">
                     <s:property value="#request.id"/>
                 </a>
                 <dl class="layui-nav-child">

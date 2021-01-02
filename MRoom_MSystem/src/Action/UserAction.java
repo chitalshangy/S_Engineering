@@ -4,22 +4,9 @@ import Po.Admin;
 import Po.User;
 import Service.IUserService;
 import org.apache.struts2.ServletActionContext;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class UserAction {
     private User user;
@@ -84,19 +71,9 @@ public class UserAction {
         return "success";
     }
 
+    // 执行上传功能
+    public void upload() {
 
-    @ResponseBody
-    @RequestMapping("/uploadUser")
-    public Map<String, String> uploadUser() throws Exception {
-        HttpServletRequest request=ServletActionContext.getRequest();
-        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
-        commonsMultipartResolver.setDefaultEncoding("utf-8");
-        MultipartHttpServletRequest multipartRequest = commonsMultipartResolver.resolveMultipart(request);
-
-        MultipartFile file = multipartRequest.getFile("file");
-        Map<String, String> map = new HashMap<>();
-        userService.uploadUser(file);
-        map.put("msg", "ok");
-        return map;
     }
+
 }

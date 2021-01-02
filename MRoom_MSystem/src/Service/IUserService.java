@@ -32,6 +32,4 @@ public interface IUserService {
     public void delUser(String uid);
 
     public void updateAdmin(String aid, String apassword, String aphone);
-
-    public String uploadUser(MultipartFile file);
 }

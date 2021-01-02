@@ -11,9 +11,7 @@
             <result name="fail">/error.jsp</result>
         </action>
 
-        <action name="uploadUser" class="userAction" method="uploadUser">
-            <result name="success">/admin.jsp</result>
-        </action>
+        <action name="upload" class="userAction" method="upload"/>
 
         <!--删除转发-->
         <action name="delete" class="userAction" method="delete">

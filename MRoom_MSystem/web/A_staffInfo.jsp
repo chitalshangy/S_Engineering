@@ -45,9 +45,13 @@
         <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
         <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
-        <button class="layui-btn layui-btn-sm" lay-event="upLoad" id="test1111">批量上传人员数据</button>
     </div>
 </script>
+
+<form method="post" id="uploadForm">
+    <input type="file" id="file" name="file"/>
+    <input type="button" onclick="upload()" value="开始上传">
+</form>
 
 <!--编辑以及删除的前端-->
 <script type="text/html" id="barDemo">
@@ -69,12 +73,12 @@
             title: '照片'
             , type: 1
             , skin: 'layui-layer-rim' //加上边框
-            , area: ['60%', '80%'] //宽高
+            , area: ['300px', '405px'] //宽高
             , shadeClose: true //开启遮罩关闭
             , end: function (index, layero) {
                 return false;
             }
-            , content: '<div style="text-align:center"><img src="' + $(t).attr('src') + '" /></div>'
+            , content: '<div style="text-align:center" ><img src="' + $(t).attr('src') + '" style="height: 100%;width: 100%"/></div>'
         });
     }
 
@@ -107,7 +111,7 @@
                     , title: '照片'
                     //定义照片在表格内缩小展示，点击后放大展示
                     , templet: function (d) {
-                        return '<div onclick="show_img(this)" ><img src="' + d.upicture + '" width="30px" height="30px"></a></div>';
+                        return '<div onclick="show_img(this)" ><img src="' + d.upicture + '" height=40px width=30px></a></div>';
                     }
                 }
                 , {fixed: 'right', title: '操作', toolbar: '#barDemo', fixed: 'right'}
@@ -182,27 +186,30 @@
                 });
             }
         });
-
-        var upload = layui.upload;
-
-        //选完文件后不自动上传
-        var upload = layui.upload;
-
-        //执行实例
-        upload.render({
-            elem: '#test1111' //绑定元素
-            ,url: 'uploadUser.action' //上传接口
-            ,done: function(res){
-                //上传完毕回调
-                alert(res);
-            }
-            ,error: function(){
-                //请求异常回调
-                alert("出错了！");
-            }
-            ,accept:'file'//允许的文件类型
-        });
     });
+
+    function upload(){
+        var file=document.getElementById('file').files[0];
+        if(file==undefined){
+            alert('请选择文件');
+            return
+        }
+        var data = new FormData();
+        data.append("file", file);
+        $.ajax({
+            type: 'post',
+            url: 'upload.action',
+            data: data,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                alert(data.msg);
+            }, error: function () {
+                alert("上传失败");
+            },
+        });
+    }
 </script>
 </body>
 </html>

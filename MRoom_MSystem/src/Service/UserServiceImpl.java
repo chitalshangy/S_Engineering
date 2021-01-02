@@ -6,17 +6,7 @@ import Dao.UserDAO;
 import Po.Admin;
 import Po.User;
 import com.opensymphony.xwork2.ActionContext;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import upLoad.ExcelUtils;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -101,45 +91,5 @@ public class UserServiceImpl implements IUserService {
 
     public void updateAdmin(String aid, String apassword, String aphone){
         adminDAO.update(aid,apassword,aphone);
-    }
-
-    public String uploadUser(MultipartFile file){
-        if(file.isEmpty()){
-            try {
-                throw new Exception("文件不存在！");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        InputStream in =null;
-        try {
-            in = file.getInputStream();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        List<List<Object>> listob = null;
-        try {
-            listob = new ExcelUtils().getBankListByExcel(in,file.getOriginalFilename());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        for (int i = 0; i < listob.size(); i++) {
-            List<Object> lo = listob.get(i);
-            User user=new User();
-            String hql="from User as user where uid='" + Integer.valueOf(String.valueOf(lo.get(0)));
-            List list=userDAO.findByhql(hql);
-            if(list==null) {
-                continue;
-            }
-            user.setUid(String.valueOf(lo.get(0)));
-            user.setUname(String.valueOf(lo.get(1)));
-            user.setUpassword(String.valueOf(lo.get(2)));
-            user.setUphone(String.valueOf(lo.get(3)));
-            user.setUpicture(String.valueOf(lo.get(4)));
-
-            userDAO.add(user);
-        }
-        return "success";
     }
 }
