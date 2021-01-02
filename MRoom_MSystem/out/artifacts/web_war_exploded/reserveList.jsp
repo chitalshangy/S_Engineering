@@ -37,7 +37,6 @@
 <script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
 
 
-
 <script>
     //定义全局变量$
     var $ = layui.jquery;
@@ -171,7 +170,7 @@
                         });
                         //监听行工具事件
                         table.on('tool(test1)', function (obj) {
-                            var data1= obj.data; //获得当前行数据
+                            var data1 = obj.data; //获得当前行数据
                             console.log(data);
                             if (obj.event === 'del') {
                                 layer.confirm('确定踢出会议吗？', {title: '踢出'}, function (index1) {

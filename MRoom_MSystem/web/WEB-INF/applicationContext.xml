@@ -46,16 +46,18 @@ http://www.springframework.org/schema/context/spring-context-5.2.9.xsd">
     <bean id="userDAO" class="Dao.UserDAO" parent="baseDAO"/>
     <bean id="reserveDAO" class="Dao.ReserveDAO" parent="baseDAO"/>
     <bean id="conferenceDAO" class="Dao.ConferenceDAO" parent="baseDAO"/>
+    <bean id="roomDAO" class="Dao.RoomDAO" parent="baseDAO"/>
 
-    <bean id="userService" class="Service.UserService">
+    <bean id="userService" class="Service.UserServiceImpl">
         <property name="adminDAO" ref="adminDAO"/>
         <property name="userDAO" ref="userDAO"/>
+        <property name="roomDAO" ref="roomDAO"/>
     </bean>
-    <bean id="reserveService" class="Service.ReserveService">
+    <bean id="reserveService" class="Service.ReserveServiceImpl">
         <property name="reserveDAO" ref="reserveDAO"/>
         <property name="conferenceDAO" ref="conferenceDAO"/>
     </bean>
-    <bean id="conferenceService" class="Service.ConferenceService">
+    <bean id="conferenceService" class="Service.ConferenceServiceImpl">
         <property name="conferenceDAO" ref="conferenceDAO"/>
     </bean>
 

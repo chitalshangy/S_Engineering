@@ -17,7 +17,7 @@
 <body bgcolor="#0F0F0F">
 <div class="layui-layout layui-layout-login">
     <!--添加表单只有在判断成功后才允许提交-->
-    <form action="login" method="post" onsubmit="return validate()">
+    <form action="login.action" method="post" onsubmit="return validate()">
         <h1>
             <strong>智能会议室管理系统</strong>
             <em>Meeting Room Management System</em>

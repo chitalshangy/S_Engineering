@@ -5,6 +5,7 @@ import Po.User;
 import Service.IUserService;
 import org.apache.struts2.ServletActionContext;
 
+
 import javax.servlet.http.HttpServletRequest;
 
 public class UserAction {
@@ -36,7 +37,9 @@ public class UserAction {
         if (user.getUid().length() == 4) {
             admin.setAid(user.getUid());
             admin.setApassword(user.getUpassword());
-            if (userService.alogin(admin)) return "admin_success";
+            if (userService.alogin(admin)) {
+                return "admin_success";
+            }
         } else if (user.getUid().length() == 6) {
             if (userService.ulogin(user)) return "other_success";
         }
@@ -49,13 +52,28 @@ public class UserAction {
         return "success";
     }
 
-    public String update() {
+    public String Userupdate() {
         HttpServletRequest reqeust = ServletActionContext.getRequest();
         String uid = reqeust.getParameter("uid");
         String uname = reqeust.getParameter("uname");
         String upassword = reqeust.getParameter("upassword");
-        String uidentity = reqeust.getParameter("uidentity");
-        userService.updateUser(uid, uname, upassword, uidentity);
+        String uphone = reqeust.getParameter("uphone");
+        userService.updateUser(uid, uname, upassword, uphone);
         return "success";
     }
+
+    public String Adminupdate() {
+        HttpServletRequest reqeust = ServletActionContext.getRequest();
+        String aid = reqeust.getParameter("aid");
+        String apassword = reqeust.getParameter("apassword");
+        String aphone = reqeust.getParameter("aphone");
+        userService.updateAdmin(aid, apassword, aphone);
+        return "success";
+    }
+
+    // 执行上传功能
+    public void upload() {
+
+    }
+
 }

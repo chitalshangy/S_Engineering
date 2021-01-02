@@ -60,11 +60,11 @@ public class ZPJsonAction {
     }
 
     public String zpjsonUserList() {
-        List userlist = userService.InfoList(page, limit);
+        List userlist = userService.userList(page, limit);
         data = new JSONObject();
         data.put("code", 0);
         data.put("msg", "");
-        data.put("count", userService.Count());
+        data.put("count", userService.userCount());
         data.put("data", userlist);
         return "success";
     }
@@ -127,6 +127,16 @@ public class ZPJsonAction {
         hashMap.put("data", list);
         data = new JSONObject();
         data.putAll(hashMap, jsonConfig);
+        return "success";
+    }
+
+    public String zpjsonRoomList(){
+        List roomlist=userService.roomList(page, limit);
+        data=new JSONObject();
+        data.put("code", 0);
+        data.put("msg", "");
+        data.put("count", userService.roomCount());
+        data.put("data", roomlist);
         return "success";
     }
 }

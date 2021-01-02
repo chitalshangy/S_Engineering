@@ -20,15 +20,15 @@
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    <s:property value="#request.user.uid"/>
+                    <img src="images/example.jpg" class="layui-nav-img">
+                    <s:property value="#request.id"/>
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
+                    <dd><a href="javascript:show_inf(this);">基本资料</a></dd>
+                    <dd><a href="null">安全设置</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">退了</a></li>
+            <li class="layui-nav-item"><a href="login.jsp">退了</a></li>
         </ul>
     </div>
 
@@ -45,11 +45,8 @@
                         <dd><a href="javascript:;" data-id="2" data-title="会议室管理" data-url="A_roomInfo.jsp"
                                class="site-demo-active" data-type="tabAdd"><i
                                 class="layui-icon layui-icon-chart-screen"></i>会议室管理</a></dd>
-                        <dd><a href="javascript:;" data-id="3" data-title="部门管理" data-url="A_departmentInfo.jsp"
-                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-flag"></i>部门管理</a>
-                        </dd>
-                        <dd><a href="javascript:;" data-id="4" data-title="人脸库管理" data-url="A_photoInfo.jsp"
-                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-picture"></i>人脸库管理</a>
+                        <dd><a href="javascript:;" data-id="3" data-title="预约管理" data-url="A_reserveInfo.jsp"
+                               class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-flag"></i>预约管理</a>
                         </dd>
                     </dl>
                 </li>
@@ -69,12 +66,68 @@
             </div>
         </div>
     </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
 </div>
+
+<!--修改信息的弹窗-->
+<div class="site-text" style="margin: 5%; display: none" id="box1" target="123">
+    <form class="layui-form layui-form-pane" onsubmit="return false" id="booktype">
+        <div class="layui-form-item">
+            <label class="layui-form-label"> 序号</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="aid" name="aid" value="<%=request.getAttribute("id")%>"
+                       readonly><br>
+            </div>
+            <label class="layui-form-label"> 密码</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="apassword" name="apassword"
+                       value="<%=request.getAttribute("password")%>"><br>
+            </div>
+            <label class="layui-form-label"> 联系方式</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="aphone" name="aphone"><br>
+            </div>
+
+        </div>
+    </form>
+</div>
+
 <script>
+    //个人信息弹出框
+    function show_inf(t) {
+        var $ = layui.$;
+        //页面层
+        layer.open({
+            type: 1
+            , skin: 'layui-layer-molv'
+            , area: ['380px', '270px']
+            , title: ['个人信息', 'font-size:18px']
+            , btn: ['修改', '取消']
+            , shadeClose: true
+            , shade: 0
+            , maxmin: true
+            , content: $('#box1')
+            , success: function (layero, index) {
+
+            }, yes: function (index, layero) {
+                $.getJSON('Adminupdate.action', {
+                    apassword: $('#apassword').val(),
+                    aphone: $('#aphone').val(),
+                    aid: $('#aid').val()
+                });
+                layer.close(index);//关闭弹窗
+            }
+        });
+    }
+
     layui.use(['element', 'layer', 'jquery'], function () {
+        var $ = layui.$;
         var element = layui.element;
         // var layer = layui.layer;
-        var $ = layui.$;
         // 配置tab实践在下面无法获取到菜单元素
         $('.site-demo-active').on('click', function () {
             var dataid = $(this);

@@ -10,14 +10,18 @@
             <result name="other_success">/normal.jsp</result>
             <result name="fail">/error.jsp</result>
         </action>
-        <!--注册转发-->
+        <!--文件上传-->
+        <action name="upload" class="userAction" method="upload"/>
 
         <!--删除转发-->
         <action name="delete" class="userAction" method="delete">
             <result name="success">/admin.jsp</result>
         </action>
 
-        <action name="update" class="userAction" method="update">
+        <action name="Userupdate" class="userAction" method="Userupdate">
+            <result name="success">/admin.jsp</result>
+        </action>
+        <action name="Adminupdate" class="userAction" method="Adminupdate">
             <result name="success">/admin.jsp</result>
         </action>
 
@@ -54,6 +58,12 @@
     <package name="zp" extends="json-default">
 
         <action name="zpjsonUserList" class="zpJsonAction" method="zpjsonUserList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="zpjsonRoomList" class="zpJsonAction" method="zpjsonRoomList">
             <result type="json" name="success">
                 <param name="root">data</param>
             </result>
