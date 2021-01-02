@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Po.Conference" table="conference"
+           catalog="mroom_msystem">
+        <composite-id>
+            <key-many-to-one name="user" column="uid" class="Po.User"></key-many-to-one>
+            <key-many-to-one name="reserve" column="reid" class="Po.Reserve"></key-many-to-one>
+        </composite-id>
+        <property name="cidentity" type="string">
+            <column name="cidentity" length="6" />
+        </property>
+        <property name="checkInTime" type="string">
+            <column name="checkInTime" length="8" />
+        </property>
+        <property name="signingOutTime" type="string">
+            <column name="signingOutTime" length="8" />
+        </property>
+    </class>
+</hibernate-mapping>

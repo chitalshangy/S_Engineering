@@ -6,58 +6,46 @@ public class User {
     private String uid;
     private String uname;
     private String upassword;
-    private String uidentity;
-    private Image upicture;
+    private String uphone;
+    private String upicture;
 
-    //记得构造函数
-    public User() {
-    }
-
-    public User(String uid, String uname, String upassword, String uidentity, Image upicture) {
-        this.uid = uid;
-        this.uname = uname;
-        this.upassword = upassword;
-        this.uidentity = uidentity;
-        this.upicture = upicture;
+    public String getUid() {
+        return uid;
     }
 
     public void setUid(String uid) {
         this.uid = uid;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
-    }
-
-    public void setUpassword(String upassword) {
-        this.upassword = upassword;
-    }
-
-    public void setUidentity(String uidentity) {
-        this.uidentity = uidentity;
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
     public String getUname() {
         return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 
     public String getUpassword() {
         return upassword;
     }
 
-    public String getUidentity() {
-        return uidentity;
+    public void setUpassword(String upassword) {
+        this.upassword = upassword;
     }
 
-    public Image getUpicture() {
+    public String getUphone() {
+        return uphone;
+    }
+
+    public void setUphone(String uphone) {
+        this.uphone = uphone;
+    }
+
+    public String getUpicture() {
         return upicture;
     }
 
-    public void setUpicture(Image upicture) {
+    public void setUpicture(String upicture) {
         this.upicture = upicture;
     }
 }
