@@ -44,7 +44,7 @@ public class UserDAO extends BaseHibernateDAO implements IUserDAO {
     }
 
     //返回信息总条数
-    public Long infoCount() {
+    public Long userCount() {
         String hql = "select count(*) from User";
         Transaction tran = null;
         Session session = getSession();
@@ -84,17 +84,37 @@ public class UserDAO extends BaseHibernateDAO implements IUserDAO {
         }
     }
 
-    public void update(String uid, String uname, String upassword, String uidentity) {
+    //更新
+    public void update(String uid, String uname, String upassword, String uphone) {
         Transaction tran = null;
         Session session = getSession();
-        String hql = "update User u set u.uname=:uname,u.upassword=:upassword,u.uidentity=:uidentity where u.uid=:uid";
+        String hql = "update User u set u.uname=:uname,u.upassword=:upassword,u.uphone=:uphone where u.uid=:uid";
         try {
             tran = session.beginTransaction();
             Query query = session.createQuery(hql).setParameter("uname", uname)
                     .setParameter("upassword", upassword)
-                    .setParameter("uidentity", uidentity)
+                    .setParameter("uphone", uphone)
                     .setParameter("uid", uid);
             query.executeUpdate();
+            tran.commit();
+        } catch (RuntimeException re) {
+            if (tran != null) tran.rollback();
+            throw re;
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
+
+    //添加
+    public void add(User user){
+        Transaction tran = null;
+        Session session = getSession();
+        try {
+            tran = session.beginTransaction();
+            session.save(user);
             tran.commit();
         } catch (RuntimeException re) {
             if (tran != null) tran.rollback();

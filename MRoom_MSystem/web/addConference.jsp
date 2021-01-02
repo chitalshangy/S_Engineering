@@ -15,7 +15,7 @@
 </head>
 <body class="layui-layout-body">
 <label class="layui-word-aux"><s:property value="#request.tip"/></label>
-<form class="layui-form" action="addConference" method="post">
+<form class="layui-form" action="addConference.action" method="post">
     <div class="layui-form-item">
         <label class="layui-form-label">预约流水号</label>
         <div class="layui-input-block">

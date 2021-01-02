@@ -5,7 +5,7 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>face.jsp</welcome-file>
     </welcome-file-list>
 
 
@@ -16,13 +16,21 @@
     </filter>
     <filter-mapping>
         <filter-name>struts2</filter-name>
-        <!--表示所有页面都必须进行过滤-->
-        <url-pattern>/*</url-pattern>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>*.jsp</url-pattern>
     </filter-mapping>
 
     <filter>
         <filter-name>AccessFilter</filter-name>
         <filter-class>Filters.AccessFilter</filter-class>
+
+        <init-param>
+            <param-name>excludedPages</param-name>
+            <param-value>/face.jsp</param-value>
+        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>AccessFilter</filter-name>

@@ -63,4 +63,25 @@ public class AdminDAO extends BaseHibernateDAO implements IAdminDAO {
         }
         return tem;
     }
+
+    public void update(String aid, String apassword, String aphone) {
+        Transaction tran = null;
+        Session session = getSession();
+        String hql = "update Admin a set a.apassword=:apassword,a.aphone=:aphone where a.aid=:aid";
+        try {
+            tran = session.beginTransaction();
+            Query query = session.createQuery(hql).setParameter("apassword", apassword)
+                    .setParameter("aphone", aphone)
+                    .setParameter("aid", aid);
+            query.executeUpdate();
+            tran.commit();
+        } catch (RuntimeException re) {
+            if (tran != null) tran.rollback();
+            throw re;
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
 }

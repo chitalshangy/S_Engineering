@@ -13,7 +13,7 @@
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
-<form class="layui-form" action="addReserve" method="post">
+<form class="layui-form" action="addReserve.action" method="post">
     <div class="layui-form-item">
         <label class="layui-form-label">会议室编号</label>
         <div class="layui-input-block">
