@@ -5,6 +5,8 @@ import Service.IConferenceService;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class ConferenceAction {
     private Conference conference;
@@ -41,4 +43,14 @@ public class ConferenceAction {
         return "success";
     }
 
+
+    public void checkIn() throws IOException {
+        HttpServletRequest request =ServletActionContext.getRequest();
+        HttpServletResponse response= ServletActionContext.getResponse();
+        response.setContentType("application/json; charset=utf-8");
+        request.setCharacterEncoding("utf-8");
+        String a=request.getParameter("image");
+        String rid= request.getParameter("rid");
+        conferenceService.checkIn(a,rid);
+    }
 }

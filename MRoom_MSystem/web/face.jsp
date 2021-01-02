@@ -9,12 +9,15 @@
     <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
-<p align="center"><video id="video" autoplay=""style='width:640px;height:480px'></video></p>
+<p align="center">
+    <video id="video" autoplay=""style='width:640px;height:480px'></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+</p>
 <p align="center">
     <button id="paizhao">拍照</button>
     <button id="upimg">上传</button>
 </p>
-<canvas id="canvas" width="640" height="480" hidden></canvas>
+
 <script type="text/javascript">
     let video=document.getElementById("video");
     let context=canvas.getContext("2d");
@@ -64,13 +67,14 @@
 		
         // Sending the image data to Server
         $.ajax({
-			url: "JSONServlerDemo01",
+			url: "checkIn.action?rid=R01",
 			type:"post",		
 			datatype:"json",
 			data:{"image":Pic,},
 			//-----------------------------------
 			success:function(data){
 				//传入成功时的操作
+
 			},
 			error:function(jqXHR,textStatus,errorThrown){
 				//传入失败时的操作

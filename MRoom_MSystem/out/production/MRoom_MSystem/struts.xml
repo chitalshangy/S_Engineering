@@ -53,6 +53,10 @@
         <action name="deleteConferenceByManager" class="conferenceAction" method="deleteConferenceByManager">
             <result name="success">/reserveList.jsp</result>
         </action>
+
+
+        <action name="checkIn" class="conferenceAction" method="checkIn"/>
+
     </package>
     <!--json文件返回-->
     <package name="zp" extends="json-default">
