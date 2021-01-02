@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>用户界面</title>
-    <link rel="stylesheet" href="layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body class="layui-layout-body">
@@ -30,14 +30,14 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
 
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">预定会议室</a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;" data-id="1" data-title="普通预定" data-url="reserve.jsp"
                                class="site-demo-active" data-type="tabAdd">普通预定</a></dd>
-                        <dd><a href="javascript:;" data-id="2" data-title="紧急预定" data-url=""
+                        <dd><a href="javascript:;" data-id="2" data-title="紧急预定" data-url="emergencyReserve.jsp"
                                class="site-demo-active" data-type="tabAdd">紧急预定</a></dd>
                     </dl>
                 </li>
@@ -142,9 +142,10 @@
                 element.tabDelete("demo", id);//删除
             }
         };
+
         function FrameWH() {
             var h = $(window).height();
-            $("iframe").css("height",h+"px");
+            $("iframe").css("height", h + "px");
         }
     });
 </script>

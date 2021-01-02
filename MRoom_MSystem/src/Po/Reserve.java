@@ -1,9 +1,6 @@
 package Po;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.sql.Date;
 import java.sql.Time;
 
@@ -14,24 +11,22 @@ public class Reserve {
     private String rid;
     private String rephone;
     private String state;
+    private String title;
     private Date date;
-
     private Time startTime;
-
     private Time endTime;
-    private String state2;
+    private String open;
     private User user;
     private Room room;
 
 
-    public Reserve(){
+    public Reserve() {
 
     }
 
 
-
-    public Reserve(String reid){
-        this.reid=reid;
+    public Reserve(String reid) {
+        this.reid = reid;
     }
 
     public String getReid() {
@@ -98,9 +93,26 @@ public class Reserve {
         this.endTime = endTime;
     }*/
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getOpen() {
+        return open;
+    }
+
+    public void setOpen(String open) {
+        this.open = open;
+    }
+
     public Time getStartTime() {
         return startTime;
     }
+
     public void setStartTime(Time startTime) {
         this.startTime = startTime;
     }
@@ -109,17 +121,11 @@ public class Reserve {
     public Time getEndTime() {
         return endTime;
     }
+
     public void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
 
-    public String getState2() {
-        return state2;
-    }
-
-    public void setState2(String state2) {
-        this.state2 = state2;
-    }
 
     public User getUser() {
         return user;

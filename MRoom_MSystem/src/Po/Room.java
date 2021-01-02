@@ -2,11 +2,11 @@ package Po;
 
 public class Room {
     private String rid;
-    private  int rnum;
-    private  String rtype;
+    private int rnum;
+    private String rstate;
     private String raddress;
 
-    public Room(){
+    public Room() {
 
     }
 
@@ -30,12 +30,12 @@ public class Room {
         this.rnum = rnum;
     }
 
-    public String getRtype() {
-        return rtype;
+    public String getRstate() {
+        return rstate;
     }
 
-    public void setRtype(String rtype) {
-        this.rtype = rtype;
+    public void setRstate(String rtype) {
+        this.rstate = rtype;
     }
 
     public String getRaddress() {

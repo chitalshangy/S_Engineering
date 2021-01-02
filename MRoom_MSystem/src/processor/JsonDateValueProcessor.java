@@ -7,7 +7,7 @@ import java.util.Locale;
 import net.sf.json.JsonConfig;
 import net.sf.json.processors.JsonValueProcessor;
 
-public class JsonDateValueProcessor implements JsonValueProcessor{//实现该接口
+public class JsonDateValueProcessor implements JsonValueProcessor {//实现该接口
 
     private String format = "yyyy-MM-dd";
 
