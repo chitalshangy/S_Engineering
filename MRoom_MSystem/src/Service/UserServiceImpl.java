@@ -15,6 +15,8 @@ public class UserServiceImpl implements IUserService {
     private AdminDAO adminDAO;
     private RoomDAO roomDAO;
 
+    private Map<String, Object> session;
+
     public void setUserDAO(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
@@ -24,20 +26,22 @@ public class UserServiceImpl implements IUserService {
     }
 
     public void setRoomDAO(RoomDAO roomDAO) {
-        this.roomDAO=roomDAO;
+        this.roomDAO = roomDAO;
     }
-
 
     //普通用户登录
     public boolean ulogin(User user) {
         String id = user.getUid();
         String password = user.getUpassword();
         String hql = "from User as user where uid='" + id + "' and upassword='" + password + "'";
-        /*错误
-        UserDAO userDAO=new UserDAO();
-        */
+
+        ActionContext ctx = ActionContext.getContext();
+        session = (Map) ctx.getSession();
         List list = userDAO.findByhql(hql);
-        if (list != null) return true;
+        if (list.size() == 1) {
+            session.put("user", user);
+            return true;
+        }
         return false;
     }
 
@@ -50,7 +54,7 @@ public class UserServiceImpl implements IUserService {
         UserDAO userDAO=new UserDAO();
         */
         List list = adminDAO.findByhql(hql);
-        if (list.size() == 1){
+        if (list.size() == 1) {
             Map request;
             ActionContext ctx=ActionContext.getContext();
             request=(Map)ctx.get("request");

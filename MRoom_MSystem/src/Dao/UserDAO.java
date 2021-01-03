@@ -65,7 +65,6 @@ public class UserDAO extends BaseHibernateDAO implements IUserDAO {
         return tem;
     }
 
-    //删除
     public void del(String uid) {
         Transaction tran = null;
         Session session = getSession();
@@ -107,6 +106,7 @@ public class UserDAO extends BaseHibernateDAO implements IUserDAO {
             }
         }
     }
+
 
     //添加
     public void add(User user){

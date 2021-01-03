@@ -6,6 +6,14 @@ public class Room {
     private String rstate;
     private String raddress;
 
+    public Room() {
+
+    }
+
+    public Room(String rid) {
+        this.rid = rid;
+    }
+
     public String getRid() {
         return rid;
     }
@@ -26,8 +34,8 @@ public class Room {
         return rstate;
     }
 
-    public void setRstate(String rstate) {
-        this.rstate = rstate;
+    public void setRstate(String rtype) {
+        this.rstate = rtype;
     }
 
     public String getRaddress() {

@@ -1,15 +1,25 @@
 package Po;
 
 import java.io.Serializable;
+import java.sql.Time;
 
 public class Conference implements Serializable {
     private String uid;
     private String reid;
     private String cidentity;
-    private String checkInTime;
-    private String signingOutTime;
+    private Time checkInTime;
+    private Time signingOutTime;
     private User user;
     private Reserve reserve;
+
+    public Conference() {
+
+    }
+
+    public Conference(User user, Reserve reserve) {
+        this.user = user;
+        this.reserve = reserve;
+    }
 
     public String getUid() {
         return uid;
@@ -35,19 +45,19 @@ public class Conference implements Serializable {
         this.cidentity = cidentity;
     }
 
-    public String getCheckInTime() {
+    public Time getCheckInTime() {
         return checkInTime;
     }
 
-    public void setCheckInTime(String checkInTime) {
+    public void setCheckInTime(Time checkInTime) {
         this.checkInTime = checkInTime;
     }
 
-    public String getSigningOutTime() {
+    public Time getSigningOutTime() {
         return signingOutTime;
     }
 
-    public void setSigningOutTime(String signingOutTime) {
+    public void setSigningOutTime(Time signingOutTime) {
         this.signingOutTime = signingOutTime;
     }
 

@@ -23,7 +23,7 @@ public class webcam {
 	String appId = "4dTQLDT1XXKegVCsZLdnb5EzwWQR6Qm4KWcG9MVBoA8v";
 	 String sdkKey = "E4hpryAyCvCa6mq2oNAzAvxdTPPKs9Gg76CTtSLv9tgN";
 
-	 FaceEngine faceEngine = new FaceEngine("arcsoft_lib");//加载依赖库，这里到时候根据自己电脑上存放的位置来改变
+	 FaceEngine faceEngine = new FaceEngine("C:\\arcsoft_lib");//加载依赖库，这里到时候根据自己电脑上存放的位置来改变
 	// 激活引擎
 	 int errorCode = faceEngine.activeOnline(appId, sdkKey);
 	 public webcam() {
@@ -82,7 +82,7 @@ public class webcam {
 				imageInfo.getImageFormat(), faceInfoList.get(0), faceFeature);
 
 		// 人脸检测2
-		ImageInfo imageInfo2 = getRGBData(new File("D:\\testPic.jpg"));//这里也是根据自己存放位置改变（web上拍的那个照片这是这张）
+		ImageInfo imageInfo2 = getRGBData(new File("C:\\Users\\ZYJ\\Desktop\\testpic.jpg"));//这里也是根据自己存放位置改变（web上拍的那个照片这是这张）
 		List<FaceInfo> faceInfoList2 = new ArrayList<FaceInfo>();
 		errorCode = faceEngine.detectFaces(imageInfo2.getImageData(), imageInfo2.getWidth(), imageInfo2.getHeight(),
 				imageInfo.getImageFormat(), faceInfoList2);

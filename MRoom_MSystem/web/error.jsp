@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Chital
@@ -8,9 +9,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>运行失败</title>
+    <title>失败</title>
 </head>
 <body>
-Sorry, something wrong happened!!!
+<label><s:property value="#request.tip"/></label>
 </body>
 </html>
