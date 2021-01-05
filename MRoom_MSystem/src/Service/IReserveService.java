@@ -22,6 +22,12 @@ public interface IReserveService {
     //获取总行数
     public long Count();
 
+    //获取历史记录
+    public List history(int page, int limit);
+
+    //获取历史预约记录数
+    public long historyCount();
+
     //获得我预约的会议
     public List InfoMyList(int page, int limit);
 

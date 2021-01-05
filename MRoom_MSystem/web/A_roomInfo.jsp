@@ -60,7 +60,7 @@
                 , {field: 'rnum', title: '支持人数', sort: true}
                 , {field: 'rstate', title: '是否可用', sort: true}
                 , {field: 'raddress', title: '地址', sort: true}
-                , {fixed: 'right', title: '操作', toolbar: '#barDemo', fixed: 'right'}
+                , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
             ]]
             , page: true
         });
@@ -124,7 +124,7 @@
                             uid: data.uid,
                         });
                         layer.close(index);//关闭弹窗
-                        table.reload('staffTable', {page: {curr: 1}, where: {time: new Date()}});
+                        table.reload('roomTable', {page: {curr: 1}, where: {time: new Date()}});
                     }
                 });
             }

@@ -27,7 +27,6 @@ public class ReserveAction {
         this.reserveService = reserveService;
     }
 
-
     public String addReserve() {
         if (reserveService.addReserve(reserve)) return "success";
         else return "fail";
@@ -44,5 +43,4 @@ public class ReserveAction {
         reserveService.deleteReserve(reid);
         return "success";
     }
-
 }

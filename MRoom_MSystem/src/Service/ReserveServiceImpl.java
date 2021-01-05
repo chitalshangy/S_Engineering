@@ -38,6 +38,15 @@ public class ReserveServiceImpl implements IReserveService {
         return reserveDAO.infoCount();
     }
 
+
+    public List history(int page, int limit) {
+        return reserveDAO.history(page, limit);
+    }
+
+    public long historyCount() {
+        return reserveDAO.historyCount();
+    }
+
     public List InfoMyList(int page, int limit) {
         ActionContext ctx = ActionContext.getContext();
         session = (Map) ctx.getSession();
@@ -92,6 +101,9 @@ public class ReserveServiceImpl implements IReserveService {
             else {
                 reserve.setReid(uid + rid + date + start);
                 reserveDAO.save(reserve);
+                Conference conference = new Conference(user, reserve);
+                conference.setCidentity("预约者");
+                conferenceDAO.addConference(conference);
                 request.put("reid", uid + rid + date + start);
                 return true;
             }
@@ -116,12 +128,20 @@ public class ReserveServiceImpl implements IReserveService {
         reserve.setReid(uid + rid + date + starttime);
         reserve.setUser(user);
         reserve.setState("1");
+
+        String hql = "from Room r where r.rid='" + rid + "'";
+        List list = reserveDAO.findByhql(hql);
+        if (list.size() == 0) {
+            request.put("tip", "预约会议室不存在，请重新预约");
+            return false;
+        }
+
         Room r = new Room(rid);
         reserve.setRoom(r);
         Conference conference = new Conference(user, reserve);
         conference.setCidentity("预约者");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        //System.out.println(sdf.format(date));
+        System.out.println(sdf.format(date));
         reserveDAO.save(reserve);
         conferenceDAO.addConference(conference);
         request.put("reid", uid + rid + date + starttime);
@@ -132,6 +152,4 @@ public class ReserveServiceImpl implements IReserveService {
         reserveDAO.deleteReserve(reid);
         conferenceDAO.deleteConference(reid);
     }
-
-
 }

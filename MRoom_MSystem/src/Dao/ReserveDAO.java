@@ -104,6 +104,42 @@ public class ReserveDAO extends BaseHibernateDAO implements IReserveDAO {
         return tem;
     }
 
+    public List history(int page, int limit) {
+
+        String hql = "from Reserve";
+        try {
+            //设置分页
+            Query query = getSession().createQuery(hql);
+            query.setFirstResult((page - 1) * limit);
+            query.setMaxResults(limit);
+            List list = query.list();
+            return list;
+        } catch (RuntimeException re) {
+            throw re;
+        }
+    }
+
+    public Long historyCount() {
+
+        String hql = "select count(*) from Reserve";
+        Transaction tran = null;
+        Session session = getSession();
+        Long tem = 0l;
+        try {
+            tran = session.beginTransaction();
+            Query query = session.createQuery(hql);
+            tem = (Long) query.uniqueResult();
+            tran.commit();
+        } catch (RuntimeException re) {
+            if (tran != null) tran.rollback();
+            throw re;
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return tem;
+    }
 
     public List findMyAll(int page, int limit, String uid) {
 
@@ -181,5 +217,4 @@ public class ReserveDAO extends BaseHibernateDAO implements IReserveDAO {
             }
         }
     }
-
 }

@@ -102,6 +102,5 @@ public class webcam {
 		errorCode = faceEngine.compareFaceFeature(targetFaceFeature, sourceFaceFeature, faceSimilar);
 
 		return faceSimilar.getScore();
-
 	}
 }

@@ -114,7 +114,7 @@
                         return '<div onclick="show_img(this)" ><img src="' + d.upicture + '" height=40px width=30px></a></div>';
                     }
                 }
-                , {fixed: 'right', title: '操作', toolbar: '#barDemo', fixed: 'right'}
+                , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
             ]]
             , page: true
         });

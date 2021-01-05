@@ -19,8 +19,8 @@
                     <s:property value=""/>
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
+                    <dd><a href="null">基本资料</a></dd>
+                    <dd><a href="null">安全设置</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="login.jsp">退了</a></li>

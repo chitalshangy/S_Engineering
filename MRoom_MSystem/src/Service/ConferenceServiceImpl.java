@@ -128,6 +128,10 @@ public class ConferenceServiceImpl implements IConferenceService {
                 ten_less_time + "' <= r.startTime and '" +
                 ten_more_time + "' >= r.startTime";
         List reidList = conferenceDAO.findByhql(hql1);
+
+        if(reidList.size()==0){
+            return false;
+        }
         String reid = (String) reidList.get(0);
 
         String hql2 = "select c.user.uid from Conference c,Reserve r where c.reserve.reid=r.reid and r.reid ='" + reid + "'";
@@ -142,6 +146,8 @@ public class ConferenceServiceImpl implements IConferenceService {
             String hql3 = "select u.upicture from User u where u.uid='" + uid + "'";
             List list = conferenceDAO.findByhql(hql3);
 
+            ActionContext ctx = ActionContext.getContext();
+            request = (Map) ctx.get("request");
             //获取数据库内照片路径
             String tmp ="C:\\Users\\Chital\\Documents\\GitHub\\S_Engineering\\MRoom_MSystem\\web\\"+list.get(0);
             if (c.fun(tmp) > 0.7) {
@@ -151,6 +157,7 @@ public class ConferenceServiceImpl implements IConferenceService {
                 break;
             } else {
                 System.out.println("fail");
+                return false;
             }
         }
         return true;
