@@ -39,10 +39,7 @@ public class JsonTimeValueProcessor implements JsonValueProcessor {
 
 
     @Override
-    public Object processArrayValue(Object paramObject, JsonConfig paramJsonConfig
-
-
-    ) {
+    public Object processArrayValue(Object paramObject, JsonConfig paramJsonConfig) {
         return myProcess(paramObject);
     }
 }

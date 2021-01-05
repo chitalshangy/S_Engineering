@@ -14,7 +14,6 @@
 </head>
 <body>
 <form class="layui-form" action="emergencyReserve.action" method="post">
-
     <div class="layui-form-item">
         <label class="layui-form-label">联系电话</label>
         <div class="layui-input-block">
@@ -38,6 +37,5 @@
         </div>
     </div>
 </form>
-
 </body>
 </html>

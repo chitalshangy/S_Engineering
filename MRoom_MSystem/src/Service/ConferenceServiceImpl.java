@@ -91,7 +91,7 @@ public class ConferenceServiceImpl implements IConferenceService {
         return conferenceDAO.infoCountPo(reid);
     }
 
-    public Boolean checkIn(String a,String rid) throws IOException {
+    public Boolean checkIn(String a, String rid) throws IOException {
         Base64.Decoder decoder = Base64.getDecoder();
         byte[] b = decoder.decode(a);
         for (int i = 0; i < b.length; ++i) {
@@ -103,12 +103,11 @@ public class ConferenceServiceImpl implements IConferenceService {
         out1.write(b);
         out1.flush();
         out1.close();
-        webcam c =new webcam();
-
+        webcam c = new webcam();
 
         Long current_time = System.currentTimeMillis();
-        Time ten_less_time = new Time(current_time-10*1000*60);
-        Time ten_more_time = new Time(current_time+10*1000*60);
+        Time ten_less_time = new Time(current_time - 10 * 1000 * 60);
+        Time ten_more_time = new Time(current_time + 10 * 1000 * 60);
         Time check_curr_time = new Time(current_time);
 
         java.util.Date now = new java.util.Date();
@@ -118,44 +117,42 @@ public class ConferenceServiceImpl implements IConferenceService {
         // java.time.LocalDate -> java.sql.Date
         Date date = java.sql.Date.valueOf(localDate);
 
-       /* String hql = "select c.user.uid from Conference c,Reserve r where r.reid = c.reserve.reid " +
+        /*
+                String hql = "select c.user.uid from Conference c,Reserve r where r.reid = c.reserve.reid " +
                 "and r.room.rid = '"+rid+"' and r.date = '"+date+"' and '"+
                 ten_less_time + "' <= r.startTime and '" +
-                ten_more_time + "' >= r.startTime";*/
+                ten_more_time + "' >= r.startTime";
+        */
 
-
-        String hql1 = "select r.reid from Reserve r where r.room.rid = '"+rid+"' and r.date = '"+date+"' and '"+
+        String hql1 = "select r.reid from Reserve r where r.room.rid = '" + rid + "' and r.date = '" + date + "' and '" +
                 ten_less_time + "' <= r.startTime and '" +
                 ten_more_time + "' >= r.startTime";
-        List reidList=conferenceDAO.findByhql(hql1);
-        String reid=(String)reidList.get(0);
+        List reidList = conferenceDAO.findByhql(hql1);
+        String reid = (String) reidList.get(0);
 
-        String hql2="select c.user.uid from Conference c,Reserve r where c.reserve.reid=r.reid and r.reid ='"+reid+"'";
+        String hql2 = "select c.user.uid from Conference c,Reserve r where c.reserve.reid=r.reid and r.reid ='" + reid + "'";
         List conlist = conferenceDAO.findByhql(hql2);
 
-        for(int i=0;i<conlist.size();++i){
-            System.out.println((String)conlist.get(i));
+        for (int i = 0; i < conlist.size(); ++i) {
+            System.out.println((String) conlist.get(i));
         }
 
-        for(int i=0;i<conlist.size();++i){
-            String uid=(String)conlist.get(i);
-            String hql3="select u.upicture from User u where u.uid='"+uid+"'";
-            List list=conferenceDAO.findByhql(hql3);
+        for (int i = 0; i < conlist.size(); ++i) {
+            String uid = (String) conlist.get(i);
+            String hql3 = "select u.upicture from User u where u.uid='" + uid + "'";
+            List list = conferenceDAO.findByhql(hql3);
 
-            String tmp = "C:\\Users\\ZYJ\\Desktop\\MRoom_MSystem\\web\\"+list.get(0);
-            if(c.fun(tmp)>0.7) {
+            //获取数据库内照片路径
+            String tmp ="C:\\Users\\Chital\\Documents\\GitHub\\S_Engineering\\MRoom_MSystem\\web\\"+list.get(0);
+            if (c.fun(tmp) > 0.7) {
                 System.out.println(uid);
                 System.out.println("succcess");
-
-                conferenceDAO.checkInConference(reid,uid,check_curr_time);
-
+                conferenceDAO.checkInConference(reid, uid, check_curr_time);
                 break;
-            }
-            else {
+            } else {
                 System.out.println("fail");
             }
         }
         return true;
     }
-
 }

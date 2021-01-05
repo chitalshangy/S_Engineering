@@ -56,10 +56,10 @@ public class UserServiceImpl implements IUserService {
         List list = adminDAO.findByhql(hql);
         if (list.size() == 1) {
             Map request;
-            ActionContext ctx=ActionContext.getContext();
-            request=(Map)ctx.get("request");
-            request.put("id",id);
-            request.put("password",password);
+            ActionContext ctx = ActionContext.getContext();
+            request = (Map) ctx.get("request");
+            request.put("id", id);
+            request.put("password", password);
             return true;
         }
         return false;
@@ -71,8 +71,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     //获得会议室所有信息
-    public List roomList(int page, int limit){
-        return roomDAO.findAll(page,limit);
+    public List roomList(int page, int limit) {
+        return roomDAO.findAll(page, limit);
     }
 
     //获取User总行数
@@ -81,7 +81,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     //获取Room总行数
-    public long roomCount(){
+    public long roomCount() {
         return roomDAO.roomCount();
     }
 
@@ -93,7 +93,7 @@ public class UserServiceImpl implements IUserService {
         userDAO.update(uid, uname, upassword, uphone);
     }
 
-    public void updateAdmin(String aid, String apassword, String aphone){
-        adminDAO.update(aid,apassword,aphone);
+    public void updateAdmin(String aid, String apassword, String aphone) {
+        adminDAO.update(aid, apassword, aphone);
     }
 }

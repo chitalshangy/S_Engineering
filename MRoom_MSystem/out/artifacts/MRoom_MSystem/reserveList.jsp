@@ -14,8 +14,9 @@
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
+
 <!--用户表格-->
-<table class="layui-hide" id="TTTtest" lay-filter="test"></table>
+<table class="layui-hide" id="reserveTable" lay-filter="test"></table>
 
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container">
@@ -36,7 +37,6 @@
 
 <script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
 
-
 <script>
     //定义全局变量$
     var $ = layui.jquery;
@@ -50,7 +50,7 @@
         //表格的渲染
         table.render({
             //指向的是表格的id
-            elem: '#TTTtest'
+            elem: '#reserveTable'
             , url: 'myReserveList.action'
             , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
             , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
@@ -92,8 +92,7 @@
                 case 'LAYTABLE_TIPS':
                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                     break;
-            }
-            ;
+            };
         });
 
         //监听行工具事件
@@ -107,7 +106,6 @@
                     });
                     layer.close(index);//关闭弹窗
                 });
-
             } else if (obj.event === 'edit') {
                 layer.open({
                     type: 1
@@ -118,7 +116,7 @@
                     , shadeClose: true
                     , shade: 0
                     , maxmin: true
-                    , content: '<table class="layui-hide" id="TTTtest1" lay-filter="test1"></table>'
+                    , content: '<table class="layui-hide" id="person" lay-filter="test1"></table>'
                     , success: function (layero, index) {
                         var id = data.reid;
 
@@ -127,7 +125,7 @@
                         //表格的渲染
                         table.render({
                             //指向的是表格的id
-                            elem: '#TTTtest1'
+                            elem: '#person'
                             , url: url
                             , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
                             , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
@@ -165,9 +163,9 @@
                                 case 'LAYTABLE_TIPS':
                                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                                     break;
-                            }
-                            ;
+                            };
                         });
+
                         //监听行工具事件
                         table.on('tool(test1)', function (obj) {
                             var data1 = obj.data; //获得当前行数据
@@ -186,12 +184,9 @@
                         layer.close(index);//关闭弹窗
                     }
                 });
-
-
             }
         });
     });
 </script>
-
 </body>
 </html>

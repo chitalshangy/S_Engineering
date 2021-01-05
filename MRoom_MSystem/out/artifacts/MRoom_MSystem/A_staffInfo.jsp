@@ -11,6 +11,7 @@
     <title>员工信息</title>
     <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <script src="layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
 </head>
 <body>
 
@@ -48,18 +49,18 @@
     </div>
 </script>
 
-<form method="post" id="uploadForm">
-    <input type="file" id="file" name="file"/>
-    <input type="button" onclick="upload()" value="开始上传">
-</form>
-
 <!--编辑以及删除的前端-->
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
-<script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
 
+<!--
+<form method="post" id="uploadForm">
+    <input type="file" id="file" name="file"/>
+    <input type="button" onclick="upload()" value="开始上传">
+</form>
+-->
 <!--问题：找不到及时显示刷新后数据的方法-->
 <script>
     //定义全局变量$
@@ -78,16 +79,15 @@
             , end: function (index, layero) {
                 return false;
             }
-            , content: '<div style="text-align:center" ><img src="' + $(t).attr('src') + '" style="height: 100%;width: 100%"/></div>'
+            , content: '<div style="text-align:center" >' +
+                '<img src="' + $(t).attr('src') + '" style="height: 100%;width: 100%"/></div>'
         });
     }
 
     layui.use(['jquery', 'table', 'upload'], function () {
         var load = layui.layer.load(0);// 加载时loading效果
         layui.layer.close(load); //加载效果
-
         var table = layui.table;
-
         //表格主体的渲染
         table.render({
             //指向的是表格的id
@@ -119,8 +119,10 @@
             , page: true
         });
 
-        //头部按钮简单的逻辑实现
-        //头工具栏事件
+        /*
+        头部按钮简单的逻辑实现
+        头工具栏事件
+        */
         table.on('toolbar(test)', function (obj) {
             var checkStatus = table.checkStatus(obj.config.id);
             switch (obj.event) {
@@ -139,12 +141,13 @@
                 case 'LAYTABLE_TIPS':
                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                     break;
-            }
-            ;
+            };
         });
 
-        //删除和修改按钮
-        //监听行工具事件
+        /*
+        删除和修改按钮
+        监听行工具事件
+        */
         table.on('tool(test)', function (obj) {
             var data = obj.data; //获得当前行数据
             console.log(data);
@@ -156,7 +159,6 @@
                     layer.close(index);//关闭弹窗
                     table.reload('staffTable', {page: {curr: 1}, where: {time: new Date()}});
                 });
-
             } else if (obj.event === 'edit') {
                 //这里是编辑
                 layer.open({
@@ -187,7 +189,7 @@
             }
         });
     });
-
+    /*
     function upload(){
         var file=document.getElementById('file').files[0];
         if(file==undefined){
@@ -210,6 +212,7 @@
             },
         });
     }
+    */
 </script>
 </body>
 </html>

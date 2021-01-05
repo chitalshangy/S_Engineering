@@ -59,6 +59,7 @@ public class ZPJsonAction {
         this.limit = limit;
     }
 
+    //返回所需要格式的json数据
     public String zpjsonUserList() {
         List userlist = userService.userList(page, limit);
         data = new JSONObject();
@@ -130,9 +131,9 @@ public class ZPJsonAction {
         return "success";
     }
 
-    public String zpjsonRoomList(){
-        List roomlist=userService.roomList(page, limit);
-        data=new JSONObject();
+    public String zpjsonRoomList() {
+        List roomlist = userService.roomList(page, limit);
+        data = new JSONObject();
         data.put("code", 0);
         data.put("msg", "");
         data.put("count", userService.roomCount());

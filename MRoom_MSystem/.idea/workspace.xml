@@ -5,8 +5,123 @@
       <artifact name="web:war exploded" />
     </artifacts-to-build>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:div" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb9fb278-f1ef-4dea-9c13-59477795374b" name="Default Changelist" comment="" />
+    <list default="true" id="bb9fb278-f1ef-4dea-9c13-59477795374b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00f1bbee-3a1f-4521-b5dd-964f55e8cbcf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00f1bbee-3a1f-4521-b5dd-964f55e8cbcf/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MRoom_MSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MRoom_MSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/A_roomInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/A_roomInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/A_staffInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/A_staffInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Action/ConferenceAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Action/ConferenceAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Action/ReserveAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Action/ReserveAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Action/UserAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Action/UserAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Action/ZPJsonAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Action/ZPJsonAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/AttendServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Dao/BaseHibernateDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Dao/BaseHibernateDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Dao/RoomDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Dao/RoomDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Filters/AccessFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Filters/AccessFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/ReserveServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Service/ConferenceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/Service/ConferenceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/extend/faceEngineTest/ajaxTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/extend/faceEngineTest/webcam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/extend/faceEngineTest/webcam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/processor/JsonDateValueProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/processor/JsonDateValueProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/processor/JsonTimeValueProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/classes/processor/JsonTimeValueProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/conferenceList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/conferenceList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/emergencyReserve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/emergencyReserve.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/face.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/face.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/normal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/normal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/reserve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/reserve.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/reserveList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/reserveList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/reserveList1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/reserveList1.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/reserveSuccess.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MRoom_MSystem/reserveSuccess.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/Action/ConferenceAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/Action/ConferenceAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/Action/ReserveAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/Action/ReserveAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/Action/UserAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/Action/UserAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/Action/ZPJsonAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/Action/ZPJsonAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/AttendServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/Dao/BaseHibernateDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/Dao/BaseHibernateDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/Dao/RoomDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/Dao/RoomDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/Filters/AccessFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/Filters/AccessFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/ReserveServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/Service/ConferenceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/Service/ConferenceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/extend/faceEngineTest/ajaxTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/extend/faceEngineTest/webcam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/extend/faceEngineTest/webcam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/processor/JsonDateValueProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/processor/JsonDateValueProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MRoom_MSystem/processor/JsonTimeValueProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MRoom_MSystem/processor/JsonTimeValueProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Action/ConferenceAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/ConferenceAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Action/ReserveAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/ReserveAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Action/UserAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/UserAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Action/ZPJsonAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/ZPJsonAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AttendServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dao/BaseHibernateDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/BaseHibernateDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dao/ConferenceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/ConferenceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dao/IAdminDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/IAdminDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dao/IConferenceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/IConferenceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dao/IReserveDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/IReserveDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dao/IRoomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/IRoomDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dao/RoomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/RoomDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filters/AccessFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filters/AccessFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReserveServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ConferenceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ConferenceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/IConferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/IConferenceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/IReserveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/IReserveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extend/faceEngineTest/ajaxTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extend/faceEngineTest/webcam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/extend/faceEngineTest/webcam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/JsonDateValueProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/JsonDateValueProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/JsonTimeValueProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/JsonTimeValueProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/A_roomInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/A_roomInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/A_staffInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/A_staffInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/conferenceList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/conferenceList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/emergencyReserve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/emergencyReserve.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/face.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/face.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/normal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/normal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/reserve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/reserve.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/reserveList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/reserveList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/reserveList1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/reserveList1.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/reserveSuccess.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/reserveSuccess.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,13 +132,20 @@
       <list>
         <option value="chital.xml" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/chitalshangy/S_Engineering.git" />
+      </set>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -41,7 +163,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1lJwgsvTHqnd1rQInT4u1goyO6X" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,25 +181,25 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3" />
-    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Chital\Desktop\MRoom_MSystem\lib" />
-      <recent name="C:\Users\Chital\Desktop\MRoom_MSystem\src\andriod" />
-      <recent name="C:\Users\ZYJ\Desktop\MRoom_MSystem\lib" />
-      <recent name="C:\Users\ZYJ\Desktop\MRoom_MSystem\web" />
-      <recent name="C:\Users\ZYJ\Desktop\MRoom_MSystem\web\images" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Action" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ZYJ\Desktop\MRoom_MSystem\src\extend" />
       <recent name="C:\Download\MRoom_MSystem\src\Service" />
       <recent name="C:\Download\MRoom_MSystem\src\Dao" />
       <recent name="C:\Download\MRoom_MSystem\src\Po" />
       <recent name="C:\Download\MRoom_MSystem\web" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Action" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Chital\Documents\GitHub\S_Engineering\MRoom_MSystem\src\andriod" />
+      <recent name="C:\Users\Chital\Desktop\MRoom_MSystem\lib" />
+      <recent name="C:\Users\Chital\Desktop\MRoom_MSystem\src\andriod" />
+      <recent name="C:\Users\ZYJ\Desktop\MRoom_MSystem\lib" />
+      <recent name="C:\Users\ZYJ\Desktop\MRoom_MSystem\web" />
     </key>
   </component>
   <component name="RunManager">
@@ -85,7 +209,7 @@
       <deployment>
         <artifact name="web:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/MRoon_MSystem" />
+            <option name="CONTEXT_PATH" value="/MRoom_MSystem" />
           </settings>
         </artifact>
       </deployment>
@@ -255,11 +379,58 @@
       <workItem from="1609646771742" duration="1803000" />
       <workItem from="1609651237382" duration="4594000" />
       <workItem from="1609656379650" duration="2103000" />
+      <workItem from="1609658653639" duration="87000" />
+      <workItem from="1609665324517" duration="1340000" />
+      <workItem from="1609672856488" duration="2255000" />
+      <workItem from="1609716565897" duration="2446000" />
+      <workItem from="1609719392089" duration="225000" />
+      <workItem from="1609744982158" duration="5006000" />
+      <workItem from="1609750508609" duration="724000" />
+      <workItem from="1609760549772" duration="124000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="div" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="div" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="662" y="301" width="549" height="221" key="#Assign_Data_Sources" timestamp="1607859320282">
@@ -270,6 +441,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="217" key="#BuildArtifactsBeforeRunChooser/0.0.1536.824@0.0.1536.824" timestamp="1609601363521" />
+    <state x="588" y="280" key="#Notifications" timestamp="1609673074330">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="588" y="280" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1609673074330" />
     <state x="249" y="0" key="#Project_Structure" timestamp="1607855282861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -278,19 +453,23 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="292" y="245" key="#Template_Data_Languages/0.0.1536.824@0.0.1536.824" timestamp="1608029994631" />
-    <state x="410" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609657555124">
+    <state x="410" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609666528032">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="410" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1609657555124" />
-    <state x="764" y="554" key="#com.intellij.ide.util.MemberChooser" timestamp="1609568203570">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="410" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1609666528032" />
+    <state x="663" y="192" key="#com.intellij.ide.util.MemberChooser" timestamp="1609718734920">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="663" y="192" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1609309593287" />
+    <state x="663" y="192" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1609718734920" />
     <state x="764" y="554" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1609568203570" />
-    <state x="832" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608272547191">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="676" y="298" width="448" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1609719256926">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1607840028811" />
+    <state x="676" y="298" width="448" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1609719256926" />
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609719216845">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1609719216845" />
     <state x="832" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1608272547191" />
     <state x="626" y="147" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1609647253158">
       <screen x="0" y="0" width="1536" height="824" />
@@ -300,108 +479,124 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="524" y="114" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1607866167081" />
-    <state x="455" y="199" key="FileChooserDialogImpl" timestamp="1609648299823">
+    <state x="455" y="202" width="438" height="486" key="FileChooserDialogImpl" timestamp="1609674374636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="455" y="199" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1609648299823" />
+    <state x="455" y="202" width="438" height="486" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1609674374636" />
     <state x="758" y="338" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1608285451764" />
-    <state width="1181" height="65" key="GridCell.Tab.0.bottom" timestamp="1609658545369">
+    <state width="1317" height="365" key="GridCell.Tab.0.bottom" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609658545369" />
+    <state width="1317" height="365" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.0.center" timestamp="1609658545369">
+    <state width="1317" height="365" key="GridCell.Tab.0.center" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609658545369" />
+    <state width="1317" height="365" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.0.left" timestamp="1609658545369">
+    <state width="1317" height="365" key="GridCell.Tab.0.left" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609658545369" />
+    <state width="1317" height="365" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.0.right" timestamp="1609658545369">
+    <state width="1317" height="365" key="GridCell.Tab.0.right" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609658545369" />
+    <state width="1317" height="365" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.1.bottom" timestamp="1609658545370">
+    <state width="1317" height="365" key="GridCell.Tab.1.bottom" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609658545370" />
+    <state width="1317" height="365" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.1.center" timestamp="1609658545370">
+    <state width="1317" height="365" key="GridCell.Tab.1.center" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1609658545370" />
+    <state width="1317" height="365" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.1.left" timestamp="1609658545370">
+    <state width="1317" height="365" key="GridCell.Tab.1.left" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1609658545370" />
+    <state width="1317" height="365" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.1.right" timestamp="1609658545370">
+    <state width="1317" height="365" key="GridCell.Tab.1.right" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1609658545370" />
+    <state width="1317" height="365" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.2.bottom" timestamp="1609658545370">
+    <state width="1317" height="365" key="GridCell.Tab.2.bottom" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609658545370" />
+    <state width="1317" height="365" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497361" />
-    <state width="1181" height="65" key="GridCell.Tab.2.center" timestamp="1609658545370">
+    <state width="1317" height="365" key="GridCell.Tab.2.center" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1609658545370" />
+    <state width="1317" height="365" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.2.left" timestamp="1609658545370">
+    <state width="1317" height="365" key="GridCell.Tab.2.left" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1609658545370" />
+    <state width="1317" height="365" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497360" />
-    <state width="1181" height="65" key="GridCell.Tab.2.right" timestamp="1609658545370">
+    <state width="1317" height="365" key="GridCell.Tab.2.right" timestamp="1609751239931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1181" height="65" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1609658545370" />
+    <state width="1317" height="365" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1609751239931" />
     <state width="1524" height="274" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1609590497361" />
-    <state width="1317" height="77" key="GridCell.Tab.3.bottom" timestamp="1609655007022">
+    <state width="1317" height="314" key="GridCell.Tab.3.bottom" timestamp="1609750010959">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1317" height="77" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609655007022" />
+    <state width="1317" height="314" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609750010959" />
     <state width="2289" height="578" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1609587393724" />
-    <state width="1317" height="77" key="GridCell.Tab.3.center" timestamp="1609655007022">
+    <state width="1317" height="314" key="GridCell.Tab.3.center" timestamp="1609750010959">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1317" height="77" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1609655007022" />
+    <state width="1317" height="314" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1609750010959" />
     <state width="2289" height="578" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1609587393723" />
-    <state width="1317" height="77" key="GridCell.Tab.3.left" timestamp="1609655007022">
+    <state width="1317" height="314" key="GridCell.Tab.3.left" timestamp="1609750010959">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1317" height="77" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1609655007022" />
+    <state width="1317" height="314" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1609750010959" />
     <state width="2289" height="578" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1609587393723" />
-    <state width="1317" height="77" key="GridCell.Tab.3.right" timestamp="1609655007022">
+    <state width="1317" height="314" key="GridCell.Tab.3.right" timestamp="1609750010959">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1317" height="77" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1609655007022" />
+    <state width="1317" height="314" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1609750010959" />
     <state width="2289" height="578" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1609587393723" />
+    <state width="1317" height="417" key="GridCell.Tab.57.bottom" timestamp="1609719050857">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1317" height="417" key="GridCell.Tab.57.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609719050857" />
+    <state width="1317" height="417" key="GridCell.Tab.57.center" timestamp="1609719050857">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1317" height="417" key="GridCell.Tab.57.center/0.0.1536.824@0.0.1536.824" timestamp="1609719050857" />
+    <state width="1317" height="417" key="GridCell.Tab.57.left" timestamp="1609719050857">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1317" height="417" key="GridCell.Tab.57.left/0.0.1536.824@0.0.1536.824" timestamp="1609719050857" />
+    <state width="1317" height="417" key="GridCell.Tab.57.right" timestamp="1609719050857">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1317" height="417" key="GridCell.Tab.57.right/0.0.1536.824@0.0.1536.824" timestamp="1609719050857" />
     <state width="221" height="477" key="HiddenNamespacesPopup" timestamp="1607830144131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="221" height="477" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1607830144131" />
-    <state x="96" y="0" key="SettingsEditor" timestamp="1609648304277">
+    <state x="-95" y="62" key="SettingsEditor" timestamp="1609674965343">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="96" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1609648304277" />
+    <state x="-95" y="62" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1609674965343" />
     <state x="415" y="0" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1609170030492" />
     <state x="643" y="215" width="334" height="394" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1609657992760">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="643" y="215" width="334" height="394" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.824@0.0.1536.824" timestamp="1609657992760" />
-    <state x="349" y="67" key="com.intellij.database.dbimport.ImportDialog" timestamp="1607998169732">
+    <state x="349" y="67" key="com.intellij.database.dbimport.ImportDialog" timestamp="1609719612579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="349" y="67" key="com.intellij.database.dbimport.ImportDialog/0.0.1536.824@0.0.1536.824" timestamp="1607998169732" />
+    <state x="349" y="67" key="com.intellij.database.dbimport.ImportDialog/0.0.1536.824@0.0.1536.824" timestamp="1609719612579" />
     <state x="582" y="181" width="527" height="528" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1609599463402">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -452,23 +647,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Po/Reserve.java</url>
-          <line>75</line>
+          <line>97</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Po/Reserve.java</url>
-          <line>99</line>
+          <line>113</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Po/Reserve.java</url>
-          <line>107</line>
+          <line>121</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Service/UserServiceImpl.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="16" />
+          <url>file://$PROJECT_DIR$/src/Service/ConferenceServiceImpl.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/extend/faceEngineTest/webcam.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

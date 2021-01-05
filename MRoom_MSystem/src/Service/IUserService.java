@@ -6,6 +6,7 @@ import Po.User;
 import java.util.List;
 
 public interface IUserService {
+
     //普通用户登录
     public boolean ulogin(User user);
 
@@ -24,9 +25,12 @@ public interface IUserService {
     //获取Room总行数
     public long roomCount();
 
+    //更新用户信息
     public void updateUser(String uid, String uname, String upassword, String uidentity);
 
+    //管理员删除用户
     public void delUser(String uid);
 
+    //管理员更新本人信息
     public void updateAdmin(String aid, String apassword, String aphone);
 }

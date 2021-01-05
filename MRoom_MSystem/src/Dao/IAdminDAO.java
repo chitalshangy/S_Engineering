@@ -3,6 +3,6 @@ package Dao;
 import java.util.List;
 
 public interface IAdminDAO {
-    //登录
+    //查找
     public List findByhql(String hql);
 }

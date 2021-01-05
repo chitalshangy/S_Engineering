@@ -16,7 +16,7 @@
 <body>
 
 <!--用户表格-->
-<table class="layui-hide" id="TTTtest" lay-filter="test"></table>
+<table class="layui-hide" id="reserveTable1" lay-filter="test"></table>
 
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container">
@@ -39,7 +39,7 @@
         //表格的渲染
         table.render({
             //指向的是表格的id
-            elem: '#TTTtest'
+            elem: '#reserveTable1'
             , url: 'reserveList.action'
             , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
             , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
@@ -78,13 +78,9 @@
                 case 'LAYTABLE_TIPS':
                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                     break;
-            }
-            ;
+            };
         });
-
-
     });
 </script>
-
 </body>
 </html>

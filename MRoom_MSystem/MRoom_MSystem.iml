@@ -59,5 +59,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="poi-4.1.2" level="project" />
   </component>
 </module>

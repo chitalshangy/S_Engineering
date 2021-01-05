@@ -43,14 +43,13 @@ public class ConferenceAction {
         return "success";
     }
 
-
     public void checkIn() throws IOException {
-        HttpServletRequest request =ServletActionContext.getRequest();
-        HttpServletResponse response= ServletActionContext.getResponse();
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
         response.setContentType("application/json; charset=utf-8");
         request.setCharacterEncoding("utf-8");
-        String a=request.getParameter("image");
-        String rid= request.getParameter("rid");
-        conferenceService.checkIn(a,rid);
+        String a = request.getParameter("image");
+        String rid = request.getParameter("rid");
+        conferenceService.checkIn(a, rid);
     }
 }

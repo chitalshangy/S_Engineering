@@ -7,6 +7,7 @@ import java.sql.Date;
 import java.util.List;
 
 public interface IReserveDAO {
+
     public List findByhql(String hql);
 
     public void save(Reserve reserve);

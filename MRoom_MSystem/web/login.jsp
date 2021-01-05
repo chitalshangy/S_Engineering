@@ -22,7 +22,6 @@
             <strong>智能会议室管理系统</strong>
             <em>Meeting Room Management System</em>
         </h1>
-
         <div class="layui-user-icon larry-login">
             <div class="layui-code-box">
                 <input name="user.uid" id="user_id" type="text" placeholder="账号" class="login_txtbx"/>
@@ -43,9 +42,6 @@
         <div class="layui-submit larry-login">
             <input type="submit" value="登录" class="submit_btn"/>
         </div>
-        <div class="layui-submit larry-login">
-            <input type="button" value="注册" class="submit_btn" onclick="window.location.href='register.jsp'"/>
-        </div>
     </form>
 </div>
 <script type="text/javascript">
@@ -56,8 +52,8 @@
         code = "";
         var codeLength = 4;//验证码的长度
         var checkCode = document.getElementById("new_code");
-        var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');//随机数
+        var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+            'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');//随机数
         for (var i = 0; i < codeLength; i++) {//循环操作
             var index = Math.floor(Math.random() * 36);//取得随机数的索引（0~35）
             code += random[index];//根据索引取得随机数加到code上
@@ -88,6 +84,7 @@
         return result;
     }
 </script>
+
 <script type="text/javascript" color="255,255,255" opacity="0.5" count="180">
     !function () {
         //封装方法，压缩之后减少文件大小
@@ -116,8 +113,12 @@
 
         //设置canvas的高宽
         function set_canvas_size() {
-            canvas_width = the_canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-                canvas_height = the_canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            canvas_width = the_canvas.width = window.innerWidth
+                || document.documentElement.clientWidth
+                || document.body.clientWidth,
+                canvas_height = the_canvas.height = window.innerHeight
+                    || document.documentElement.clientHeight
+                    || document.body.clientHeight;
         }
 
         //绘制过程
@@ -158,7 +159,12 @@
             config = get_config_option(), //配置
             canvas_id = "c_n" + config.l, //canvas id
             context = the_canvas.getContext("2d"), canvas_width, canvas_height,
-            frame_func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (func) {
+            frame_func = window.requestAnimationFrame
+                || window.webkitRequestAnimationFrame
+                || window.mozRequestAnimationFrame
+                || window.oRequestAnimationFrame
+                || window.msRequestAnimationFrame
+                || function (func) {
                 window.setTimeout(func, 1000 / 45);
             }, random = Math.random,
             current_point = {
@@ -174,17 +180,6 @@
         //初始化画布大小
         set_canvas_size();
         window.onresize = set_canvas_size;
-        //当时鼠标位置存储，离开的时候，释放当前位置信息
-        /*
-        window.onmousemove = function(e) {
-            e = e || window.event;
-            current_point.x = e.clientX;
-            current_point.y = e.clientY;
-        }, window.onmouseout = function() {
-            current_point.x = null;
-            current_point.y = null;
-        };
-        */
         //随机生成config.n条线位置信息
         for (var random_points = [], i = 0; config.n > i; i++) {
             var x = random() * canvas_width, //随机位置

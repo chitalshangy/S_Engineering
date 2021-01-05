@@ -6,10 +6,14 @@ import java.text.ParseException;
 import java.util.List;
 
 public interface IReserveService {
+
+    //紧急预约
     public boolean emergencyReserve(int num, Reserve reserve);
 
+    //预约
     public boolean addReserve(Reserve reserve);
 
+    //删除预约
     public void deleteReserve(String reid);
 
     //获得所有信息

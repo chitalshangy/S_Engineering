@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<!DOCTYPE html>
 <html>
 <head>
     <title>html5调用摄像头实现拍照</title>
@@ -9,13 +8,15 @@
     <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
+<h1>这是会议室R01</h1>
+
 <p align="center">
     <video id="video" autoplay=""style='width:640px;height:480px'></video>
     <canvas id="canvas" width="640" height="480"></canvas>
 </p>
 <p align="center">
     <button id="paizhao">拍照</button>
-    <button id="upimg">上传</button>
+    <button id="upimg">签到</button>
 </p>
 
 <script type="text/javascript">
@@ -45,11 +46,11 @@
     }
     //成功回调
     function success(stream) {
+
         //兼容webkit核心浏览器
         var CompatibleURL = window.URL || window.webkitURL;
+
         //将视频流设置为video元素的源
-        // console.log(stream);
-        //video.src = CompatibleURL.createObjectURL(stream);
         video.srcObject = stream;
         video.play();
     }
@@ -61,17 +62,15 @@
         context.drawImage(video,0,0,640,480);
     });
     function UploadPic() {
-        // Generate the image data
         var Pic = document.getElementById("canvas").toDataURL("image/jpg");
         Pic = Pic.replace(/^data:image\/(png|jpg);base64,/, "")
-		
-        // Sending the image data to Server
+
         $.ajax({
 			url: "checkIn.action?rid=R01",
 			type:"post",		
 			datatype:"json",
 			data:{"image":Pic,},
-			//-----------------------------------
+
 			success:function(data){
 				//传入成功时的操作
 
