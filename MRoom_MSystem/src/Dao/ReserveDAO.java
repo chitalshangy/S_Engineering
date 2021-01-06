@@ -1,6 +1,7 @@
 package Dao;
 
 import Po.Reserve;
+import javafx.beans.binding.LongExpression;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -31,14 +32,26 @@ public class ReserveDAO extends BaseHibernateDAO implements IReserveDAO {
     }
 
     public boolean judge(String rid, Date date, Time start, Time end) {
-        String hql = "from Reserve r where r.state='1' and r.room.rid=:rid and r.date=:date and :start>=r.startTime and :start<r.endTime";
-        String hql2 = "from Reserve r where r.state='1' and r.room.rid=:rid and r.date=:date and :end>r.startTime and :end<=r.endTime";
+        String hql = "from Reserve r where r.state='1' and r.room.rid=:rid " +
+                "and r.date=:date and :start>=r.startTime and :start<r.endTime";
+        String hql2 = "from Reserve r where r.state='1' and r.room.rid=:rid " +
+                "and r.date=:date and :end>r.startTime and :end<=r.endTime";
+        String hql3 = "select r.rstate from Room r where r.rid=:rid";
+
+        String tem_id;
+
         Transaction tran = null;
         Session session = getSession();
         List list = null;
         List list2 = null;
         try {
             tran = session.beginTransaction();
+            Query query_tem = session.createQuery(hql3);
+            query_tem.setParameter("rid", rid);
+            tem_id = (String) query_tem.uniqueResult();
+            if (tem_id.equals("1")) {
+                return false;
+            }
             Query query = session.createQuery(hql);
             query.setString("rid", rid);
             query.setTimestamp("date", date);

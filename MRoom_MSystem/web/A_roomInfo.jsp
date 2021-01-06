@@ -58,7 +58,7 @@
                 {type: 'checkbox', fixed: 'left'}
                 , {field: 'rid', title: '编号', sort: true}
                 , {field: 'rnum', title: '支持人数', sort: true}
-                , {field: 'rstate', title: '是否可用', sort: true}
+                , {field: 'rstate', title: '是否维修', sort: true}
                 , {field: 'raddress', title: '地址', sort: true}
                 , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
             ]]

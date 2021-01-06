@@ -60,7 +60,7 @@
                 , {field: 'user', title: '预约人', sort: true, templet: '<div>{{d.user.uid}}</div>'}
                 , {field: 'room', title: '会议室', sort: true, templet: '<div>{{d.room.rid}}</div>'}
                 , {field: 'rephone', title: '联系电话', sort: true}
-                , {field: 'state', title:'是否可用',sort: true}
+                , {field: 'state', title:'会议状态',sort: true}
                 , {field: 'title', title:'会议简述',sort: true}
                 , {field: 'date', title:'开始日期',sort: true}
                 , {field: 'startTime', title:'开始时间',sort: true}
