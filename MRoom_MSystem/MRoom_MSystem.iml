@@ -47,7 +47,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.31" level="application_server_libraries" />
-    <orderEntry type="library" name="struts2-json-plugin-2.5.25" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -59,6 +58,5 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="poi-4.1.2" level="project" />
   </component>
 </module>

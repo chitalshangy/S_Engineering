@@ -3,15 +3,45 @@ package Action;
 import Po.Admin;
 import Po.User;
 import Service.IUserService;
+import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 
-public class UserAction {
+public class UserAction extends ActionSupport {
     private User user;
     private Admin admin = new Admin();
     private IUserService userService;
+
+    private File userExcel;
+    private String userExcelContentType;
+    private String userExcelFileName;
+
+    public File getUserExcel() {
+        return userExcel;
+    }
+
+    public void setUserExcel(File userExcel) {
+        this.userExcel = userExcel;
+    }
+
+    public String getUserExcelContentType() {
+        return userExcelContentType;
+    }
+
+    public void setUserExcelContentType(String userExcelContentType) {
+        this.userExcelContentType = userExcelContentType;
+    }
+
+    public String getUserExcelFileName() {
+        return userExcelFileName;
+    }
+
+    public void setUserExcelFileName(String userExcelFileName) {
+        this.userExcelFileName = userExcelFileName;
+    }
 
     public User getUser() {
         return user;
@@ -72,6 +102,12 @@ public class UserAction {
     }
 
     // 执行上传功能
-    public void upload() {
+    public String uploadFile() {
+        if (!(userExcel == null)) {
+            if (userExcelFileName.matches("^.+\\.(?i)((xls)|(xlsx))$")) {
+                userService.importExcel(userExcel, userExcelFileName);
+            }
+        }
+        return "list";
     }
 }

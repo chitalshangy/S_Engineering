@@ -17,6 +17,10 @@
 
 <!--主体，用户信息表格-->
 <table class="layui-hide" id="staffTable" lay-filter="test"></table>
+<form action="uploadFile.action" enctype="multipart/form-data" method="post">
+    <input name="userExcel" type="file"/>
+    <input type="submit" value="导入"/>
+</form>
 
 <!--修改信息时的弹出层-->
 <div class="site-text" style="margin: 5%; display: none" id="box1" target="123">

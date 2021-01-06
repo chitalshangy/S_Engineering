@@ -107,7 +107,6 @@ public class UserDAO extends BaseHibernateDAO implements IUserDAO {
         }
     }
 
-
     //添加
     public void add(User user) {
         Transaction tran = null;

@@ -12,7 +12,9 @@
         </action>
 
         <!--文件上传-->
-        <action name="upload" class="userAction" method="upload"/>
+        <action name="uploadFile" class="userAction" method="uploadFile">
+            <result name="list">/admin.jsp</result>
+        </action>
 
         <!--删除转发-->
         <action name="delete" class="userAction" method="delete">
@@ -25,7 +27,6 @@
         <action name="Adminupdate" class="userAction" method="Adminupdate">
             <result name="success">/admin.jsp</result>
         </action>
-
 
         <!--增加预约记录-->
         <action name="addReserve" class="reserveAction" method="addReserve">

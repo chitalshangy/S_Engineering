@@ -3,6 +3,7 @@ package Service;
 import Po.Admin;
 import Po.User;
 
+import java.io.File;
 import java.util.List;
 
 public interface IUserService {
@@ -33,4 +34,6 @@ public interface IUserService {
 
     //管理员更新本人信息
     public void updateAdmin(String aid, String apassword, String aphone);
+
+    public void importExcel(File userExcel, String userExcelFileName);
 }

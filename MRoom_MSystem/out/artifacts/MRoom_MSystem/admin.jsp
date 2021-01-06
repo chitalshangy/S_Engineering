@@ -15,7 +15,6 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-
     <!--页眉-->
     <div class="layui-header">
         <div class="layui-logo">欢迎您，管理员</div>
@@ -183,6 +182,7 @@
                 element.tabDelete("demo", id);//删除
             }
         };
+
         function FrameWH() {
             var h = $(window).height();
             $("iframe").css("height", h + "px");
