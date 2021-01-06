@@ -41,15 +41,15 @@ public class ConferenceAction {
     }
 
     public String deleteConference() {
-        HttpServletRequest reqeust = ServletActionContext.getRequest();
-        String reid = reqeust.getParameter("reid");
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String reid = request.getParameter("reid");
         conferenceService.deleteConference(reid);
         return "success";
     }
 
     public String deleteConferenceByManager() {
-        HttpServletRequest reqeust = ServletActionContext.getRequest();
-        String uid = reqeust.getParameter("uid");
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String uid = request.getParameter("uid");
         conferenceService.deleteConferenceByManager(uid);
         return "success";
     }

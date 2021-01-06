@@ -38,8 +38,8 @@ public class ReserveAction {
     }
 
     public String deleteReserve() {
-        HttpServletRequest reqeust = ServletActionContext.getRequest();
-        String reid = reqeust.getParameter("reid");
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String reid = request.getParameter("reid");
         reserveService.deleteReserve(reid);
         return "success";
     }
