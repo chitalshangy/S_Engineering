@@ -150,16 +150,18 @@ public class ConferenceServiceImpl implements IConferenceService {
             request = (Map) ctx.get("request");
             //获取数据库内照片路径
             String tmp ="C:\\Users\\Chital\\Documents\\GitHub\\S_Engineering\\MRoom_MSystem\\web\\"+list.get(0);
-            if (c.fun(tmp) > 0.7) {
+            double re=c.fun(tmp);
+            System.out.println(re);
+            if (re > 0.7) {
                 System.out.println(uid);
                 System.out.println("succcess");
                 conferenceDAO.checkInConference(reid, uid, check_curr_time);
-                break;
+                return true;
             } else {
                 System.out.println("fail");
-                return false;
+                continue;
             }
         }
-        return true;
+        return false;
     }
 }
