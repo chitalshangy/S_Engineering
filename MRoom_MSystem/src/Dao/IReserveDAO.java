@@ -28,4 +28,6 @@ public interface IReserveDAO {
     public Long infoMyCount(String uid);
 
     public boolean judge(String rid, Date date, Time start, Time end);
+
+    public void updateReserve(String reid);
 }

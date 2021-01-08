@@ -230,4 +230,25 @@ public class ReserveDAO extends BaseHibernateDAO implements IReserveDAO {
             }
         }
     }
+
+    public void updateReserve(String reid){
+        Transaction tran = null;
+        Session session = getSession();
+        try {
+            tran = session.beginTransaction();
+            String hql = "update Reserve r set r.state=:state where r.reid=:reid";
+            Query queryupdate = session.createQuery(hql);
+            queryupdate.setString("state", "2");
+            queryupdate.setString("reid", reid);
+            queryupdate.executeUpdate();
+            tran.commit();
+        } catch (RuntimeException re) {
+            if (tran != null) tran.rollback();
+            throw re;
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
 }

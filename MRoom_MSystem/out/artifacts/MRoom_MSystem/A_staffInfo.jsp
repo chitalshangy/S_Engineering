@@ -193,30 +193,6 @@
             }
         });
     });
-    /*
-    function upload(){
-        var file=document.getElementById('file').files[0];
-        if(file==undefined){
-            alert('请选择文件');
-            return
-        }
-        var data = new FormData();
-        data.append("file", file);
-        $.ajax({
-            type: 'post',
-            url: 'upload.action',
-            data: data,
-            cache: false,
-            processData: false,
-            contentType: false,
-            success: function (data) {
-                alert(data.msg);
-            }, error: function () {
-                alert("上传失败");
-            },
-        });
-    }
-    */
 </script>
 </body>
 </html>

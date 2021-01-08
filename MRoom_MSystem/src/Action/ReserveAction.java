@@ -43,4 +43,11 @@ public class ReserveAction {
         reserveService.deleteReserve(reid);
         return "success";
     }
+
+    public String updateReserve(){
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String reid = request.getParameter("reid");
+        reserveService.updateReserve(reid);
+        return "success";
+    }
 }

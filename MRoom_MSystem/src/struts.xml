@@ -43,6 +43,10 @@
             <result name="success">/reserveList.jsp</result>
         </action>
 
+        <action name="updateReserve" class="reserveAction" method="updateReserve">
+            <result name="success">/reserveList.jsp</result>
+        </action>
+
         <!--增加会议记录-->
         <action name="addConference" class="conferenceAction" method="addConference">
             <result name="success">/addConference.jsp</result>

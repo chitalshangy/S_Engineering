@@ -33,4 +33,7 @@ public interface IReserveService {
 
     //获取我预约的会议的行数
     public long CountMy();
+
+    //更新会议状态
+    public void updateReserve(String reid);
 }

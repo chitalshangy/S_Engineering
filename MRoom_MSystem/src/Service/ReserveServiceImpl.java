@@ -152,4 +152,8 @@ public class ReserveServiceImpl implements IReserveService {
         reserveDAO.deleteReserve(reid);
         conferenceDAO.deleteConference(reid);
     }
+
+    public void updateReserve(String reid){
+        reserveDAO.updateReserve(reid);
+    }
 }

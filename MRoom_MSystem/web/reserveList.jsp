@@ -18,6 +18,18 @@
 <!--用户表格-->
 <table class="layui-hide" id="reserveTable" lay-filter="test"></table>
 
+<!--修改会议状态-->
+<div class="site-text" style="margin: 5%; display: none" id="box1" target="123">
+    <form class="layui-form layui-form-pane" onsubmit="return false" id="booktype">
+        <div class="layui-form-item">
+            <label class="layui-form-label"> 会议状态</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="state" name=state><br>
+            </div>
+        </div>
+    </form>
+</div>
+
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
@@ -29,6 +41,7 @@
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-xs" lay-event="edit">管理与会人员</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">取消预约</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit1">编辑</a>
 </script>
 
 <script type="text/html" id="barDemo1">
@@ -63,12 +76,12 @@
                 {type: 'checkbox', fixed: 'left'}
                 , {field: 'reid', title: '预约流水号', sort: true}
                 , {field: 'room', title: '会议室号', sort: true, templet: '<div>{{d.room.rid}}</div>'}
-                , {field: 'state', title: '状态(0:已取消/1:预约中/2:已完结)', sort: true}
+                , {field: 'state', title: '状态(0:已取消/1:进行中/2:已完结)', sort: true, width: 260}
                 , {field: 'title', title: '主题', sort: true}
                 , {field: 'date', title: '预约日期', sort: true}
                 , {field: 'startTime', title: '开始时间', sort: true}
                 , {field: 'endTime', title: '结束时间', sort: true}
-                , {fixed: 'right', title: '操作', toolbar: '#barDemo', fixed: 'right'}
+                , {fixed: 'right', title: '操作', toolbar: '#barDemo', fixed: 'right', width: 250}
             ]]
             , page: true
         });
@@ -92,7 +105,8 @@
                 case 'LAYTABLE_TIPS':
                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                     break;
-            };
+            }
+            ;
         });
 
         //监听行工具事件
@@ -163,7 +177,8 @@
                                 case 'LAYTABLE_TIPS':
                                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                                     break;
-                            };
+                            }
+                            ;
                         });
 
                         //监听行工具事件
@@ -182,6 +197,28 @@
                         });
                     }, yes: function (index, layero) {
                         layer.close(index);//关闭弹窗
+                    }
+                });
+            } else if (obj.event === 'edit1') {
+                //这里是编辑
+                layer.open({
+                    type: 1 //Page层类型
+                    , skin: 'layui-layer-molv'
+                    , area: ['380px', '270px']
+                    , title: ['编辑用户信息', 'font-size:18px']
+                    , btn: ['确定', '取消']
+                    , shadeClose: true
+                    , shade: 0 //遮罩透明度
+                    , maxmin: true //允许全屏最小化
+                    , content: $('#box1')  //弹窗id
+                    , success: function (layero, index) {
+                        $('#state').val(data.state);
+                    }, yes: function (index, layero) {
+                        $.getJSON('updateReserve.action', {
+                            reid: data.reid,
+                        });
+                        layer.close(index);//关闭弹窗
+                        table.reload('reserveTable', {page: {curr: 1}, where: {time: new Date()}});
                     }
                 });
             }
