@@ -67,6 +67,38 @@
           <element id="file-copy" path="$PROJECT_DIR$/lib/xmlbeans-4.0.0.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/commons-compress-1.19.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/xbean.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/junit-4.12.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/log4j-1.2.17.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/curvesapi-1.06.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/xmlbeans-3.1.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxb-impl-2.3.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/activation-1.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/SparseBitSet-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxb-core-2.3.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-codec-1.13.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-examples-4.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-excelant-4.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-math3-3.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-scratchpad-4.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-collections4-4.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/xmlbeans-4.0.0-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/xmlbeans-4.0.0-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/resolver.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/xmlbeans-3.1.0-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/xmlbeans-3.1.0-sources.jar" />
+          <element id="library" level="project" name="lib" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-4.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/curvesapi-1.05.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxb-api-2.3.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/xmlbeans-3.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-ooxml-4.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jaxb-impl-2.3.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-codec-1.11.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-examples-4.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-excelant-4.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-scratchpad-4.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-ooxml-schemas-4.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-collections4-4.2.jar" />
         </element>
       </element>
     </root>

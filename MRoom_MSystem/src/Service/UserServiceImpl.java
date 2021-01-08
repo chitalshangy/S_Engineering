@@ -7,10 +7,7 @@ import Po.Admin;
 import Po.User;
 import com.opensymphony.xwork2.ActionContext;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -115,25 +112,40 @@ public class UserServiceImpl implements IUserService {
             //3、读取行
             if(sheet.getPhysicalNumberOfRows() > 2){
                 User user = null;
-                for(int k = 2; k < sheet.getPhysicalNumberOfRows(); ++k){
+                for(int k = 1; k < sheet.getPhysicalNumberOfRows(); ++k){
 
                     Row row = sheet.getRow(k);
                     user = new User();
 
                     Cell cell0 = row.getCell(0);
-                    user.setUid(cell0.getStringCellValue());
+                    if(cell0!=null){
+                        cell0.setCellType(CellType.STRING);
+                        user.setUid(cell0.getStringCellValue());
+                    }
 
                     Cell cell1 = row.getCell(1);
-                    user.setUname(cell1.getStringCellValue());
+                    if(cell1!=null){
+                        cell1.setCellType(CellType.STRING);
+                        user.setUname(cell1.getStringCellValue());
+                    }
 
                     Cell cell2 = row.getCell(2);
-                    user.setUpassword(cell2.getStringCellValue());
+                    if(cell2!=null){
+                        cell2.setCellType(CellType.STRING);
+                        user.setUpassword(cell2.getStringCellValue());
+                    }
 
                     Cell cell3 = row.getCell(3);
-                    user.setUpassword(cell3.getStringCellValue());
+                    if(cell3!=null){
+                        cell3.setCellType(CellType.STRING);
+                        user.setUphone(cell3.getStringCellValue());
+                    }
 
                     Cell cell4 = row.getCell(4);
-                    user.setUpassword(cell4.getStringCellValue());
+                    if(cell4!=null){
+                        cell4.setCellType(CellType.STRING);
+                        user.setUpicture(cell4.getStringCellValue());
+                    }
 
                     //5、保存用户
                     userDAO.add(user);
