@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 public class ReserveAction {
     private Reserve reserve;
     private int num;//紧急预约时存储参会人数
-    private IReserveService reserveService = null;
+    private IReserveService reserveService;
 
     public Reserve getReserve() {
         return reserve;
@@ -27,7 +27,6 @@ public class ReserveAction {
         this.reserveService = reserveService;
     }
 
-
     public String addReserve() {
         if (reserveService.addReserve(reserve)) return "success";
         else return "fail";
@@ -39,10 +38,9 @@ public class ReserveAction {
     }
 
     public String deleteReserve() {
-        HttpServletRequest reqeust = ServletActionContext.getRequest();
-        String reid = reqeust.getParameter("reid");
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String reid = request.getParameter("reid");
         reserveService.deleteReserve(reid);
         return "success";
     }
-
 }

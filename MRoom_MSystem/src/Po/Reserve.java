@@ -24,7 +24,6 @@ public class Reserve {
 
     }
 
-
     public Reserve(String reid) {
         this.reid = reid;
     }
@@ -77,22 +76,6 @@ public class Reserve {
         this.date = date;
     }
 
-    /*public String getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
-
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }*/
-
     public String getTitle() {
         return title;
     }
@@ -117,7 +100,6 @@ public class Reserve {
         this.startTime = startTime;
     }
 
-
     public Time getEndTime() {
         return endTime;
     }
@@ -125,7 +107,6 @@ public class Reserve {
     public void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
-
 
     public User getUser() {
         return user;

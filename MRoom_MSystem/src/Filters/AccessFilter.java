@@ -29,16 +29,15 @@ public class AccessFilter implements Filter {
         //过滤器有错误，已经解决
 
         boolean hasIt = false;
-        for(String page:excludedPageArray){
-            if(((HttpServletRequest) request).getServletPath().equals(page)){
+        for (String page : excludedPageArray) {
+            if (((HttpServletRequest) request).getServletPath().equals(page)) {
                 hasIt = true;
                 break;
             }
         }
 
         if (session.getAttribute("user_id") == null &&
-                request.getRequestURI().indexOf("login.jsp") == -1 &&
-                request.getRequestURI().indexOf("register.jsp") == -1 &&!hasIt) {
+                request.getRequestURI().indexOf("login.jsp") == -1 && !hasIt) {
             response.sendRedirect("login.jsp");
             return;
         }

@@ -59,6 +59,7 @@ public class ZPJsonAction {
         this.limit = limit;
     }
 
+    //返回所需要格式的json数据
     public String zpjsonUserList() {
         List userlist = userService.userList(page, limit);
         data = new JSONObject();
@@ -78,6 +79,21 @@ public class ZPJsonAction {
         hashMap.put("code", 0);
         hashMap.put("msg", "");
         hashMap.put("count", reserveService.Count());
+        hashMap.put("data", reservelist);
+        data = new JSONObject();
+        data.putAll(hashMap, jsonConfig);
+        return "success";
+    }
+
+    public String zpjsonHistory() {
+        JsonConfig jsonConfig = new JsonConfig();
+        jsonConfig.registerJsonValueProcessor(Date.class, new JsonDateValueProcessor());
+        jsonConfig.registerJsonValueProcessor(Time.class, new JsonTimeValueProcessor());
+        List reservelist = reserveService.history(page, limit);
+        HashMap<String, Object> hashMap = new HashMap<String, Object>();
+        hashMap.put("code", 0);
+        hashMap.put("msg", "");
+        hashMap.put("count", reserveService.historyCount());
         hashMap.put("data", reservelist);
         data = new JSONObject();
         data.putAll(hashMap, jsonConfig);
@@ -130,9 +146,9 @@ public class ZPJsonAction {
         return "success";
     }
 
-    public String zpjsonRoomList(){
-        List roomlist=userService.roomList(page, limit);
-        data=new JSONObject();
+    public String zpjsonRoomList() {
+        List roomlist = userService.roomList(page, limit);
+        data = new JSONObject();
         data.put("code", 0);
         data.put("msg", "");
         data.put("count", userService.roomCount());
