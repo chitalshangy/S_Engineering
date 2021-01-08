@@ -1,12 +1,14 @@
 package Dao;
 
 import Po.Reserve;
+import org.hibernate.query.Query;
 
 import java.sql.Time;
 import java.sql.Date;
 import java.util.List;
 
 public interface IReserveDAO {
+
     public List findByhql(String hql);
 
     public void save(Reserve reserve);
@@ -16,6 +18,10 @@ public interface IReserveDAO {
     public List findAll(int page, int limit);
 
     public Long infoCount();
+
+    public List history(int page, int limit);
+
+    public Long historyCount();
 
     public List findMyAll(int page, int limit, String uid);
 

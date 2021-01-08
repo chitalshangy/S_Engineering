@@ -6,7 +6,15 @@ import Dao.UserDAO;
 import Po.Admin;
 import Po.User;
 import com.opensymphony.xwork2.ActionContext;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -38,7 +46,7 @@ public class UserServiceImpl implements IUserService {
         ActionContext ctx = ActionContext.getContext();
         session = (Map) ctx.getSession();
         List list = userDAO.findByhql(hql);
-        if (list != null) {
+        if (list.size() == 1) {
             session.put("user", user);
             return true;
         }
@@ -56,10 +64,10 @@ public class UserServiceImpl implements IUserService {
         List list = adminDAO.findByhql(hql);
         if (list.size() == 1) {
             Map request;
-            ActionContext ctx=ActionContext.getContext();
-            request=(Map)ctx.get("request");
-            request.put("id",id);
-            request.put("password",password);
+            ActionContext ctx = ActionContext.getContext();
+            request = (Map) ctx.get("request");
+            request.put("id", id);
+            request.put("password", password);
             return true;
         }
         return false;
@@ -71,8 +79,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     //获得会议室所有信息
-    public List roomList(int page, int limit){
-        return roomDAO.findAll(page,limit);
+    public List roomList(int page, int limit) {
+        return roomDAO.findAll(page, limit);
     }
 
     //获取User总行数
@@ -81,7 +89,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     //获取Room总行数
-    public long roomCount(){
+    public long roomCount() {
         return roomDAO.roomCount();
     }
 
@@ -93,7 +101,48 @@ public class UserServiceImpl implements IUserService {
         userDAO.update(uid, uname, upassword, uphone);
     }
 
-    public void updateAdmin(String aid, String apassword, String aphone){
-        adminDAO.update(aid,apassword,aphone);
+    public void updateAdmin(String aid, String apassword, String aphone) {
+        adminDAO.update(aid, apassword, aphone);
+    }
+
+    public void importExcel(File userExcel, String userExcelFileName){
+        try {
+            FileInputStream fileInputStream = new FileInputStream(userExcel);
+            boolean is03Excel = userExcelFileName.matches("^.+\\.(?i)(xls)$");
+            Workbook workbook = is03Excel ? new HSSFWorkbook(fileInputStream):new XSSFWorkbook(fileInputStream);
+            //2、读取工作表
+            Sheet sheet = workbook.getSheetAt(0);
+            //3、读取行
+            if(sheet.getPhysicalNumberOfRows() > 2){
+                User user = null;
+                for(int k = 2; k < sheet.getPhysicalNumberOfRows(); ++k){
+
+                    Row row = sheet.getRow(k);
+                    user = new User();
+
+                    Cell cell0 = row.getCell(0);
+                    user.setUid(cell0.getStringCellValue());
+
+                    Cell cell1 = row.getCell(1);
+                    user.setUname(cell1.getStringCellValue());
+
+                    Cell cell2 = row.getCell(2);
+                    user.setUpassword(cell2.getStringCellValue());
+
+                    Cell cell3 = row.getCell(3);
+                    user.setUpassword(cell3.getStringCellValue());
+
+                    Cell cell4 = row.getCell(4);
+                    user.setUpassword(cell4.getStringCellValue());
+
+                    //5、保存用户
+                    userDAO.add(user);
+                }
+            }
+            workbook.close();
+            fileInputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

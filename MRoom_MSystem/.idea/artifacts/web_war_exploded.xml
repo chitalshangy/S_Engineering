@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="web:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/web_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/MRoom_MSystem</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="MRoom_MSystem/web/Web" />
       <element id="directory" name="WEB-INF">
@@ -8,8 +8,6 @@
           <element id="module-output" name="MRoom_MSystem" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="lib" />
-          <element id="library" level="project" name="struts2-json-plugin-2.5.25" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/sqljdbc4.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/sqljdbc42.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/txw2-2.3.1.jar" />
@@ -57,6 +55,18 @@
           <element id="file-copy" path="$PROJECT_DIR$/lib/spring-expression-5.2.9.RELEASE.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/hibernate-commons-annotations-5.1.0.Final.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/arcsoft-sdk-face-3.0.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/json.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-4.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/bridj-0.7.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-ooxml-4.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/slf4j-api-1.7.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/webcam-capture-0.3.12.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/poi-ooxml-schemas-4.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-collections4-4.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/xmlbeans-4.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-compress-1.19.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/xbean.jar" />
         </element>
       </element>
     </root>

@@ -24,10 +24,10 @@
             <column name="date" length="10"/>
         </property>
         <property name="startTime" type="java.sql.Time">
-            <column name="startTime"/>
+            <column name="starttime"/>
         </property>
         <property name="endTime" type="java.sql.Time">
-            <column name="endTime"/>
+            <column name="endtime"/>
         </property>
         <property name="open" type="string">
             <column name="open" length="2"/>

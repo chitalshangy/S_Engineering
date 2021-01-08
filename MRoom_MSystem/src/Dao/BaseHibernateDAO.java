@@ -6,14 +6,10 @@ import org.hibernate.SessionFactory;
 
 public abstract class BaseHibernateDAO {
     private SessionFactory sessionFactory;
-
     public Session getSession() {
         return sessionFactory.openSession();
     }
-
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-
-
 }
