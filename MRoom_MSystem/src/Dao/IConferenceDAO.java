@@ -2,6 +2,7 @@ package Dao;
 
 import Po.Conference;
 
+import java.sql.Time;
 import java.util.List;
 
 public interface IConferenceDAO {
@@ -20,4 +21,6 @@ public interface IConferenceDAO {
     public List findAllPo(String reid, int page, int limit);
 
     public Long infoCountPo(String reid);
+
+    public void checkInConference(String reid, String uid, Time time);
 }

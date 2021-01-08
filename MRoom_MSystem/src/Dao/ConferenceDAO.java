@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.sql.Time;
 import java.util.List;
 
 public class ConferenceDAO extends BaseHibernateDAO implements IConferenceDAO {
@@ -140,6 +141,28 @@ public class ConferenceDAO extends BaseHibernateDAO implements IConferenceDAO {
             String hql = "delete from Conference c where c.reserve.reid=:reid";
             Query query = session.createQuery(hql);
             query.setString("reid", reid);
+            query.executeUpdate();
+            tran.commit();
+        } catch (RuntimeException re) {
+            if (tran != null) tran.rollback();
+            throw re;
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
+    public void checkInConference(String reid, String uid, Time time){
+        Transaction tran = null;
+        Session session = getSession();
+        try {
+            tran = session.beginTransaction();
+            String hql4 = "update Conference set checkInTime=:checkInTime where uid=:uid and reid=:reid";
+            Query query = session.createQuery(hql4);
+            query.setParameter("checkInTime" ,time);
+            query.setParameter("uid",uid);
+            query.setParameter("reid", reid);
             query.executeUpdate();
             tran.commit();
         } catch (RuntimeException re) {

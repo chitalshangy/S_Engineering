@@ -65,14 +65,10 @@ public class ReserveServiceImpl implements IReserveService {
         }
         java.util.Date now = new java.util.Date();
         // java.util.Date -> java.time.LocalDate
-        System.out.println(now);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println(sdf.format(now));
         LocalDate localDate = now.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         // java.time.LocalDate -> java.sql.Date
         Date date = java.sql.Date.valueOf(localDate);
-        System.out.println(date);
-        System.out.println(sdf.format(date));
 
         Long time = System.currentTimeMillis();
         Time start = new Time(time);

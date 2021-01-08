@@ -6,7 +6,18 @@ import Po.Conference;
 import Po.Reserve;
 import Po.User;
 import com.opensymphony.xwork2.ActionContext;
+import extend.faceEngineTest.webcam;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.sql.Date;
+import java.sql.SQLOutput;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 
@@ -81,4 +92,72 @@ public class ConferenceServiceImpl implements IConferenceService {
     public long CountPa(String reid) {
         return conferenceDAO.infoCountPo(reid);
     }
+
+    public Boolean checkIn(String a,String rid) throws IOException {
+        Base64.Decoder decoder = Base64.getDecoder();
+        byte[] b = decoder.decode(a);
+        for (int i = 0; i < b.length; ++i) {
+            if (b[i] < 0) {
+                b[i] += 256;
+            }
+        }
+        OutputStream out1 = new FileOutputStream("C:\\Users\\ZYJ\\Desktop\\testpic.jpg");
+        out1.write(b);
+        out1.flush();
+        out1.close();
+        webcam c =new webcam();
+
+
+        Long current_time = System.currentTimeMillis();
+        Time ten_less_time = new Time(current_time-10*1000*60);
+        Time ten_more_time = new Time(current_time+10*1000*60);
+        Time check_curr_time = new Time(current_time);
+
+        java.util.Date now = new java.util.Date();
+        // java.util.Date -> java.time.LocalDate
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        LocalDate localDate = now.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        // java.time.LocalDate -> java.sql.Date
+        Date date = java.sql.Date.valueOf(localDate);
+
+       /* String hql = "select c.user.uid from Conference c,Reserve r where r.reid = c.reserve.reid " +
+                "and r.room.rid = '"+rid+"' and r.date = '"+date+"' and '"+
+                ten_less_time + "' <= r.startTime and '" +
+                ten_more_time + "' >= r.startTime";*/
+
+
+        String hql1 = "select r.reid from Reserve r where r.room.rid = '"+rid+"' and r.date = '"+date+"' and '"+
+                ten_less_time + "' <= r.startTime and '" +
+                ten_more_time + "' >= r.startTime";
+        List reidList=conferenceDAO.findByhql(hql1);
+        String reid=(String)reidList.get(0);
+
+        String hql2="select c.user.uid from Conference c,Reserve r where c.reserve.reid=r.reid and r.reid ='"+reid+"'";
+        List conlist = conferenceDAO.findByhql(hql2);
+
+        for(int i=0;i<conlist.size();++i){
+            System.out.println((String)conlist.get(i));
+        }
+
+        for(int i=0;i<conlist.size();++i){
+            String uid=(String)conlist.get(i);
+            String hql3="select u.upicture from User u where u.uid='"+uid+"'";
+            List list=conferenceDAO.findByhql(hql3);
+
+            String tmp = "C:\\Users\\ZYJ\\Desktop\\MRoom_MSystem\\web\\"+list.get(0);
+            if(c.fun(tmp)>0.7) {
+                System.out.println(uid);
+                System.out.println("succcess");
+
+                conferenceDAO.checkInConference(reid,uid,check_curr_time);
+
+                break;
+            }
+            else {
+                System.out.println("fail");
+            }
+        }
+        return true;
+    }
+
 }

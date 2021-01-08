@@ -2,6 +2,7 @@ package Service;
 
 import Po.Conference;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface IConferenceService {
@@ -18,4 +19,6 @@ public interface IConferenceService {
     public List InfoListPa(String reid, int page, int limit);
 
     public long CountPa(String reid);
+
+    public Boolean checkIn(String a,String rid) throws IOException;
 }
