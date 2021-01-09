@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="strutsBean" extends="struts-default" namespace="/">
+        <!--登录转发-->
+        <action name="login" class="userAction" method="login">
+            <result name="admin_success">/admin.jsp</result>
+            <result name="other_success">/normal.jsp</result>
+            <result name="fail">/error.jsp</result>
+        </action>
+
+        <!--文件上传-->
+        <action name="uploadFile" class="userAction" method="uploadFile">
+            <result name="list">/A_staffInfo.jsp</result>
+        </action>
+
+        <!--删除转发-->
+        <action name="delete" class="userAction" method="delete">
+            <result name="success">/A_staffInfo.jsp</result>
+        </action>
+
+        <action name="Userupdate" class="userAction" method="Userupdate">
+            <result name="success">/A_staffInfo.jsp</result>
+        </action>
+        <action name="Adminupdate" class="userAction" method="Adminupdate">
+            <result name="success">/admin.jsp</result>
+        </action>
+
+        <!--增加预约记录-->
+        <action name="addReserve" class="reserveAction" method="addReserve">
+            <result name="success">/reserveSuccess.jsp</result>
+            <result name="fail">/error.jsp</result>
+        </action>
+        <!--紧急预约-->
+        <action name="emergencyReserve" class="reserveAction" method="emergencyReserve">
+            <result name="success">/reserveSuccess.jsp</result>
+            <result name="fail">/error.jsp</result>
+        </action>
+        <!--删除预约记录-->
+        <action name="deleteReserve" class="reserveAction" method="deleteReserve">
+            <result name="success">/reserveList.jsp</result>
+        </action>
+
+        <action name="updateReserve" class="reserveAction" method="updateReserve">
+            <result name="success">/reserveList.jsp</result>
+        </action>
+
+        <!--增加会议记录-->
+        <action name="addConference" class="conferenceAction" method="addConference">
+            <result name="success">/addConference.jsp</result>
+        </action>
+        <!--删除会议记录（个人推出会议）-->
+        <action name="deleteConference" class="conferenceAction" method="deleteConference">
+            <result name="success">/conferenceList.jsp</result>
+        </action>
+        <!--删除会议记录（预约者踢出会议）-->
+        <action name="deleteConferenceByManager" class="conferenceAction" method="deleteConferenceByManager">
+            <result name="success">/reserveList.jsp</result>
+        </action>
+    </package>
+
+    <!--json文件返回-->
+    <package name="zp" extends="json-default">
+        <action name="zpjsonUserList" class="zpJsonAction" method="zpjsonUserList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="zpjsonRoomList" class="zpJsonAction" method="zpjsonRoomList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="zpjsonHistoryList" class="zpJsonAction" method="zpjsonHistory">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="reserveList" class="zpJsonAction" method="zpjsonReserveList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="myReserveList" class="zpJsonAction" method="zpjsonMyReserveList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="conferenceList" class="zpJsonAction" method="zpjsonConferenceList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="participantList" class="zpJsonAction" method="zpjsonParticipantList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="checkIn" class="conferenceAction" method="checkIn">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+    </package>
+</struts>

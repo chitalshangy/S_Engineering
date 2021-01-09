@@ -90,8 +90,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
@@ -116,7 +116,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.31" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="D:/java/jdk/jdk1.8.0_212">
+    <configuration name="Tomcat 9.0.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.31" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
@@ -316,6 +316,7 @@
       <workItem from="1610097928080" duration="2819000" />
       <workItem from="1610155336669" duration="380000" />
       <workItem from="1610156463944" duration="8446000" />
+      <workItem from="1610183713580" duration="104000" />
     </task>
     <servers />
   </component>
@@ -382,10 +383,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="292" y="245" key="#Template_Data_Languages/0.0.1536.824@0.0.1536.824" timestamp="1608029994631" />
-    <state x="410" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609666528032">
+    <state x="92" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610183816810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="410" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1609666528032" />
+    <state x="92" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1610183816810" />
     <state x="663" y="192" key="#com.intellij.ide.util.MemberChooser" timestamp="1609944936385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -517,10 +518,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="221" height="477" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1607830144131" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1610093281905">
+    <state x="249" y="0" key="SettingsEditor" timestamp="1610183757990">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610093281905" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610183757990" />
     <state x="415" y="0" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1609170030492" />
     <state x="643" y="215" width="334" height="394" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1609657992760">
       <screen x="0" y="0" width="1536" height="824" />

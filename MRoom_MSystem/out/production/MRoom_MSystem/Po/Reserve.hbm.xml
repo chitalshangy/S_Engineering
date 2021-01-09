@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Po.Reserve" table="reserve"
+           catalog="mroom_msystem">
+        <id name="reid" type="string">
+            <column name="reid" length="30"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one name="user" lazy="false" column="uid" class="Po.User"></many-to-one>
+        <many-to-one name="room" lazy="false" column="rid" class="Po.Room"></many-to-one>
+        <property name="rephone" type="string">
+            <column name="rephone" length="13"/>
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="2"/>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="50"/>
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10"/>
+        </property>
+        <property name="startTime" type="java.sql.Time">
+            <column name="starttime"/>
+        </property>
+        <property name="endTime" type="java.sql.Time">
+            <column name="endtime"/>
+        </property>
+        <property name="open" type="string">
+            <column name="open" length="2"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
