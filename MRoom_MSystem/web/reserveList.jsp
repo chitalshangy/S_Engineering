@@ -14,8 +14,21 @@
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
+
 <!--用户表格-->
-<table class="layui-hide" id="TTTtest" lay-filter="test"></table>
+<table class="layui-hide" id="reserveTable" lay-filter="test"></table>
+
+<!--修改会议状态-->
+<div class="site-text" style="margin: 5%; display: none" id="box1" target="123">
+    <form class="layui-form layui-form-pane" onsubmit="return false" id="booktype">
+        <div class="layui-form-item">
+            <label class="layui-form-label"> 会议状态</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="state" name=state><br>
+            </div>
+        </div>
+    </form>
+</div>
 
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container">
@@ -28,6 +41,7 @@
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-xs" lay-event="edit">管理与会人员</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">取消预约</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit1">结束</a>
 </script>
 
 <script type="text/html" id="barDemo1">
@@ -35,7 +49,6 @@
 </script>
 
 <script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
-
 
 <script>
     //定义全局变量$
@@ -50,7 +63,7 @@
         //表格的渲染
         table.render({
             //指向的是表格的id
-            elem: '#TTTtest'
+            elem: '#reserveTable'
             , url: 'myReserveList.action'
             , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
             , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
@@ -63,12 +76,12 @@
                 {type: 'checkbox', fixed: 'left'}
                 , {field: 'reid', title: '预约流水号', sort: true}
                 , {field: 'room', title: '会议室号', sort: true, templet: '<div>{{d.room.rid}}</div>'}
-                , {field: 'state', title: '状态(0:已取消/1:预约中/2:已完结)', sort: true}
+                , {field: 'state', title: '状态(0:已取消/1:进行中/2:已完结)', sort: true, width: 260}
                 , {field: 'title', title: '主题', sort: true}
                 , {field: 'date', title: '预约日期', sort: true}
                 , {field: 'startTime', title: '开始时间', sort: true}
                 , {field: 'endTime', title: '结束时间', sort: true}
-                , {fixed: 'right', title: '操作', toolbar: '#barDemo', fixed: 'right'}
+                , {fixed: 'right', title: '操作', toolbar: '#barDemo', fixed: 'right', width: 250}
             ]]
             , page: true
         });
@@ -107,7 +120,6 @@
                     });
                     layer.close(index);//关闭弹窗
                 });
-
             } else if (obj.event === 'edit') {
                 layer.open({
                     type: 1
@@ -118,7 +130,7 @@
                     , shadeClose: true
                     , shade: 0
                     , maxmin: true
-                    , content: '<table class="layui-hide" id="TTTtest1" lay-filter="test1"></table>'
+                    , content: '<table class="layui-hide" id="person" lay-filter="test1"></table>'
                     , success: function (layero, index) {
                         var id = data.reid;
 
@@ -127,7 +139,7 @@
                         //表格的渲染
                         table.render({
                             //指向的是表格的id
-                            elem: '#TTTtest1'
+                            elem: '#person'
                             , url: url
                             , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
                             , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
@@ -168,6 +180,7 @@
                             }
                             ;
                         });
+
                         //监听行工具事件
                         table.on('tool(test1)', function (obj) {
                             var data1 = obj.data; //获得当前行数据
@@ -186,12 +199,13 @@
                         layer.close(index);//关闭弹窗
                     }
                 });
-
-
+            } else if (obj.event === 'edit1') {
+                $.getJSON('updateReserve.action', {
+                    reid: data.reid,
+                });
             }
         });
     });
 </script>
-
 </body>
 </html>

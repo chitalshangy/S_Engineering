@@ -11,23 +11,19 @@ public class JsonDateValueProcessor implements JsonValueProcessor {//实现该�
 
     private String format = "yyyy-MM-dd";
 
-
     public JsonDateValueProcessor() {
         super();
     }
-
 
     public JsonDateValueProcessor(String format) {
         super();
         this.format = format;
     }
 
-
     @Override
     public Object processObjectValue(String paramString, Object paramObject, JsonConfig paramJsonConfig) {
         return myProcess(paramObject);
     }
-
 
     private Object myProcess(Object value) {
         if (value instanceof Date) {
@@ -37,14 +33,8 @@ public class JsonDateValueProcessor implements JsonValueProcessor {//实现该�
         return value == null ? "" : value.toString();
     }
 
-
     @Override
-    public Object processArrayValue(Object paramObject, JsonConfig paramJsonConfig
-
-
-    ) {
+    public Object processArrayValue(Object paramObject, JsonConfig paramJsonConfig) {
         return myProcess(paramObject);
     }
-
-
 }

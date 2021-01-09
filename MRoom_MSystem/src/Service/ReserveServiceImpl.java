@@ -38,6 +38,15 @@ public class ReserveServiceImpl implements IReserveService {
         return reserveDAO.infoCount();
     }
 
+
+    public List history(int page, int limit) {
+        return reserveDAO.history(page, limit);
+    }
+
+    public long historyCount() {
+        return reserveDAO.historyCount();
+    }
+
     public List InfoMyList(int page, int limit) {
         ActionContext ctx = ActionContext.getContext();
         session = (Map) ctx.getSession();
@@ -60,7 +69,7 @@ public class ReserveServiceImpl implements IReserveService {
         String hql = "from Room r where r.rnum>=" + num + " order by r.rnum asc";
         List list = reserveDAO.findByhql(hql);
         if (list.isEmpty()) {
-            request.put("tip", "您的与会人数超过最大会议室容纳人数");
+            request.put("tip", "您的与会人数超过最大会议室容纳人数或当前无可用会议室");
             return false;
         }
         java.util.Date now = new java.util.Date();
@@ -92,11 +101,14 @@ public class ReserveServiceImpl implements IReserveService {
             else {
                 reserve.setReid(uid + rid + date + start);
                 reserveDAO.save(reserve);
+                Conference conference = new Conference(user, reserve);
+                conference.setCidentity("预约者");
+                conferenceDAO.addConference(conference);
                 request.put("reid", uid + rid + date + start);
                 return true;
             }
         }
-        request.put("tip", "目前无空闲会议室");
+        request.put("tip", "目前无空闲会议室或当前无可用会议室");
         return false;
     }
 
@@ -104,7 +116,7 @@ public class ReserveServiceImpl implements IReserveService {
         ActionContext ctx = ActionContext.getContext();
         request = (Map) ctx.get("request");
         if (!reserveDAO.judge(reserve.getRid(), reserve.getDate(), reserve.getStartTime(), reserve.getEndTime())) {
-            request.put("tip", "您预约的时段与已有预约冲突，请重新预约");
+            request.put("tip", "您预约的时段与已有预约冲突或当前无可用会议室，请重新预约");
             return false;
         }
         session = (Map) ctx.getSession();
@@ -116,12 +128,20 @@ public class ReserveServiceImpl implements IReserveService {
         reserve.setReid(uid + rid + date + starttime);
         reserve.setUser(user);
         reserve.setState("1");
+
+        String hql = "from Room r where r.rid='" + rid + "'";
+        List list = reserveDAO.findByhql(hql);
+        if (list.size() == 0) {
+            request.put("tip", "预约会议室不存在，请重新预约");
+            return false;
+        }
+
         Room r = new Room(rid);
         reserve.setRoom(r);
         Conference conference = new Conference(user, reserve);
         conference.setCidentity("预约者");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        //System.out.println(sdf.format(date));
+        System.out.println(sdf.format(date));
         reserveDAO.save(reserve);
         conferenceDAO.addConference(conference);
         request.put("reid", uid + rid + date + starttime);
@@ -133,5 +153,7 @@ public class ReserveServiceImpl implements IReserveService {
         conferenceDAO.deleteConference(reid);
     }
 
-
+    public void updateReserve(String reid){
+        reserveDAO.updateReserve(reid);
+    }
 }

@@ -12,10 +12,11 @@
     <title>Title</title>
     <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <script src="layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
 </head>
 <body>
 <!--用户表格-->
-<table class="layui-hide" id="TTTtest" lay-filter="test"></table>
+<table class="layui-hide" id="userTable" lay-filter="test"></table>
 
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container">
@@ -28,7 +29,6 @@
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">退出会议</a>
 </script>
-<script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
 
 <script>
     //定义全局变量$
@@ -43,7 +43,7 @@
         //表格的渲染
         table.render({
             //指向的是表格的id
-            elem: '#TTTtest'
+            elem: '#userTable'
             , url: 'conferenceList.action'
             , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
             , defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
@@ -83,8 +83,7 @@
                 case 'LAYTABLE_TIPS':
                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                     break;
-            }
-            ;
+            };
         });
 
         //监听行工具事件
@@ -94,17 +93,12 @@
             var tr = obj.tr//活动当前行tr 的  DOM对象
             console.log(data);
             if (obj.event === 'del') {
-                /*layer.confirm('真的删除行么', function (index) {
-                    obj.del();
-                    layer.close(index);
-                });*/
                 layer.confirm('确定推出会议吗？', {title: '退出'}, function (index) {
                     //向服务端发送删除指令og
                     $.getJSON('deleteConference.action', {reid: data.reid}, function (ret) {
                     });
                     layer.close(index);//关闭弹窗
                 });
-
             }
         });
     });

@@ -16,11 +16,11 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="images/example.jpg" class="layui-nav-img">
-                    <s:property value="#request.id"/>
+                    <s:property value=""/>
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
+                    <dd><a href="null">基本资料</a></dd>
+                    <dd><a href="null">安全设置</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="login.jsp">退了</a></li>
@@ -73,18 +73,15 @@
         </div>
     </div>
 
-    <!-- 底部固定区域 -->
-    <!--
     <div class="layui-footer">
-
-
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
     </div>
-    -->
 </div>
+
 <script>
     layui.use(['element', 'layer', 'jquery'], function () {
         var element = layui.element;
-        // var layer = layui.layer;
         var $ = layui.$;
         // 配置tab实践在下面无法获取到菜单元素
         $('.site-demo-active').on('click', function () {
@@ -98,7 +95,6 @@
                 <%
                 session.setAttribute("user_id",1);
                 %>
-
             } else {
                 //否则判断该tab项是否以及存在
                 var isData = false; //初始化一个标志，为false说明未打开该tab项 为true则说明已有
@@ -115,7 +111,6 @@
                     <%
                     session.setAttribute("user_id",1);
                     %>
-
                 }
             }
             //最后不管是否新增tab，最后都转到要打开的选项页面上
@@ -129,7 +124,9 @@
                 //关于tabAdd的方法所传入的参数可看layui的开发文档中基础方法部分
                 element.tabAdd('demo', {
                     title: name,
-                    content: '<iframe data-frameid="' + id + '" scrolling="auto" frameborder="0" src="' + url + '" style="width:100%;height:99%;"></iframe>',
+                    content: '<iframe data-frameid="' +
+                        id + '" scrolling="auto" frameborder="0" src="' +
+                        url + '" style="width:100%;height:99%;"></iframe>',
                     id: id //规定好的id
                 })
                 FrameWH();  //计算ifram层的大小

@@ -15,6 +15,7 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
+    <!--页眉-->
     <div class="layui-header">
         <div class="layui-logo">欢迎您，管理员</div>
         <ul class="layui-nav layui-layout-right">
@@ -32,6 +33,7 @@
         </ul>
     </div>
 
+    <!--左侧菜单栏-->
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
@@ -53,9 +55,6 @@
             </ul>
         </div>
     </div>
-
-    <input type="button" id="parentID" value="" hidden/>
-
 
     <!-- 内容主体区域 -->
     <div class="layui-body">
@@ -91,7 +90,6 @@
             <div class="layui-input-block">
                 <input type="text" class="layui-input" id="aphone" name="aphone"><br>
             </div>
-
         </div>
     </form>
 </div>
@@ -127,7 +125,7 @@
     layui.use(['element', 'layer', 'jquery'], function () {
         var $ = layui.$;
         var element = layui.element;
-        // var layer = layui.layer;
+
         // 配置tab实践在下面无法获取到菜单元素
         $('.site-demo-active').on('click', function () {
             var dataid = $(this);
@@ -136,11 +134,10 @@
                 //如果比零小，则直接打开新的tab项
                 active.tabAdd(dataid.attr("data-url"), dataid.attr("data-id"), dataid.attr("data-title"));
 
-                <!--解决过滤器问题-->
+                //解决过滤器问题
                 <%
                 session.setAttribute("user_id",1);
                 %>
-
             } else {
                 //否则判断该tab项是否以及存在
                 var isData = false; //初始化一个标志，为false说明未打开该tab项 为true则说明已有
@@ -157,7 +154,6 @@
                     <%
                     session.setAttribute("user_id",1);
                     %>
-
                 }
             }
             //最后不管是否新增tab，最后都转到要打开的选项页面上
@@ -171,7 +167,9 @@
                 //关于tabAdd的方法所传入的参数可看layui的开发文档中基础方法部分
                 element.tabAdd('demo', {
                     title: name,
-                    content: '<iframe data-frameid="' + id + '" scrolling="auto" frameborder="0" src="' + url + '" style="width:100%;height:99%;"></iframe>',
+                    content: '<iframe data-frameid="' +
+                        id + '" scrolling="auto" frameborder="0" src="' +
+                        url + '" style="width:100%;height:99%;"></iframe>',
                     id: id //规定好的id
                 })
                 FrameWH();  //计算ifram层的大小

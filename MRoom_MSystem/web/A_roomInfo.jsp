@@ -27,8 +27,8 @@
 
 <!--编辑以及删除的前端-->
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-xs layui-btn-disabled" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs layui-btn-disabled" lay-event="del">删除</a>
 </script>
 <script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
 
@@ -58,15 +58,13 @@
                 {type: 'checkbox', fixed: 'left'}
                 , {field: 'rid', title: '编号', sort: true}
                 , {field: 'rnum', title: '支持人数', sort: true}
-                , {field: 'rstate', title: '是否可用', sort: true}
+                , {field: 'rstate', title: '是否维修', sort: true}
                 , {field: 'raddress', title: '地址', sort: true}
-                , {fixed: 'right', title: '操作', toolbar: '#barDemo', fixed: 'right'}
+                , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
             ]]
             , page: true
         });
 
-        //头部三个按钮简单的逻辑实现
-        //头工具栏事件
         table.on('toolbar(test)', function (obj) {
             var checkStatus = table.checkStatus(obj.config.id);
             switch (obj.event) {
@@ -85,12 +83,9 @@
                 case 'LAYTABLE_TIPS':
                     layer.alert('这是工具栏右侧自定义的一个图标按钮');
                     break;
-            }
-            ;
+            };
         });
 
-        //删除和修改按钮
-        //监听行工具事件
         table.on('tool(test)', function (obj) {
             var data = obj.data; //获得当前行数据
             var urlex = "${pageContext.request.contextPath}";
@@ -129,13 +124,12 @@
                             uid: data.uid,
                         });
                         layer.close(index);//关闭弹窗
-                        table.reload('staffTable', {page: {curr: 1}, where: {time: new Date()}});
+                        table.reload('roomTable', {page: {curr: 1}, where: {time: new Date()}});
                     }
                 });
             }
         });
     });
 </script>
-
 </body>
 </html>
