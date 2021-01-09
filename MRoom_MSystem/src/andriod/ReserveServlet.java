@@ -124,7 +124,7 @@ public class ReserveServlet extends HttpServlet {
             Class.forName(driver);
             Connection conn = DriverManager.getConnection(dburl, dbusername, dbpassword);
             System.out.println("查询1");
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * from room where rnum >= ? ");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * from room where rnum >= ? and rstate = '0'");
             pstmt.setInt(1, num);
             ResultSet rst = pstmt.executeQuery();
             System.out.println("查询2");

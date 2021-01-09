@@ -13,7 +13,7 @@
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
-<form class="layui-form" action="emergencyReserve.action" method="post">
+<form class="layui-form" action="emergencyReserve.action" method="post" onsubmit="return validateNum()">
     <div class="layui-form-item">
         <label class="layui-form-label">联系电话</label>
         <div class="layui-input-block">
@@ -25,7 +25,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">与会人数</label>
         <div class="layui-input-block">
-            <input type="text" name="num" required lay-verify="required" placeholder="请输入" autocomplete="off"
+            <input type="text" id="num" name="num" required lay-verify="required" placeholder="请输入" autocomplete="off"
                    class="layui-input">
         </div>
     </div>
@@ -37,5 +37,15 @@
         </div>
     </div>
 </form>
+<script>
+    function validateNum() {
+        var num = document.getElementById("num").value;
+        if (num <= 0) {
+            alert("请输入正常的人数！！！");
+            return false;
+        }
+        return true;
+    }
+</script>
 </body>
 </html>

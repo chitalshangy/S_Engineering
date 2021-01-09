@@ -158,6 +158,8 @@ public class ConferenceDAO extends BaseHibernateDAO implements IConferenceDAO {
         Session session = getSession();
         try {
             tran = session.beginTransaction();
+            List list = findByhql("from Conference where checkInTime is null and reid = '" + reid + "'");
+            if (list.size() == 0) return;
             String hql4 = "update Conference set checkInTime=:checkInTime where uid=:uid and reid=:reid";
             Query query = session.createQuery(hql4);
             query.setParameter("checkInTime", time);

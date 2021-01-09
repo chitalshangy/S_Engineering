@@ -59,12 +59,6 @@
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 
-<!--
-<form method="post" id="uploadForm">
-    <input type="file" id="file" name="file"/>
-    <input type="button" onclick="upload()" value="开始上传">
-</form>
--->
 <!--问题：找不到及时显示刷新后数据的方法-->
 <script>
     //定义全局变量$
