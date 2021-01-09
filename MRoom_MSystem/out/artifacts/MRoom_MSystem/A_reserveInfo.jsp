@@ -27,8 +27,8 @@
 
 <!--编辑以及删除的前端-->
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-xs layui-btn-disabled" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs layui-btn-disabled" lay-event="del">删除</a>
 </script>
 <script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
 
