@@ -41,7 +41,7 @@
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-xs" lay-event="edit">管理与会人员</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">取消预约</a>
-    <a class="layui-btn layui-btn-xs" lay-event="edit1">编辑</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit1">结束</a>
 </script>
 
 <script type="text/html" id="barDemo1">
@@ -200,26 +200,8 @@
                     }
                 });
             } else if (obj.event === 'edit1') {
-                //这里是编辑
-                layer.open({
-                    type: 1 //Page层类型
-                    , skin: 'layui-layer-molv'
-                    , area: ['380px', '270px']
-                    , title: ['编辑用户信息', 'font-size:18px']
-                    , btn: ['确定', '取消']
-                    , shadeClose: true
-                    , shade: 0 //遮罩透明度
-                    , maxmin: true //允许全屏最小化
-                    , content: $('#box1')  //弹窗id
-                    , success: function (layero, index) {
-                        $('#state').val(data.state);
-                    }, yes: function (index, layero) {
-                        $.getJSON('updateReserve.action', {
-                            reid: data.reid,
-                        });
-                        layer.close(index);//关闭弹窗
-                        table.reload('reserveTable', {page: {curr: 1}, where: {time: new Date()}});
-                    }
+                $.getJSON('updateReserve.action', {
+                    reid: data.reid,
                 });
             }
         });

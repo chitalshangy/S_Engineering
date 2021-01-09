@@ -78,10 +78,9 @@ public class ReserveDAO extends BaseHibernateDAO implements IReserveDAO {
         }
     }
 
-
     public List findAll(int page, int limit) {
 
-        String hql = "from Reserve r where r.date>=current_date and r.state!='0' order by r.room.rid asc ";
+        String hql = "from Reserve r where r.date>=current_date and r.state = '1' order by r.room.rid asc ";
 
         try {
             //设置分页
