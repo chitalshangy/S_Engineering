@@ -13,7 +13,7 @@
     <script src="layui/layui.js" charset="utf-8"></script>
 </head>
 <body>
-<form class="layui-form" action="addReserve.action" method="post">
+<form class="layui-form" action="addReserve.action" method="post" onsubmit="return validateDate()">
     <div class="layui-form-item">
         <label class="layui-form-label">会议室编号</label>
         <div class="layui-input-block">
@@ -95,6 +95,27 @@
             , type: 'time'
         });
     });
+
+    function validateDate() {
+        var tmpp = document.getElementById("date").value;
+        var date = new Date(tmpp.replace(/\-/g, "\/"));
+
+        var tmp = new Date();
+        var todaytmp = tmp.toLocaleDateString();
+        var today = new Date(todaytmp.replace(/\-/g, "\/"));
+
+        var stime = document.getElementById("stime").value;
+        var etime = document.getElementById("etime").value;
+        if (date.getTime() < today.getTime()) {
+            alert("请选择正确的日期！！！");
+            return false;
+        }
+        if (stime >= etime) {
+            alert("请选择正确的时间段！！！");
+            return false;
+        }
+        return true;
+    }
 </script>
 </body>
 </html>
