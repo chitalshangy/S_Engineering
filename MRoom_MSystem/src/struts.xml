@@ -13,16 +13,16 @@
 
         <!--文件上传-->
         <action name="uploadFile" class="userAction" method="uploadFile">
-            <result name="list">/admin.jsp</result>
+            <result name="list">/A_staffInfo.jsp</result>
         </action>
 
         <!--删除转发-->
         <action name="delete" class="userAction" method="delete">
-            <result name="success">/admin.jsp</result>
+            <result name="success">/A_staffInfo.jsp</result>
         </action>
 
         <action name="Userupdate" class="userAction" method="Userupdate">
-            <result name="success">/admin.jsp</result>
+            <result name="success">/A_staffInfo.jsp</result>
         </action>
         <action name="Adminupdate" class="userAction" method="Adminupdate">
             <result name="success">/admin.jsp</result>
@@ -40,6 +40,10 @@
         </action>
         <!--删除预约记录-->
         <action name="deleteReserve" class="reserveAction" method="deleteReserve">
+            <result name="success">/reserveList.jsp</result>
+        </action>
+
+        <action name="updateReserve" class="reserveAction" method="updateReserve">
             <result name="success">/reserveList.jsp</result>
         </action>
 

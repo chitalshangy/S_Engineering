@@ -78,10 +78,9 @@ public class ReserveDAO extends BaseHibernateDAO implements IReserveDAO {
         }
     }
 
-
     public List findAll(int page, int limit) {
 
-        String hql = "from Reserve r where r.date>=current_date and r.state!='0' order by r.room.rid asc ";
+        String hql = "from Reserve r where r.date>=current_date and r.state = '1' order by r.room.rid asc ";
 
         try {
             //设置分页
@@ -218,6 +217,27 @@ public class ReserveDAO extends BaseHibernateDAO implements IReserveDAO {
             String hql = "update Reserve r set r.state=:state where r.reid=:reid";
             Query queryupdate = session.createQuery(hql);
             queryupdate.setString("state", "0");
+            queryupdate.setString("reid", reid);
+            queryupdate.executeUpdate();
+            tran.commit();
+        } catch (RuntimeException re) {
+            if (tran != null) tran.rollback();
+            throw re;
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
+    public void updateReserve(String reid){
+        Transaction tran = null;
+        Session session = getSession();
+        try {
+            tran = session.beginTransaction();
+            String hql = "update Reserve r set r.state=:state where r.reid=:reid";
+            Query queryupdate = session.createQuery(hql);
+            queryupdate.setString("state", "2");
             queryupdate.setString("reid", reid);
             queryupdate.executeUpdate();
             tran.commit();
