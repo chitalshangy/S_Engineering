@@ -157,4 +157,13 @@ public class UserServiceImpl implements IUserService {
             e.printStackTrace();
         }
     }
+
+    public void updateRstate(String rid, int rnum, String rstate, String raddress){
+        if(rstate.equals("0")) {
+            roomDAO.update(rid, rnum, "1", raddress);
+        }
+        else {
+            roomDAO.update(rid, rnum, "0", raddress);
+        }
+    }
 }

@@ -30,7 +30,6 @@ public class ConferenceDAO extends BaseHibernateDAO implements IConferenceDAO {
         }
     }
 
-
     public List findAll(int page, int limit, String uid) {
         String hql = "select r from Conference c,Reserve r where c.user.uid=:uid and r.state='1' and c.reserve.reid=r.reid order by r.date asc";
         try {

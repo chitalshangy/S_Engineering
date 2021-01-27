@@ -8,7 +8,7 @@
         <action name="login" class="userAction" method="login">
             <result name="admin_success">/admin.jsp</result>
             <result name="other_success">/normal.jsp</result>
-            <result name="fail">/error.jsp</result>
+            <result name="fail">/loginfail.jsp</result>
         </action>
 
         <!--文件上传-->
@@ -27,6 +27,7 @@
         <action name="Adminupdate" class="userAction" method="Adminupdate">
             <result name="success">/admin.jsp</result>
         </action>
+        <action name="updateRstate" class="userAction" method="updateRstate"/>
 
         <!--增加预约记录-->
         <action name="addReserve" class="reserveAction" method="addReserve">
@@ -82,6 +83,12 @@
         </action>
 
         <action name="reserveList" class="zpJsonAction" method="zpjsonReserveList">
+            <result type="json" name="success">
+                <param name="root">data</param>
+            </result>
+        </action>
+
+        <action name="graReserveList" class="zpJsonAction" method="zpjsongraReserveList">
             <result type="json" name="success">
                 <param name="root">data</param>
             </result>

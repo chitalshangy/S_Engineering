@@ -123,4 +123,8 @@ public class Reserve {
     public void setRoom(Room room) {
         this.room = room;
     }
+
+    public String toString() {
+        return "rid="+room.getRid()+",date="+date+",startTime="+startTime+",endTime="+endTime;
+    }
 }

@@ -156,4 +156,8 @@ public class ReserveServiceImpl implements IReserveService {
     public void updateReserve(String reid){
         reserveDAO.updateReserve(reid);
     }
+
+    public List findAll(String hql){
+        return reserveDAO.findByhql(hql);
+    }
 }

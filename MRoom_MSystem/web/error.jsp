@@ -10,8 +10,21 @@
 <html>
 <head>
     <title>失败</title>
+    <script language="javascript">
+        var times = 4;
+        clock();
+        function clock() {
+            window.setTimeout('clock()', 1000);
+            times = times - 1;
+            time.innerHTML = times;
+            if (times <= 0) {
+                parent.location.reload();
+            }
+        }
+    </script>
 </head>
 <body>
-<label><s:property value="#request.tip"/></label>
+<h1 align="center"><label><s:property value="#request.tip"/></label></h1>
+<h2 align="center">当前页面将会在<div id="time">3</div>秒后刷新</h2>
 </body>
 </html>

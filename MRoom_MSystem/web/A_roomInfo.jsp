@@ -27,7 +27,7 @@
 
 <!--编辑以及删除的前端-->
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs layui-btn-disabled" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs layui-btn-disabled" lay-event="del">删除</a>
 </script>
 <script type="text/javascript" src="layui/lay/modules/jquery.js"></script>
@@ -94,15 +94,17 @@
             if (obj.event === 'del') {
                 layer.confirm('确定删除吗？', {title: '删除'}, function (index) {
                     //向服务端发送删除指令og
-                    $.getJSON('null', {uid: data.uid}, function (ret) {
+                    $.getJSON('null', {rid: data.rid}, function (ret) {
                     });
                     layer.close(index);//关闭弹窗
                     table.reload('roomTable', {page: {curr: 1}, where: {time: new Date()}});
                 });
 
             } else if (obj.event === 'edit') {
+                $.getJSON('updateRstate.action', {rid: data.rid,rnum:data.rnum,rstate: data.rstate,raddress:data.raddress}, function (ret) {
+                });
                 //这里是编辑
-                layer.open({
+                /*layer.open({
                     type: 1 //Page层类型
                     , skin: 'layui-layer-molv'
                     , area: ['380px', '270px']
@@ -126,7 +128,7 @@
                         layer.close(index);//关闭弹窗
                         table.reload('roomTable', {page: {curr: 1}, where: {time: new Date()}});
                     }
-                });
+                });*/
             }
         });
     });

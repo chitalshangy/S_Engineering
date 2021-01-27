@@ -36,4 +36,6 @@ public interface IUserService {
     public void updateAdmin(String aid, String apassword, String aphone);
 
     public void importExcel(File userExcel, String userExcelFileName);
+
+    public void updateRstate(String rid, int rnum, String rstate, String raddress);
 }

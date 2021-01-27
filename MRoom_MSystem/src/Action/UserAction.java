@@ -110,4 +110,9 @@ public class UserAction extends ActionSupport {
         }
         return "list";
     }
+
+    public void updateRstate() {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        userService.updateRstate(request.getParameter("rid"), Integer.valueOf(request.getParameter("rnum")), request.getParameter("rstate"), request.getParameter("raddress"));
+    }
 }

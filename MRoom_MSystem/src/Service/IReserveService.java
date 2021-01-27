@@ -36,4 +36,7 @@ public interface IReserveService {
 
     //更新会议状态
     public void updateReserve(String reid);
+
+    //前端图像信息获取
+    public List findAll(String hql);
 }
