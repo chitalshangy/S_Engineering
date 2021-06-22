@@ -1,11 +1,16 @@
 package Service;
 
 import Dao.IConferenceDAO;
+import Dao.IInfomationDAO;
 import Po.Conference;
 import Po.Reserve;
 import Po.User;
 import com.opensymphony.xwork2.ActionContext;
+import com.xiaomi.xmpush.server.Constants;
+import com.xiaomi.xmpush.server.Message;
+import com.xiaomi.xmpush.server.Sender;
 import extend.faceEngineTest.webcam;
+import org.json.simple.parser.ParseException;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -21,10 +26,15 @@ import java.util.Map;
 
 public class ConferenceServiceImpl implements IConferenceService {
     private IConferenceDAO conferenceDAO = null;
+    private IInfomationDAO infomationDAO = null;
     private Map<String, Object> session, request;
 
     public void setConferenceDAO(IConferenceDAO conferenceDAO) {
         this.conferenceDAO = conferenceDAO;
+    }
+
+    public void setInfomationDAO(IInfomationDAO infomationDAO) {
+        this.infomationDAO = infomationDAO;
     }
 
     public void deleteConference(String reid) {
@@ -44,6 +54,29 @@ public class ConferenceServiceImpl implements IConferenceService {
         Reserve reserve = new Reserve(reid);
         Conference conference = new Conference(user, reserve);
         conferenceDAO.deleteConference(conference);
+
+        //发送通知
+        Constants.useOfficial();
+        Sender sender = new Sender("wyQaepXTnw5hhglTd6J1jg==");
+        String messagePayload = "您的会议有新动态，请查看";
+        String title = "踢出会议通知";
+        String description = "您已被该会议踢出："+reid;
+        String useraccount = uid;    //useraccount非空白, 不能包含逗号, 长度小于128
+        Message message = new Message.Builder()
+                .title(title)
+                .description(description).payload(messagePayload)
+                .restrictedPackageName("com.xiaomi.huiyi")
+                .passThrough(0)  //消息使用通知栏方式
+
+                .notifyType(2)     // 使用默认提示音提示
+                .build();
+        try {
+            sender.sendToUserAccount(message, useraccount, 3);
+        } catch (IOException | ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } //根据useraccount, 发送消息到指定设备上
+        infomationDAO.insert(useraccount,description,"未读");
     }
 
     public void addConference(Conference conference) {

@@ -12,7 +12,7 @@
             <column name="apassword" length="8"/>
         </property>
         <property name="aphone" type="string">
-            <column name="aphone" length="13"/>
+            <column name="aphone" length="11"/>
         </property>
     </class>
 </hibernate-mapping>

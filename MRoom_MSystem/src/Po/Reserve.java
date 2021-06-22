@@ -125,6 +125,6 @@ public class Reserve {
     }
 
     public String toString() {
-        return "rid="+room.getRid()+",date="+date+",startTime="+startTime+",endTime="+endTime;
+        return "rid="+this.getRoom().getRid()+",date="+this.getDate()+",startTime="+this.getStartTime()+",endTime="+this.getEndTime();
     }
 }

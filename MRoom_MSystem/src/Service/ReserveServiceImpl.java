@@ -2,13 +2,20 @@ package Service;
 
 
 import Dao.IConferenceDAO;
+import Dao.IInfomationDAO;
 import Dao.IReserveDAO;
+import Dao.InfomationDAO;
 import Po.Conference;
 import Po.Reserve;
 import Po.Room;
 import Po.User;
 import com.opensymphony.xwork2.ActionContext;
+import com.xiaomi.xmpush.server.Constants;
+import com.xiaomi.xmpush.server.Message;
+import com.xiaomi.xmpush.server.Sender;
+import org.json.simple.parser.ParseException;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
@@ -20,6 +27,7 @@ import java.util.Map;
 public class ReserveServiceImpl implements IReserveService {
     private IReserveDAO reserveDAO;
     private IConferenceDAO conferenceDAO;
+    private IInfomationDAO infomationDAO;
     private Map<String, Object> session, request;
 
     public void setConferenceDAO(IConferenceDAO conferenceDAO) {
@@ -28,6 +36,10 @@ public class ReserveServiceImpl implements IReserveService {
 
     public void setReserveDAO(IReserveDAO reserveDAO) {
         this.reserveDAO = reserveDAO;
+    }
+
+    public void setInfomationDAO(IInfomationDAO infomationDAO) {
+        this.infomationDAO = infomationDAO;
     }
 
     public List InfoList(int page, int limit) {
@@ -149,6 +161,33 @@ public class ReserveServiceImpl implements IReserveService {
     }
 
     public void deleteReserve(String reid) {
+        List uidlist = conferenceDAO.findByhql("select c.user.uid from Conference c where c.reserve.reid='" + reid + "'");
+
+        for(int i = 0; i < uidlist.size(); ++i){
+            //发送通知
+            Constants.useOfficial();
+            Sender sender = new Sender("wyQaepXTnw5hhglTd6J1jg==");
+            String messagePayload = "您的会议有新动态，请查看";
+            String title = "踢出会议通知";
+            String description = "您已被该会议踢出："+reid;
+            String useraccount = (String) uidlist.get(i);    //useraccount非空白, 不能包含逗号, 长度小于128
+            Message message = new Message.Builder()
+                    .title(title)
+                    .description(description).payload(messagePayload)
+                    .restrictedPackageName("com.xiaomi.huiyi")
+                    .passThrough(0)  //消息使用通知栏方式
+
+                    .notifyType(2)     // 使用默认提示音提示
+                    .build();
+            try {
+                sender.sendToUserAccount(message, useraccount, 3);
+            } catch (IOException | ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } //根据useraccount, 发送消息到指定设备上
+            infomationDAO.insert(useraccount,description,"未读");
+        }
+
         reserveDAO.deleteReserve(reid);
         conferenceDAO.deleteConference(reid);
     }

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Po.Information" table="information"
+           catalog="mroom_msystem">
+        <composite-id>
+        <key-many-to-one name="user" lazy="false" column="uid" class="Po.User"></key-many-to-one>
+        <key-property name="itext" type="string">
+            <column name="itext" length="100"/>
+        </key-property>
+        <key-property name="istate" type="string">
+            <column name="istate" length="6"/>
+        </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

@@ -38,7 +38,8 @@ public class ReserveServlet extends HttpServlet {
         reserve.setUid(uid);
         reserve.setRephone(phone);
         JSONObject json = new JSONObject();
-        response.setContentType("text/html,charset=utf=8");
+        response.setContentType("text/json");
+        response.setCharacterEncoding("UTF-8");
         ArrayList<Room> list = new ArrayList<Room>();
         try {
             list = findBynum(num);
@@ -66,21 +67,19 @@ public class ReserveServlet extends HttpServlet {
         System.out.println(sdf.format(now));
         LocalDate localDate = now.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         // java.time.LocalDate -> java.sql.Date
-        Date date = java.sql.Date.valueOf(localDate);
+        Date date = Date.valueOf(localDate);
         System.out.println(date);
         System.out.println(sdf.format(date));
-
         Long time = System.currentTimeMillis();
         Time start = new Time(time);
         time += 30 * 1000 * 60;
         Time end = new Time(time);
-
         reserve.setDate(date);
         reserve.setStartTime(start);
         reserve.setEndTime(end);
         reserve.setState("1");
         reserve.setTitle("紧急会议");
-        System.out.println(reserve.toString());
+        //System.out.println(reserve.toString());
         for (int i = 0; i < list.size(); ++i) {
             Room r = list.get(i);
             String rid = r.getRid();

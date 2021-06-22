@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="mroom_msystem@localhost" uuid="5b9fbc2f-e209-4488-bb9a-18bd329a62e2">
+    <data-source source="LOCAL" name="mroom_msystem@localhost" uuid="64c274c5-4884-4895-b67d-b21c56c0e6e5">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
@@ -9,6 +9,12 @@
       <driver-properties>
         <property name="serverTimezone" value="UTC" />
       </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="donetbase@localhost" uuid="a1da9340-b7c2-4cdc-b368-06dfef753c38">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/donetbase</jdbc-url>
     </data-source>
   </component>
 </project>

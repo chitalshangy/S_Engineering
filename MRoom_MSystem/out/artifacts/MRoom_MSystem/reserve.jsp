@@ -27,6 +27,12 @@
                     <option value="R02">R02</option>
                     <option value="R03">R03</option>
                     <option value="R04">R04</option>
+                    <option value="R05">R05</option>
+                    <option value="R06">R06</option>
+                    <option value="R07">R07</option>
+                    <option value="R08">R08</option>
+                    <option value="R09">R09</option>
+                    <option value="R10">R10</option>
                 </select>
             </div>
         </div>

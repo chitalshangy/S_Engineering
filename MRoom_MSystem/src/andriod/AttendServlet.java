@@ -19,7 +19,8 @@ public class AttendServlet extends HttpServlet {
         System.out.println(uid);
         System.out.println(reid);
         JSONObject json = new JSONObject();
-        response.setContentType("text/html,charset=utf=8");
+        response.setContentType("text/json");
+        response.setCharacterEncoding("UTF-8");
         String driver = "com.mysql.jdbc.Driver";
         String dburl = "jdbc:mysql://localhost:3306/mroom_msystem";
         String dbusername = "dbuser";
